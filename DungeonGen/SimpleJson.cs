@@ -1269,9 +1269,7 @@ namespace Json
     }
 
     [GeneratedCode("simple-json", "1.0.0")]
-    public
-#endif
-        interface IJsonSerializerStrategy
+    public interface IJsonSerializerStrategy
     {
         [SuppressMessage("Microsoft.Design", "CA1007:UseGenericsWhereAppropriate", Justification = "Need to support .NET 2")]
         bool TrySerializeNonPrimitiveObject(object input, out object output);

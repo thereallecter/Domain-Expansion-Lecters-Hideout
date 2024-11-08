@@ -18,7 +18,10 @@ namespace wServer.realm.commands
     // Does not require RankName
     internal class LeftToMax : Command
     {
-        public LeftToMax() : base("lefttomax") { }
+        public LeftToMax() : base("lefttomax")
+        {
+        }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             int Hp = player.ObjectDesc.MaxHitPoints - player.Stats[0];
@@ -40,6 +43,7 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class GlandCommand : Command
     {
         public GlandCommand()
@@ -83,6 +87,7 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SuicideCommand : Command
     {
         public SuicideCommand()
@@ -97,6 +102,7 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class TutorialCommand : Command
     {
         public TutorialCommand()
@@ -117,6 +123,7 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class TradeCommand : Command
     {
         public TradeCommand()
@@ -138,6 +145,7 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class WhoCommand : Command
     {
         public WhoCommand()
@@ -159,6 +167,7 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class ServerCommand : Command
     {
         public ServerCommand()
@@ -172,6 +181,7 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class PauseCommand : Command
     {
         public PauseCommand()
@@ -210,6 +220,7 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class TeleportCommand : Command
     {
         public TeleportCommand()
@@ -247,9 +258,12 @@ namespace wServer.realm.commands
             return false;
         }
     }
+
     internal class TellCommand : Command
     {
-        public TellCommand() : base("tell") { }
+        public TellCommand() : base("tell")
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -396,9 +410,12 @@ namespace wServer.realm.commands
             return false;
         }
     }
+
     internal class TalkCommand : Command
     {
-        public TalkCommand() : base("talk") { }
+        public TalkCommand() : base("talk")
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -413,9 +430,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class LockCommand : Command
     {
-        public LockCommand() : base("lock") { }
+        public LockCommand() : base("lock")
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -453,11 +473,13 @@ namespace wServer.realm.commands
     }
 
     #region Sets
+
     internal class RogueCommand : Command
     {
         public RogueCommand() : base("rouge", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -472,11 +494,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class ArcherCommand : Command
     {
         public ArcherCommand() : base("archer", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -491,11 +515,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class WizardCommand : Command
     {
         public WizardCommand() : base("wizard", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -510,11 +536,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class PriestCommand : Command
     {
         public PriestCommand() : base("priest", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -529,11 +557,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class WarriorCommand : Command
     {
         public WarriorCommand() : base("warrior", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -548,11 +578,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class KnightCommand : Command
     {
         public KnightCommand() : base("knight", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -567,11 +599,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class PaladinCommand : Command
     {
         public PaladinCommand() : base("paladin", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -586,11 +620,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class AssassinCommand : Command
     {
         public AssassinCommand() : base("assassin", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -605,11 +641,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class NecromancerCommand : Command
     {
         public NecromancerCommand() : base("necro", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -624,11 +662,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class HuntressCommand : Command
     {
         public HuntressCommand() : base("huntress", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -643,11 +683,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class MysticCommand : Command
     {
         public MysticCommand() : base("mystic", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -662,11 +704,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class TricksterCommand : Command
     {
         public TricksterCommand() : base("trickster", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -681,11 +725,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SorcererCommand : Command
     {
         public SorcererCommand() : base("sorcerer", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -700,11 +746,13 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class NinjaCommand : Command
     {
         public NinjaCommand() : base("ninja", RankName.ADMIN)
         {
         }
+
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
             for (int i = 0; i < player.Inventory.Length; i++)
@@ -719,6 +767,6 @@ namespace wServer.realm.commands
             return true;
         }
     }
-    #endregion
 
+    #endregion
 }

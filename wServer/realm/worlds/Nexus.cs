@@ -11,8 +11,11 @@ namespace wServer.realm.worlds
     public class Nexus : World
     {
         public const string NEXUS_RESOURCE = "wServer.realm.worlds.maps.nexus.wmap";
+
         public const string PROD_RESOURCE = "wServer.realm.worlds.maps.nexusprod.wmap";
+
         public const string WINTER_RESOURCE = "wServer.realm.worlds.maps.nexus_winter.jm";
+
         public const string SUMMER_RESOURCE = "wServer.realm.worlds.maps.nexus_summer.jm";
 
         public Nexus()

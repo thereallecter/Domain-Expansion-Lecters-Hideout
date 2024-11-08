@@ -20,6 +20,7 @@ namespace wServer.realm.commands
             MODERATOR = 30,
 
             ADMIN = 40,
+
             OWNER = 50
         }
 

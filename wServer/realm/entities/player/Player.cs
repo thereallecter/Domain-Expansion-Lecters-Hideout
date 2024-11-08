@@ -16,6 +16,7 @@ namespace wServer.realm.entities.player
     internal interface IPlayer
     {
         void Damage(int dmg, Entity chr);
+
         bool IsVisibleToEnemy();
     }
 
@@ -36,11 +37,15 @@ namespace wServer.realm.entities.player
         private Item[] inventory;
 
         private float hpRegenCounter;
+
         private float mpRegenCounter;
+
         private bool resurrecting;
 
         private byte[,] tiles;
+
         private int pingSerial;
+
         private SetTypeSkin setTypeSkin;
 
         public Player(RealmManager manager, Client psr)
@@ -225,6 +230,7 @@ namespace wServer.realm.entities.player
             get { return LootDropBoostTimeLeft > 0; }
             set { LootDropBoostTimeLeft = value ? LootDropBoostTimeLeft : 0.0f; }
         }
+
         public float LootDropBoostTimeLeft { get; set; }
 
         public bool LootTierBoost
@@ -232,6 +238,7 @@ namespace wServer.realm.entities.player
             get { return LootTierBoostTimeLeft > 0; }
             set { LootTierBoostTimeLeft = value ? LootTierBoostTimeLeft : 0.0f; }
         }
+
         public float LootTierBoostTimeLeft { get; set; }
 
         public bool XpBoosted { get; set; }
@@ -643,6 +650,7 @@ namespace wServer.realm.entities.player
                 case 12:
                     chr.Equipment = Inventory.Select(_ => _?.ObjectType ?? -1).ToArray();
                     break;
+
                 case 20:
                     var equip = Inventory.Select(_ => _?.ObjectType ?? -1).ToArray();
                     var backpack = new int[8];

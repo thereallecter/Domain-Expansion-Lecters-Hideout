@@ -388,3 +388,5 @@ namespace Mono.Game
         #endregion Operators
     }
 }
+
+#endif
