@@ -1,0 +1,11 @@
+<application xmlns="http://ns.adobe.com/air/application/50.2">
+  <id>Main</id>
+  <filename>Main</filename>
+  <name>Main</name>
+  <versionNumber>0.0.0</versionNumber>
+  <architecture>64</architecture>
+  <initialWindow>
+    <content>Main.swf</content>
+    <visible>true</visible>
+  </initialWindow>
+</application>
