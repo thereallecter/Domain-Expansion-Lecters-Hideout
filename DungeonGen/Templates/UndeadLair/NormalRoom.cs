@@ -46,10 +46,10 @@ namespace DungeonGenerator.Templates.UndeadLair
         { get { return h; } }
 
         private static readonly Tuple<Direction, int>[] connections = {
-            Tuple.Create(Direction.East, 2),
-            Tuple.Create(Direction.West, 2),
-            Tuple.Create(Direction.South, 2),
-            Tuple.Create(Direction.North, 2)
+            Tuple.Create(Direction.East, 5),
+            Tuple.Create(Direction.West, 5),
+            Tuple.Create(Direction.South, 5),
+            Tuple.Create(Direction.North, 5)
         };
 
         public override Tuple<Direction, int>[] ConnectionPoints { get { return connections; } }
@@ -58,7 +58,7 @@ namespace DungeonGenerator.Templates.UndeadLair
         {
             rasterizer.FillRect(Bounds, new DungeonTile
             {
-                TileType = UndeadLairTemplate.BrownLines
+                TileType = UndeadLairTemplate.GreyClosed
             });
 
             int numBoss = new Range(0, 1).Random(rand);

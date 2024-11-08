@@ -624,8 +624,6 @@
     <EmbeddedResource Include="realm\worlds\maps\winecellar.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\nexusLimbo.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\tomb.wmap" />
-    <EmbeddedResource Include="realm\worlds\maps\UDL1.wmap" />
-    <EmbeddedResource Include="realm\worlds\maps\UDL2.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\belladonnasGarden.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\shaitansmap.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\shittersmep.wmap" />
@@ -670,7 +668,6 @@
     <EmbeddedResource Include="realm\worlds\maps\CandylandHuntingGrounds.jm" />
     <EmbeddedResource Include="realm\worlds\maps\crawling.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\davy.jm" />
-    <EmbeddedResource Include="realm\worlds\maps\udl.jm" />
     <None Include="wServer.cfg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

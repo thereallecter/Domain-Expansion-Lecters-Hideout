@@ -28,17 +28,13 @@ namespace DungeonGenerator.Templates.UndeadLair
     {
         internal static readonly TileType LightSand = new TileType(0x00bd, "Light Sand");
 
-        internal static readonly TileType BrownLines = new TileType(0x000c, "Brown Lines");
-
-        internal static readonly TileType ShallowWater = new TileType(0x0073, "Shallow Water");
+        internal static readonly TileType GreyClosed = new TileType(0x05, "Grey Closed");
 
         internal static readonly TileType Composite = new TileType(0x00fd, "Composite");
 
         internal static readonly TileType Space = new TileType(0x00fe, "Space");
 
         internal static readonly ObjectType CaveWall = new ObjectType(0x01ce, "Cave Wall");
-
-        internal static readonly ObjectType PalmTree = new ObjectType(0x018e, "Palm Tree");
 
         internal static readonly ObjectType CowardicePortal = new ObjectType(0x0703, "Portal of Cowardice");
 
@@ -67,24 +63,24 @@ namespace DungeonGenerator.Templates.UndeadLair
         { get { return null; } }
 
         public override Range RoomSeparation
-        { get { return new Range(7, 7); } }
+        { get { return new Range(5, 5); } }
 
         public override int CorridorWidth
-        { get { return 3; } }
+        { get { return 5; } }
 
         public override void Initialize()
         {
-            targetDepth = new NormDist(4, 18, 12, 24, Rand.Next());
+            targetDepth = new NormDist(2, 24, 12, 36, Rand.Next());
         }
 
         public override Room CreateStart(int depth)
         {
-            return new StartRoom(5);
+            return new StartRoom(14, 14);
         }
 
         public override Room CreateTarget(int depth, Room prev)
         {
-            return new BossRoom(10);
+            return new BossRoom(14);
         }
 
         public override Room CreateSpecial(int depth, Room prev)
@@ -94,7 +90,7 @@ namespace DungeonGenerator.Templates.UndeadLair
 
         public override Room CreateNormal(int depth, Room prev)
         {
-            return new NormalRoom(Rand.Next(13, 13), Rand.Next(13, 13));
+            return new NormalRoom(Rand.Next(14, 14), Rand.Next(14, 14));
         }
 
         public override MapCorridor CreateCorridor()

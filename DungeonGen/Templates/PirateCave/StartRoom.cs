@@ -60,6 +60,7 @@ namespace DungeonGenerator.Templates.PirateCave
             int pY = (int)(cY + Math.Sin(pR) * pR);
 
             for (int x = bounds.X; x < bounds.MaxX; x++)
+            {
                 for (int y = bounds.Y; y < bounds.MaxY; y++)
                 {
                     if ((x - cX) * (x - cX) + (y - cY) * (y - cY) <= r2)
@@ -82,6 +83,7 @@ namespace DungeonGenerator.Templates.PirateCave
                         };
                     }
                 }
+            }
         }
     }
 }

@@ -98,14 +98,184 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\103_kabam.rotmg.assets.EmbeddedData_STestingCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\104_kabam.rotmg.assets.EmbeddedData_PetsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\108_kabam.rotmg.assets.EmbeddedData_SnakePitCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\109_kabam.rotmg.assets.EmbeddedData_EquipmentSetsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\111_kabam.rotmg.assets.EmbeddedData_EncountersCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\112_kabam.rotmg.assets.EmbeddedData_GhostShipCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\117_kabam.rotmg.assets.EmbeddedData_MidCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\119_kabam.rotmg.assets.EmbeddedData_GroundCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\124_kabam.rotmg.assets.EmbeddedData_PuppetMasterCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\125_kabam.rotmg.assets.EmbeddedData_OryxChamberCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\133_kabam.rotmg.assets.EmbeddedData_ForestMazeCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\135_kabam.rotmg.assets.EmbeddedData_PermapetsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\137_kabam.rotmg.assets.EmbeddedData_MiniDungeonHubCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\140_kabam.rotmg.assets.EmbeddedData_TempObjectsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\144_kabam.rotmg.assets.EmbeddedData_MonstersCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\147_kabam.rotmg.assets.EmbeddedData_DyesCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\152_kabam.rotmg.assets.EmbeddedData_CandyLandCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\153_kabam.rotmg.assets.EmbeddedData_HighCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\154_kabam.rotmg.assets.EmbeddedData_WillemTestingCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\155_kabam.rotmg.assets.EmbeddedData_LowCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\156_kabam.rotmg.assets.EmbeddedData_TextilesCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\158_kabam.rotmg.assets.EmbeddedData_TombOfTheAncientsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\161_kabam.rotmg.assets.EmbeddedData_EpicPirateCaveCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\163_kabam.rotmg.assets.EmbeddedData_CaveOfAThousandTreasuresCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\169_kabam.rotmg.assets.EmbeddedData_EpicForestMazeCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\176_kabam.rotmg.assets.EmbeddedData_AbyssOfDemonsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\178_kabam.rotmg.assets.EmbeddedData_EquipCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\179_kabam.rotmg.assets.EmbeddedData_BTestingCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\184_kabam.rotmg.assets.EmbeddedData_OryxWineCellarCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\186_kabam.rotmg.assets.EmbeddedData_TutorialObjectsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\188_kabam.rotmg.assets.EmbeddedData_TestingObjectsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\191_kabam.rotmg.assets.EmbeddedData_TutorialScriptCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\195_kabam.rotmg.assets.EmbeddedData_HauntedCemeteryCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\199_kabam.rotmg.assets.EmbeddedData_StaticObjectsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\201_kabam.rotmg.assets.EmbeddedData_OceanTrenchCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\208_kabam.rotmg.assets.EmbeddedData_SpriteWorldCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\211_kabam.rotmg.assets.EmbeddedData_MTestingCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\212_kabam.rotmg.assets.EmbeddedData_RegionsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\214_kabam.rotmg.assets.EmbeddedData_TTestingCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\220_kabam.rotmg.assets.EmbeddedData_ManorOfTheImmortalsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\229_kabam.rotmg.assets.EmbeddedData_IceCaveCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\231_kabam.rotmg.assets.EmbeddedData_KTestingCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\252_kabam.rotmg.assets.EmbeddedData_ObjectsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\254_kabam.rotmg.assets.EmbeddedData_LairOfShaitanCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\40_kabam.rotmg.assets.EmbeddedData_OryxCastleCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\42_kabam.rotmg.assets.EmbeddedData_PlayersCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\45_kabam.rotmg.assets.EmbeddedData_MadLabCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\55_kabam.rotmg.assets.EmbeddedData_UndeadLairCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\58_kabam.rotmg.assets.EmbeddedData_NexusDestroyedCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\59_kabam.rotmg.assets.EmbeddedData_ShattersCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\62_kabam.rotmg.assets.EmbeddedData_SkinsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\63_kabam.rotmg.assets.EmbeddedData_ForbiddenJungleCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\66_kabam.rotmg.assets.EmbeddedData_PirateCaveCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\69_kabam.rotmg.assets.EmbeddedData_EpicSpiderDenCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\77_kabam.rotmg.assets.EmbeddedData_BelladonnaCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\84_kabam.rotmg.assets.EmbeddedData_ShoreCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\86_kabam.rotmg.assets.EmbeddedData_MountainsCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\88_kabam.rotmg.assets.EmbeddedData_LairOfDraconisCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="data\99_kabam.rotmg.assets.EmbeddedData_ProjectilesCXML.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="data\Addition.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="data\dat0.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\dat1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>

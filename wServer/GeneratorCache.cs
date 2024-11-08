@@ -51,7 +51,7 @@ namespace wServer
 
         private static void CreateCache(string key, DungeonTemplate template)
         {
-            uint max = 36;
+            uint max = 12;
             Random rand = new Random();
             log.Info($"Generating cache for dungeon: {key}");
             CachedMaps.Add(key, new List<string>());

@@ -26,71 +26,68 @@ namespace DungeonGenerator.Templates.UndeadLair
 {
     internal class StartRoom : FixedRoom
     {
-        private readonly int radius;
+        private readonly int w;
 
-        public StartRoom(int radius)
+        private readonly int h;
+
+        public StartRoom(int w, int h)
         {
-            this.radius = radius;
+            this.w = w;
+            this.h = h;
         }
 
         public override RoomType Type
-        { get { return RoomType.Start; } }
+        { get { return RoomType.Normal; } }
 
         public override int Width
-        { get { return radius * 2 + 1; } }
+        { get { return w; } }
 
         public override int Height
-        { get { return radius * 2 + 1; } }
+        { get { return h; } }
 
         private static readonly Tuple<Direction, int>[] connections = {
-            Tuple.Create(Direction.East, 2),
-            Tuple.Create(Direction.West, 2),
-            Tuple.Create(Direction.South, 2),
-            Tuple.Create(Direction.North, 2)
+            Tuple.Create(Direction.East, 5),
+            Tuple.Create(Direction.West, 5),
+            Tuple.Create(Direction.South, 5),
+            Tuple.Create(Direction.North, 5)
         };
 
         public override Tuple<Direction, int>[] ConnectionPoints { get { return connections; } }
 
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {
-            var tile = new DungeonTile
+            rasterizer.FillRect(Bounds, new DungeonTile
             {
-                TileType = UndeadLairTemplate.LightSand
-            };
+                TileType = UndeadLairTemplate.GreyClosed
+            });
 
-            var cX = Pos.X + radius + 0.5;
-            var cY = Pos.Y + radius + 0.5;
-            var bounds = Bounds;
-            var r2 = radius * radius;
+            int numPortal = 1;
+
             var buf = rasterizer.Bitmap;
+            var bounds = Bounds;
 
-            double pR = rand.NextDouble() * (radius - 2), pA = rand.NextDouble() * 2 * Math.PI;
-            int pX = (int)(cX + Math.Cos(pR) * pR);
-            int pY = (int)(cY + Math.Sin(pR) * pR);
+            while (numPortal > 0)
+            {
+                int x = rand.Next(bounds.X, bounds.MaxX);
+                int y = rand.Next(bounds.Y, bounds.MaxY);
+                if (buf[x, y].Object != null)
+                    continue;
 
-            for (int x = bounds.X; x < bounds.MaxX; x++)
-                for (int y = bounds.Y; y < bounds.MaxY; y++)
+                switch (rand.Next(3))
                 {
-                    if ((x - cX) * (x - cX) + (y - cY) * (y - cY) <= r2)
-                    {
-                        buf[x, y] = tile;
-                        if (rand.NextDouble() > 0.95)
+                    case 0:
+                        if (numPortal > 0)
                         {
+                            buf[x, y].Region = "Spawn";
                             buf[x, y].Object = new DungeonObject
                             {
-                                ObjectType = UndeadLairTemplate.PalmTree
+                                ObjectType = UndeadLairTemplate.CowardicePortal
                             };
+                            numPortal--;
                         }
-                    }
-                    if (x == pX && y == pY)
-                    {
-                        buf[x, y].Region = "Spawn";
-                        buf[x, y].Object = new DungeonObject
-                        {
-                            ObjectType = UndeadLairTemplate.CowardicePortal
-                        };
-                    }
+                        break;
                 }
+            }
         }
     }
 }

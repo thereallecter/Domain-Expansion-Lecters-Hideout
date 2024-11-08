@@ -17,6 +17,8 @@ namespace wServer.realm.worlds
             AllowTeleport = true;
         }
 
+        public override bool NeedsPortalKey => true;
+
         protected override void Init()
         {
             LoadMap(GeneratorCache.NextUndeadLair(Seed));

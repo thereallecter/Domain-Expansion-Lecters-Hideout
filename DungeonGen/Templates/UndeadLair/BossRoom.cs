@@ -24,7 +24,7 @@ using System;
 
 namespace DungeonGenerator.Templates.UndeadLair
 {
-    internal class BossRoom : Room
+    internal class BossRoom : FixedRoom
     {
         private readonly int radius;
 
@@ -42,11 +42,20 @@ namespace DungeonGenerator.Templates.UndeadLair
         public override int Height
         { get { return radius * 2 + 1; } }
 
+        private static readonly Tuple<Direction, int>[] connections = {
+            Tuple.Create(Direction.East, 5),
+            Tuple.Create(Direction.West, 5),
+            Tuple.Create(Direction.South, 5),
+            Tuple.Create(Direction.North, 5)
+        };
+
+        public override Tuple<Direction, int>[] ConnectionPoints { get { return connections; } }
+
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {
             var tile = new DungeonTile
             {
-                TileType = UndeadLairTemplate.BrownLines
+                TileType = UndeadLairTemplate.GreyClosed
             };
 
             var cX = Pos.X + radius + 0.5;
@@ -56,11 +65,13 @@ namespace DungeonGenerator.Templates.UndeadLair
             var buf = rasterizer.Bitmap;
 
             for (int x = bounds.X; x < bounds.MaxX; x++)
+            {
                 for (int y = bounds.Y; y < bounds.MaxY; y++)
                 {
                     if ((x - cX) * (x - cX) + (y - cY) * (y - cY) <= r2)
                         buf[x, y] = tile;
                 }
+            }
 
             int numKing = 1;
             int numBoss = new Range(4, 7).Random(rand);
@@ -75,7 +86,7 @@ namespace DungeonGenerator.Templates.UndeadLair
                 if ((x - cX) * (x - cX) + (y - cY) * (y - cY) > r2)
                     continue;
 
-                if (buf[x, y].Object != null || buf[x, y].TileType != UndeadLairTemplate.BrownLines)
+                if (buf[x, y].Object != null || buf[x, y].TileType != UndeadLairTemplate.GreyClosed)
                     continue;
 
                 switch (rand.Next(3))

@@ -29,7 +29,7 @@ namespace DungeonGenerator.Templates.UndeadLair
         {
             Default(srcPos, dstPos, new DungeonTile
             {
-                TileType = UndeadLairTemplate.BrownLines
+                TileType = UndeadLairTemplate.GreyClosed
             });
         }
     }

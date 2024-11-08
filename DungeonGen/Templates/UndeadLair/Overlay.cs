@@ -44,16 +44,16 @@ namespace DungeonGenerator.Templates.UndeadLair
             for (int x = 0; x < w; x++)
                 for (int y = 0; y < h; y++)
                 {
-                    if (buf[x, y].TileType != UndeadLairTemplate.ShallowWater)
+                    if (buf[x, y].TileType != UndeadLairTemplate.Composite)
                         continue;
 
                     bool notWall = false;
                     if (x == 0 || y == 0 || x + 1 == w || y + 1 == h)
                         notWall = false;
-                    else if (buf[x + 1, y].TileType == UndeadLairTemplate.BrownLines ||
-                             buf[x - 1, y].TileType == UndeadLairTemplate.BrownLines ||
-                             buf[x, y + 1].TileType == UndeadLairTemplate.BrownLines ||
-                             buf[x, y - 1].TileType == UndeadLairTemplate.BrownLines)
+                    else if (buf[x + 1, y].TileType == UndeadLairTemplate.GreyClosed ||
+                             buf[x - 1, y].TileType == UndeadLairTemplate.GreyClosed ||
+                             buf[x, y + 1].TileType == UndeadLairTemplate.GreyClosed ||
+                             buf[x, y - 1].TileType == UndeadLairTemplate.GreyClosed)
                     {
                         notWall = true;
                     }
@@ -65,20 +65,17 @@ namespace DungeonGenerator.Templates.UndeadLair
             for (int x = 0; x < w; x++)
                 for (int y = 0; y < h; y++)
                 {
-                    if (buf[x, y].TileType != UndeadLairTemplate.Composite)
-                        continue;
-
-                    bool nearWater = false;
+                    bool nearComp = false;
                     if (x == 0 || y == 0 || x + 1 == w || y + 1 == h)
-                        nearWater = false;
-                    else if (tmp[x + 1, y].TileType == UndeadLairTemplate.ShallowWater ||
-                             tmp[x - 1, y].TileType == UndeadLairTemplate.ShallowWater ||
-                             tmp[x, y + 1].TileType == UndeadLairTemplate.ShallowWater ||
-                             tmp[x, y - 1].TileType == UndeadLairTemplate.ShallowWater)
+                        nearComp = false;
+                    else if (tmp[x + 1, y].TileType == UndeadLairTemplate.Composite ||
+                             tmp[x - 1, y].TileType == UndeadLairTemplate.Composite ||
+                             tmp[x, y + 1].TileType == UndeadLairTemplate.Composite ||
+                             tmp[x, y - 1].TileType == UndeadLairTemplate.Composite)
                     {
-                        nearWater = true;
+                        nearComp = true;
                     }
-                    if (nearWater)
+                    if (nearComp)
                         buf[x, y] = wall;
                 }
 

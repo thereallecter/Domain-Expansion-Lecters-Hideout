@@ -26,12 +26,16 @@ namespace DungeonGenerator.Templates.UndeadLair
     {
         public override void Rasterize()
         {
-            var tile = new DungeonTile
+            var wall = new DungeonTile
             {
-                TileType = UndeadLairTemplate.ShallowWater
+                TileType = UndeadLairTemplate.Composite,
+                Object = new DungeonObject
+                {
+                    ObjectType = UndeadLairTemplate.CaveWall
+                }
             };
 
-            Rasterizer.Clear(tile);
+            Rasterizer.Clear(wall);
         }
     }
 }
