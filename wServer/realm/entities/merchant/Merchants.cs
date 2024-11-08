@@ -1,10 +1,10 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
-using log4net;
 using wServer.networking.svrPackets;
 using wServer.realm.entities.player;
 
@@ -38,7 +38,7 @@ namespace wServer.realm.entities.merchant
 
             if (Random == null) Random = new Random();
             if (AddedTypes == null) AddedTypes = new List<KeyValuePair<string, int>>();
-            if(owner != null) ResolveMType();
+            if (owner != null) ResolveMType();
         }
 
         private static List<KeyValuePair<string, int>> AddedTypes { get; set; }
@@ -204,7 +204,7 @@ namespace wServer.realm.entities.merchant
                     }
                 }
 
-                if (MRemaining == 0 &&  MType != -1)
+                if (MRemaining == 0 && MType != -1)
                 {
                     if (AddedTypes.Contains(new KeyValuePair<string, int>(Owner.Name, MType)))
                         AddedTypes.Remove(new KeyValuePair<string, int>(Owner.Name, MType));
@@ -265,53 +265,53 @@ namespace wServer.realm.entities.merchant
         {
             MType = -1;
             var list = new int[0];
-            if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_1)
+            if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_1)
                 list = MerchantLists.store1List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_2)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_2)
                 list = MerchantLists.store2List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_3)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_3)
                 list = MerchantLists.store3List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_4)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_4)
                 list = MerchantLists.store4List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_5)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_5)
                 list = MerchantLists.store5List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_6)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_6)
                 list = MerchantLists.store6List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_7)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_7)
                 list = MerchantLists.store7List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_8)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_8)
                 list = MerchantLists.store8List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_9)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_9)
                 list = MerchantLists.store9List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_10)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_10)
                 list = MerchantLists.store10List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_11)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_11)
                 list = MerchantLists.store11List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_12)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_12)
                 list = MerchantLists.AccessoryDyeList;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_13)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_13)
                 list = MerchantLists.ClothingClothList;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_14)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_14)
                 list = MerchantLists.AccessoryClothList;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_15)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_15)
                 list = MerchantLists.ClothingDyeList;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_16)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_16)
                 list = MerchantLists.store5List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_17)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_17)
                 list = MerchantLists.store7List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_18)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_18)
                 list = MerchantLists.store6List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_19)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_19)
                 list = MerchantLists.store2List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_20)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_20)
                 list = MerchantLists.store20List;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_21)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_21)
                 list = MerchantLists.AccessoryClothList;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_22)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_22)
                 list = MerchantLists.AccessoryDyeList;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_23)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_23)
                 list = MerchantLists.ClothingClothList;
-            else if (Owner.Map[(int) X, (int) Y].Region == TileRegion.Store_24)
+            else if (Owner.Map[(int)X, (int)Y].Region == TileRegion.Store_24)
                 list = MerchantLists.ClothingDyeList;
 
             if (AddedTypes == null) AddedTypes = new List<KeyValuePair<string, int>>();
@@ -331,13 +331,13 @@ namespace wServer.realm.entities.merchant
 
                 var s = Random.Next(0, 100);
 
-                if(s < 2)
+                if (s < 2)
                     Discount = 50;
-                else if(s < 5)
+                else if (s < 5)
                     Discount = 25;
                 else if (s < 10)
                     Discount = 15;
-                else if(s < 15)
+                else if (s < 15)
                     Discount = 10;
                 else Discount = 0;
 

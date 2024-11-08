@@ -1,6 +1,6 @@
 ﻿using wServer.logic.behaviors;
-using wServer.logic.transitions;
 using wServer.logic.loot;
+using wServer.logic.transitions;
 
 namespace wServer.logic
 {
@@ -106,7 +106,7 @@ namespace wServer.logic
                         ),
                     new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 1300)
                     )
-            
+
                 )
             )
         .Init("Trickster Decoys",
@@ -137,7 +137,7 @@ namespace wServer.logic
                     new Prioritize(
                            new Orbit(0.37, 4, 20, "The Puppet Master"),
                            new Wander(0.4)
-                        ),                    
+                        ),
                     new Shoot(8.4, count: 10, projectileIndex: 0, coolDown: 2650)
                     ),
                 new ItemLoot("Magic Potion", 0.1),
@@ -264,7 +264,7 @@ namespace wServer.logic
                         new TimedTransition(5000, "UnsetEffect")
                     ),
                     new State("UnsetEffect")
-                ),             
+                ),
                 new Threshold(0.15,
                 new TierLoot(10, ItemType.Weapon, 0.045),
                 new TierLoot(10, ItemType.Weapon, 0.05),
@@ -401,6 +401,6 @@ namespace wServer.logic
                         )
                  )
             );
-        
+
     }
 }

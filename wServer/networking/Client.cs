@@ -1,17 +1,16 @@
 ﻿#region
 
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Net.Sockets;
+using db.JsonObjects;
 using log4net;
 using log4net.Core;
+using System;
+using System.Collections.Generic;
+using System.Net.Sockets;
+using System.Threading.Tasks;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
 using wServer.realm;
 using wServer.realm.entities.player;
-using System.Threading.Tasks;
-using db.JsonObjects;
 
 #endregion
 
@@ -30,7 +29,7 @@ namespace wServer.networking
         public const string SERVER_VERSION = "27.7.X2";
         private bool disposed;
 
-        private static readonly ILog log = LogManager.GetLogger(typeof (Client));
+        private static readonly ILog log = LogManager.GetLogger(typeof(Client));
 
         public uint UpdateAckCount = 0;
 
@@ -41,8 +40,8 @@ namespace wServer.networking
             Socket = skt;
             Manager = manager;
             ReceiveKey =
-                new RC4(new byte[] {0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1d, 0x09, 0xa1, 0x3a, 0x2a, 0x6e});
-            SendKey = new RC4(new byte[] {0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcd, 0xd7, 0x4b, 0x80});
+                new RC4(new byte[] { 0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1d, 0x09, 0xa1, 0x3a, 0x2a, 0x6e });
+            SendKey = new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcd, 0xd7, 0x4b, 0x80 });
             BeginProcess();
         }
 
@@ -94,14 +93,14 @@ namespace wServer.networking
         {
             try
             {
-                log.Logger.Log(typeof (Client), Level.Verbose,
+                log.Logger.Log(typeof(Client), Level.Verbose,
                    $"Handling packet '{pkt}'...", null);
-                if (pkt.ID == (PacketID) 255) return;
+                if (pkt.ID == (PacketID)255) return;
                 IPacketHandler handler;
                 if (!PacketHandlers.Handlers.TryGetValue(pkt.ID, out handler))
                     log.Warn($"Unhandled packet '{pkt.ID}'.");
                 else
-                    handler.Handle(this, (ClientPacket) pkt);
+                    handler.Handle(this, (ClientPacket)pkt);
             }
             catch (Exception e)
             {

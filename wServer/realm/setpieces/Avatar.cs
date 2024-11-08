@@ -1,7 +1,7 @@
 ﻿#region
 
-using System;
 using db.data;
+using System;
 
 #endregion
 
@@ -9,7 +9,7 @@ namespace wServer.realm.setpieces
 {
     internal class Avatar : ISetPiece
     {
-        private static readonly string[] Ground = {"shtrs Disaster Floor", "shtrs Shattered Floor"};
+        private static readonly string[] Ground = { "shtrs Disaster Floor", "shtrs Shattered Floor" };
         private static readonly string PureEvil = "Pure Evil";
 
         private readonly Random rand = new Random();

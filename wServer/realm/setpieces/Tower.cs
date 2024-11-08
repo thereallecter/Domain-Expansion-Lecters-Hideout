@@ -1,7 +1,7 @@
 ﻿#region
 
-using System;
 using db.data;
+using System;
 
 #endregion
 
@@ -52,7 +52,7 @@ namespace wServer.realm.setpieces
         {
             int[,] t = new int[27, 27];
 
-            int[,] q = (int[,]) quarter.Clone();
+            int[,] q = (int[,])quarter.Clone();
 
             for (int y = 0; y < 14; y++) //Top left
                 for (int x = 0; x < 14; x++)

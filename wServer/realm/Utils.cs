@@ -16,7 +16,7 @@ namespace wServer.realm
         {
             float dx = a.X - b.X;
             float dy = a.Y - b.Y;
-            return dx*dx + dy*dy;
+            return dx * dx + dy * dy;
         }
 
         public static double Dist(this Entity a, Entity b)
@@ -30,7 +30,7 @@ namespace wServer.realm
             foreach (Player i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, 16).OfType<Player>())
             {
                 double d = i.Dist(entity);
-                if (d < 16*16)
+                if (d < 16 * 16)
                     return true;
             }
             return false;
@@ -41,7 +41,7 @@ namespace wServer.realm
             foreach (Player i in world.PlayersCollision.HitTest(x, y, 16).OfType<Player>())
             {
                 double d = MathsUtils.Dist(i.X, i.Y, x, y);
-                if (d < 16*16)
+                if (d < 16 * 16)
                     return true;
             }
             return false;
@@ -73,11 +73,11 @@ namespace wServer.realm
         }
 
         public static IEnumerable<Entity> GetNearestEntities(this Entity entity, double dist, ushort? objType, bool pets = false)
-            //Null for player
+        //Null for player
         {
             if (entity.Owner == null) yield break;
             if (objType == null)
-                foreach (Entity i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, (float) dist))
+                foreach (Entity i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, (float)dist))
                 {
                     if (!pets && i is Pet) continue;
                     if (!(i as IPlayer).IsVisibleToEnemy()) continue;
@@ -86,7 +86,7 @@ namespace wServer.realm
                         yield return i;
                 }
             else
-                foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float) dist))
+                foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float)dist))
                 {
                     if (i.ObjectType != objType.Value) continue;
                     double d = i.Dist(entity);
@@ -101,7 +101,7 @@ namespace wServer.realm
             if (entity.Owner == null) return null;
             Entity ret = null;
             if (players)
-                foreach (Entity i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, (float) dist))
+                foreach (Entity i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, (float)dist))
                 {
                     if (!(i as IPlayer).IsVisibleToEnemy() ||
                         i == entity) continue;
@@ -115,7 +115,7 @@ namespace wServer.realm
                     }
                 }
             else
-                foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float) dist))
+                foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float)dist))
                 {
                     if (i == entity) continue;
                     double d = i.Dist(entity);
@@ -139,7 +139,7 @@ namespace wServer.realm
         {
             if (entity.Owner == null)
                 yield break;
-            foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float) dist))
+            foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float)dist))
             {
                 if (i.ObjectDesc == null || i.ObjectDesc.Group != group) continue;
                 double d = i.Dist(entity);
@@ -153,7 +153,7 @@ namespace wServer.realm
             if (entity.Owner == null) return 0;
             int ret = 0;
             if (objType == null)
-                foreach (Entity i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, (float) dist))
+                foreach (Entity i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, (float)dist))
                 {
                     if (!(i as IPlayer).IsVisibleToEnemy()) continue;
                     double d = i.Dist(entity);
@@ -161,7 +161,7 @@ namespace wServer.realm
                         ret++;
                 }
             else
-                foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float) dist))
+                foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float)dist))
                 {
                     if (i.ObjectType != objType.Value) continue;
                     double d = i.Dist(entity);
@@ -175,7 +175,7 @@ namespace wServer.realm
         {
             if (entity.Owner == null) return 0;
             int ret = 0;
-            foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float) dist))
+            foreach (Entity i in entity.Owner.EnemiesCollision.HitTest(entity.X, entity.Y, (float)dist))
             {
                 if (i.ObjectDesc == null || i.ObjectDesc.Group != group) continue;
                 double d = i.Dist(entity);
@@ -189,7 +189,7 @@ namespace wServer.realm
         {
             if (entity.HasConditionEffect(ConditionEffectIndex.Slowed))
                 return 2.22f * spd + 0.74f;
-            return 5.55f*spd + 0.74f;
+            return 5.55f * spd + 0.74f;
         }
 
         public static bool ValidateAndMove(this Entity entity, float x, float y)
@@ -214,13 +214,13 @@ namespace wServer.realm
             if (x < 0 || x >= entity.Owner.Map.Width ||
                 y < 0 || y >= entity.Owner.Map.Height)
                 return false;
-            if (!entity.Owner.IsPassable((int) x, (int) y)) return false;
+            if (!entity.Owner.IsPassable((int)x, (int)y)) return false;
 
             return true;
         }
 
         public static void Aoe(this Entity entity, float radius, ushort? objType, Action<Entity> callback)
-            //Null for player
+        //Null for player
         {
             if (objType == null)
                 foreach (Entity i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, radius))
@@ -241,7 +241,7 @@ namespace wServer.realm
         }
 
         public static void Aoe(this Entity entity, float radius, bool players, Action<Entity> callback)
-            //Null for player
+        //Null for player
         {
             if (players)
                 foreach (Entity i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, radius))
@@ -262,7 +262,7 @@ namespace wServer.realm
         }
 
         public static void Aoe(this World world, Position pos, float radius, bool players, Action<Entity> callback)
-            //Null for player
+        //Null for player
         {
             if (players)
                 foreach (Entity i in world.PlayersCollision.HitTest(pos.X, pos.Y, radius))

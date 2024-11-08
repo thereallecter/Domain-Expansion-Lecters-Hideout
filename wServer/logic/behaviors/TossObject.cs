@@ -25,7 +25,7 @@ namespace wServer.logic.behaviors
         {
             this.child = BehaviorDb.InitGameData.IdToObjectType[child];
             this.range = range;
-            this.angle = angle*Math.PI/180;
+            this.angle = angle * Math.PI / 180;
             this.coolDown = coolDown.Normalize();
             this.coolDownOffset = coolDownOffset;
             this.randomToss = randomToss;
@@ -38,24 +38,24 @@ namespace wServer.logic.behaviors
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {
-            int cool = (int) state;
+            int cool = (int)state;
 
             if (cool <= 0)
             {
                 if (host.HasConditionEffect(ConditionEffectIndex.Stunned)) return;
 
-                double? tossAngle = randomToss ? Random.Next(0, 360)*Math.PI/180 : angle;
+                double? tossAngle = randomToss ? Random.Next(0, 360) * Math.PI / 180 : angle;
                 Entity en = null;
-                if(tossAngle == null)
+                if (tossAngle == null)
                     en = host.GetNearestEntity(range, null);
                 if (tossAngle == null && en == null) return;
 
-                Position target = tossAngle == null ? 
+                Position target = tossAngle == null ?
                 new Position
                 {
                     X = en.X,
                     Y = en.Y
-                } : 
+                } :
                 new Position
                 {
                     X = host.X + (float)(range * Math.Cos(tossAngle.Value)),
@@ -72,7 +72,7 @@ namespace wServer.logic.behaviors
                 {
                     Entity entity = Entity.Resolve(world.Manager, child);
                     entity.Move(target.X, target.Y);
-                    if(entity is Enemy && host is Enemy)
+                    if (entity is Enemy && host is Enemy)
                         (entity as Enemy).Terrain = (host as Enemy).Terrain;
                     world.EnterWorld(entity);
                 }));

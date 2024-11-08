@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using wServer.networking.cliPackets;
-using wServer.realm;
 using wServer.networking.svrPackets;
-using db;
-using wServer.realm.entities;
-using wServer.realm.entities.player;
 
 namespace wServer.networking.handlers
 {
@@ -29,7 +22,7 @@ namespace wServer.networking.handlers
                     var p = client.Manager.FindPlayer(packet.Name);
                     if (p != null && p.Guild == client.Player.Guild && p.NameChosen)
                     {
-                        if(client.Player.Guild[client.Account.AccountId].Rank <= p.Guild[p.AccountId].Rank && p.Guild.Name != client.Player.Guild.Name)
+                        if (client.Player.Guild[client.Account.AccountId].Rank <= p.Guild[p.AccountId].Rank && p.Guild.Name != client.Player.Guild.Name)
                             return;
 
                         var g = db.ChangeGuild(p.Client.Account, p.Client.Account.Guild.Id, p.Guild[p.AccountId].Rank, p.Client.Account.Guild.Fame, true);

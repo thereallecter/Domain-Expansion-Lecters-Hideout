@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wServer.realm;
+﻿using wServer.realm;
 
 namespace wServer.logic.behaviors.PetBehaviors
 {
@@ -11,7 +6,7 @@ namespace wServer.logic.behaviors.PetBehaviors
     {
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {
-            
+
         }
 
         private void AttackShort(Entity host, RealmTime time, ref object state)
@@ -21,7 +16,7 @@ namespace wServer.logic.behaviors.PetBehaviors
 
         private void AttackMid(Entity host, RealmTime time, ref object state)
         {
-            
+
         }
 
         private void AttackFar(Entity host, RealmTime time, ref object state)

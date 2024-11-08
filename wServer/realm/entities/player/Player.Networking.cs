@@ -34,7 +34,7 @@ namespace wServer.realm.entities.player
 
         public void BroadcastSync(Packet packet, Predicate<Player> cond)
         {
-            if(worldBroadcast)
+            if (worldBroadcast)
                 Owner.BroadcastPacketSync(packet, cond);
             else
                 pendingPackets.Enqueue(Tuple.Create(packet, cond));

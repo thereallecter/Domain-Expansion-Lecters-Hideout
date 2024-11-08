@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wServer.realm.entities.player;
-
-namespace wServer.realm.worlds
+﻿namespace wServer.realm.worlds
 {
     public class DavyJonesLocker : World
     {
@@ -22,9 +15,9 @@ namespace wServer.realm.worlds
         protected override void Init()
         {
             LoadMap("wServer.realm.worlds.maps.davy.jm", MapType.Json);
-        
-    
-        
+
+
+
         }
     }
 }

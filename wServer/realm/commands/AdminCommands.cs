@@ -1,6 +1,5 @@
 ﻿#region
 
-using db;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using wServer.networking;
 using wServer.networking.svrPackets;
-using wServer.realm.entities;
 using wServer.realm.entities.player;
 using wServer.realm.setpieces;
 using wServer.realm.worlds;
@@ -20,7 +18,7 @@ namespace wServer.realm.commands
     internal class TestCommand : Command
     {
         public TestCommand()
-            : base("test", PermLevel.ADMIN)
+            : base("test", RankName.ADMIN)
         {
         }
 
@@ -45,7 +43,7 @@ namespace wServer.realm.commands
 
     internal class SetGoldCommand : Command
     {
-        public SetGoldCommand() : base("gold", PermLevel.ADMIN) { }
+        public SetGoldCommand() : base("gold", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -74,7 +72,7 @@ namespace wServer.realm.commands
     }
     internal class SetCharacterFameCommand : Command
     {
-        public SetCharacterFameCommand() : base("cfame", PermLevel.ADMIN) { }
+        public SetCharacterFameCommand() : base("cfame", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -104,7 +102,7 @@ namespace wServer.realm.commands
     }
     internal class SetTokensCommand : Command
     {
-        public SetTokensCommand() : base("tokens", PermLevel.ADMIN) { }
+        public SetTokensCommand() : base("tokens", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -133,7 +131,7 @@ namespace wServer.realm.commands
     }
     internal class SetStarsCommand : Command
     {
-        public SetStarsCommand() : base("stars", PermLevel.ADMIN) { }
+        public SetStarsCommand() : base("stars", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -160,7 +158,7 @@ namespace wServer.realm.commands
     }
     internal class SetFameCommand : Command
     {
-        public SetFameCommand() : base("fame", PermLevel.ADMIN) { }
+        public SetFameCommand() : base("fame", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -189,7 +187,7 @@ namespace wServer.realm.commands
     }
     internal class SetLevelCommand : Command
     {
-        public SetLevelCommand() : base("level", PermLevel.ADMIN) { }
+        public SetLevelCommand() : base("level", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -218,7 +216,7 @@ namespace wServer.realm.commands
     }
     internal class SetStatCommand : Command
     {
-        public SetStatCommand() : base("stat", PermLevel.ADMIN) { }
+        public SetStatCommand() : base("stat", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -358,7 +356,7 @@ namespace wServer.realm.commands
     }
     internal class SetTagCommand : Command
     {
-        public SetTagCommand() : base("tag", PermLevel.MODERATOR) { }
+        public SetTagCommand() : base("tag", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -384,7 +382,7 @@ namespace wServer.realm.commands
     internal class BanCommand : Command
     {
         public BanCommand() :
-            base("ban", PermLevel.MODERATOR)
+            base("ban", RankName.MODERATOR)
         {
         }
 
@@ -408,7 +406,7 @@ namespace wServer.realm.commands
     }
     internal class KillAllCommand : Command
     {
-        public KillAllCommand() : base("kill_all", PermLevel.ADMIN) { }
+        public KillAllCommand() : base("kill_all", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -436,7 +434,7 @@ namespace wServer.realm.commands
     }
     internal class KickCommand : Command
     {
-        public KickCommand() : base("kick", PermLevel.MODERATOR) { }
+        public KickCommand() : base("kick", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -466,7 +464,7 @@ namespace wServer.realm.commands
     }
     internal class MuteCommand : Command
     {
-        public MuteCommand() : base("mute", PermLevel.MODERATOR) { }
+        public MuteCommand() : base("mute", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -497,7 +495,7 @@ namespace wServer.realm.commands
     }
     internal class UnMuteCommand : Command
     {
-        public UnMuteCommand() : base("unmute", PermLevel.ADMIN) { }
+        public UnMuteCommand() : base("unmute", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -528,7 +526,7 @@ namespace wServer.realm.commands
     }
     internal class GodCommand : Command
     {
-        public GodCommand() : base("him", PermLevel.MODERATOR) { }
+        public GodCommand() : base("him", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -556,7 +554,7 @@ namespace wServer.realm.commands
 
     internal class AddWorldCommand : Command
     {
-        public AddWorldCommand() : base("addworld", PermLevel.ADMIN) { }
+        public AddWorldCommand() : base("addworld", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -566,7 +564,7 @@ namespace wServer.realm.commands
     }
     internal class SpawnCommand : Command
     {
-        public SpawnCommand() : base("spawn", PermLevel.MODERATOR) { }
+        public SpawnCommand() : base("spawn", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -586,12 +584,12 @@ namespace wServer.realm.commands
                     return false;
                 }
                 int count = int.Parse(args[0]);
-                if (!(player.Client.Account.Rank == (int)PermLevel.MODERATOR) && count > 10)
+                if (!(player.Client.Account.Rank == (int)RankName.MODERATOR) && count > 10)
                 {
                     player.SendError("Maximum spawn count for moderators is set to 10!");
                     return false;
                 }
-                if (player.Client.Account.Rank >= (int)PermLevel.ADMIN && count > 10)
+                if (player.Client.Account.Rank >= (int)RankName.ADMIN && count > 10)
                 {
                     player.SendInfo("Admin recognized... Bypass made!");
                 }
@@ -626,7 +624,7 @@ namespace wServer.realm.commands
     }
     internal class GiveCommand : Command
     {
-        public GiveCommand() : base("give", PermLevel.ADMIN) { }
+        public GiveCommand() : base("give", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -667,7 +665,7 @@ namespace wServer.realm.commands
     }
     internal class TpCommand : Command
     {
-        public TpCommand() : base("tp", PermLevel.MODERATOR) { }
+        public TpCommand() : base("tp", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -707,7 +705,7 @@ namespace wServer.realm.commands
     }
     internal class MaxCommand : Command
     {
-        public MaxCommand() : base("max", PermLevel.ADMIN) { }
+        public MaxCommand() : base("max", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -736,7 +734,7 @@ namespace wServer.realm.commands
     }
     internal class MaxPlayerCommand : Command
     {
-        public MaxPlayerCommand() : base("max_player", PermLevel.ADMIN) { }
+        public MaxPlayerCommand() : base("max_player", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -771,7 +769,7 @@ namespace wServer.realm.commands
     }
     internal class OryxSayCommand : Command
     {
-        public OryxSayCommand() : base("osay", PermLevel.MODERATOR) { }
+        public OryxSayCommand() : base("osay", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -787,7 +785,7 @@ namespace wServer.realm.commands
     }
     internal class SWhoCommand : Command //get all players from all worlds (this may become too large!)
     {
-        public SWhoCommand() : base("swho", PermLevel.ADMIN) { }
+        public SWhoCommand() : base("swho", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -817,7 +815,7 @@ namespace wServer.realm.commands
     }
     internal class AnnouncementCommand : Command
     {
-        public AnnouncementCommand() : base("announce", PermLevel.MODERATOR) { }
+        public AnnouncementCommand() : base("announce", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -843,7 +841,7 @@ namespace wServer.realm.commands
     }
     internal class SummonCommand : Command
     {
-        public SummonCommand() : base("summon", PermLevel.ADMIN) { }
+        public SummonCommand() : base("summon", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -894,7 +892,7 @@ namespace wServer.realm.commands
     }
     internal class KillPlayerCommand : Command
     {
-        public KillPlayerCommand() : base("kill", PermLevel.ADMIN) { }
+        public KillPlayerCommand() : base("kill", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -914,7 +912,7 @@ namespace wServer.realm.commands
     }
     internal class RestartCommand : Command
     {
-        public RestartCommand() : base("restart", PermLevel.OWNER) { }
+        public RestartCommand() : base("restart", RankName.OWNER) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -947,7 +945,7 @@ namespace wServer.realm.commands
 
     internal class SetpieceCommand : Command
     {
-        public SetpieceCommand() : base("set_piece", PermLevel.ADMIN) { }
+        public SetpieceCommand() : base("set_piece", RankName.ADMIN) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -959,7 +957,7 @@ namespace wServer.realm.commands
     }
     internal class DevChatCommand : Command
     {
-        public DevChatCommand() : base("dev", PermLevel.MODERATOR) { }
+        public DevChatCommand() : base("dev", RankName.MODERATOR) { }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {

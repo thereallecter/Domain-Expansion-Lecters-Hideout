@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
@@ -118,7 +117,7 @@ namespace wServer.realm
 
         public void AcceptTrade(Player sender, AcceptTradePacket pkt)
         {
-            if(sender == player1)
+            if (sender == player1)
             {
                 if (pkt.MyOffers.SequenceEqual(player1Trades) && pkt.YourOffers.SequenceEqual(player2Trades))
                 {

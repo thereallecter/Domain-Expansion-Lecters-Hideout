@@ -1,6 +1,6 @@
 ﻿using wServer.logic.behaviors;
-using wServer.logic.transitions;
 using wServer.logic.loot;
+using wServer.logic.transitions;
 
 namespace wServer.logic
 {
@@ -15,7 +15,7 @@ namespace wServer.logic
                         ),
                     new State("basic",
                         new Prioritize(
-                        
+
                             new Wander(0.1)
                             ),
                         new Shoot(10, predictive: 1, coolDown: 800),
@@ -60,7 +60,7 @@ namespace wServer.logic
                         )
                     ),
                 //LootTemplates.DefaultEggLoot(EggRarity.Legendary),
-                
+
                 new Threshold(0.025,
                     new ItemLoot("Staff of the Crystal Serpent", 0.11),
 
@@ -71,12 +71,12 @@ namespace wServer.logic
                     new ItemLoot("Robe of the Tlatoani", 0.11)
                 )
             )
-           
+
             .Init("Mask Shaman",
                 new State(
                     new Wander(0.875),
                     new Shoot(8, 5, 10, coolDown: 1000)
-                    
+
                     )
             )
             .Init("Basilisk",
@@ -114,7 +114,7 @@ namespace wServer.logic
                         new Wander(0.25)
                         ),
                     new Shoot(8, 1, shootAngle: 10, coolDown: 500)
-           
+
                     )
             )
             ;

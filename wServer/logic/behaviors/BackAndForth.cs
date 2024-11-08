@@ -15,7 +15,7 @@ namespace wServer.logic.behaviors
 
         public BackAndForth(double speed, int distance = 5)
         {
-            this.speed = (float) speed;
+            this.speed = (float)speed;
             this.distance = distance;
         }
 
@@ -31,13 +31,13 @@ namespace wServer.logic.behaviors
 
             float dist;
             if (state == null) dist = distance;
-            else dist = (float) state;
+            else dist = (float)state;
 
             Status = CycleStatus.NotStarted;
 
             if (host.HasConditionEffect(ConditionEffectIndex.Paralyzed)) return;
 
-            float moveDist = host.GetSpeed(speed)*(time.thisTickTimes/1000f);
+            float moveDist = host.GetSpeed(speed) * (time.thisTickTimes / 1000f);
             if (dist > 0)
             {
                 Status = CycleStatus.InProgress;

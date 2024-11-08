@@ -1,21 +1,17 @@
 ﻿#region
 
+using db;
+using db.data;
+using GoogleMaps.LocationServices;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.IO;
 using System.Net;
-using System.Runtime.CompilerServices;
+using System.Net.Sockets;
 using System.Text;
-using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
-using db;
-using MySql.Data.MySqlClient;
-using System.Net.Sockets;
-using GoogleMaps.LocationServices;
-using Newtonsoft.Json;
-using db.data;
 
 #endregion
 
@@ -96,7 +92,7 @@ namespace server.@char
 
                 chrs.ClassAvailabilityList = GetClassAvailability(chrs.Account);
                 XmlSerializer serializer = new XmlSerializer(chrs.GetType(),
-                    new XmlRootAttribute(chrs.GetType().Name) {Namespace = ""});
+                    new XmlRootAttribute(chrs.GetType().Name) { Namespace = "" });
 
                 XmlWriterSettings xws = new XmlWriterSettings();
                 xws.OmitXmlDeclaration = true;
@@ -111,7 +107,7 @@ namespace server.@char
         {
             string ret = String.Empty;
             WebRequest wb = WebRequest.Create("http://api.hostip.info/get_html.php?ip=" + ip.ToString());
-            using(StreamReader rdr = new StreamReader(wb.GetResponse().GetResponseStream()))
+            using (StreamReader rdr = new StreamReader(wb.GetResponse().GetResponseStream()))
             {
                 string tmp = null;
                 while (!String.IsNullOrWhiteSpace(tmp = rdr.ReadLine()))
@@ -119,13 +115,13 @@ namespace server.@char
                     if (tmp.StartsWith("Country:"))
                     {
                         if (tmp.Split(':')[1].Contains("(Unknown Country?)")) continue;
-            
+
                         ret += tmp.Split(':')[1].Remove(tmp.Split(':')[1].IndexOf("("));
                     }
                     else if (tmp.StartsWith("City:"))
                     {
                         if (tmp.Split(':')[1].Contains("(Unknown City?)")) continue;
-            
+
                         ret += tmp.Split(':')[1];
                     }
                 }
@@ -162,11 +158,11 @@ namespace server.@char
                 using (var cli = new TcpClient(host, 2050))
                 {
                     var stream = cli.GetStream();
-                    stream.Write(new byte[5] {0x4d, 0x61, 0x64, 0x65, 0xff}, 0, 5);
+                    stream.Write(new byte[5] { 0x4d, 0x61, 0x64, 0x65, 0xff }, 0, 5);
                     var buffer = new byte[cli.ReceiveBufferSize];
                     Array.Resize<byte>(ref buffer, cli.Client.Receive(buffer));
                     var s = Encoding.ASCII.GetString(buffer).Split(':');
-                    return double.Parse(s[1])/double.Parse(s[0]);
+                    return double.Parse(s[1]) / double.Parse(s[0]);
                 }
             }
             catch

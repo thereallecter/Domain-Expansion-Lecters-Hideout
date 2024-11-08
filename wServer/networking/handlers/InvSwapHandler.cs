@@ -1,9 +1,9 @@
 ﻿#region
 
-using System;
-using System.Collections.Generic;
 using db;
 using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
 using wServer.realm;
@@ -69,9 +69,9 @@ namespace wServer.networking.handlers
                             con2.Inventory[packet.SlotObject1.SlotId] = null;
                         }
                     if (en1 is Player)
-                        (en1 as Player).Client.SendPacket(new InvResultPacket {Result = 0});
+                        (en1 as Player).Client.SendPacket(new InvResultPacket { Result = 0 });
                     else if (en2 is Player)
-                        (en2 as Player).Client.SendPacket(new InvResultPacket {Result = 0});
+                        (en2 as Player).Client.SendPacket(new InvResultPacket { Result = 0 });
                     return;
                 }
                 //TODO: locker
@@ -120,7 +120,7 @@ namespace wServer.networking.handlers
                 {
                     if (con2.Inventory[packet.SlotObject2.SlotId] != null)
                     {
-                        (en2 as Player)?.Client.SendPacket(new InvResultPacket {Result = -1});
+                        (en2 as Player)?.Client.SendPacket(new InvResultPacket { Result = -1 });
                         (con1 as OneWayContainer).UpdateCount++;
                         en2.UpdateCount++;
                         return;
@@ -151,7 +151,7 @@ namespace wServer.networking.handlers
                     client.Save();
                     en1.UpdateCount++;
                     en2.UpdateCount++;
-                    (en2 as Player).Client.SendPacket(new InvResultPacket {Result = 0});
+                    (en2 as Player).Client.SendPacket(new InvResultPacket { Result = 0 });
                     return;
                 }
 
@@ -189,14 +189,14 @@ namespace wServer.networking.handlers
                     if (en1.Owner.Name == "Vault")
                         (en1 as Player).Client.Save();
                     (en1 as Player).CalcBoost();
-                    (en1 as Player).Client.SendPacket(new InvResultPacket {Result = 0});
+                    (en1 as Player).Client.SendPacket(new InvResultPacket { Result = 0 });
                 }
                 if (en2 is Player)
                 {
                     if (en2.Owner.Name == "Vault")
                         (en2 as Player).Client.Save();
                     (en2 as Player).CalcBoost();
-                    (en2 as Player).Client.SendPacket(new InvResultPacket {Result = 0});
+                    (en2 as Player).Client.SendPacket(new InvResultPacket { Result = 0 });
                 }
 
                 if (client.Player.Owner is Vault)

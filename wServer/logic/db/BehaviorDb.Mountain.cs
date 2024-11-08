@@ -139,7 +139,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         ),
                     new Shoot(12, 5, 10, predictive: 1, coolDown: 1250)
-                    
+
                     ),
                 new TierLoot(6, ItemType.Weapon, 0.04),
                 new TierLoot(7, ItemType.Weapon, 0.02),
@@ -163,7 +163,7 @@ namespace wServer.logic
                         new Wander(0.4)
                         ),
                     new Shoot(12, 5, 10, predictive: 1, coolDown: 1250)
-                    
+
                     ),
                 new TierLoot(6, ItemType.Weapon, 0.04),
                 new TierLoot(7, ItemType.Weapon, 0.02),
@@ -187,7 +187,7 @@ namespace wServer.logic
                         ),
                     new Shoot(12, projectileIndex: 0, count: 5, shootAngle: 72, predictive: 0.5, coolDown: 750),
                     new Shoot(10, projectileIndex: 1, predictive: 1)
-                    
+
                     ),
                 new TierLoot(6, ItemType.Weapon, 0.04),
                 new TierLoot(7, ItemType.Weapon, 0.02),

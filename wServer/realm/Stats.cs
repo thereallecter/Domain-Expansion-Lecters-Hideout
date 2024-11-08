@@ -130,9 +130,9 @@ namespace wServer.realm
 
         public bool IsUTF()
         {
-            if(this == StatsType.Name || this == StatsType.AccountId || this == StatsType.OwnerAccountId
+            if (this == StatsType.Name || this == StatsType.AccountId || this == StatsType.OwnerAccountId
                || this == StatsType.Guild || this == StatsType.PetSkin)
-                    return true;
+                return true;
             return false;
         }
 

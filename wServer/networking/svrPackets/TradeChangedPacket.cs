@@ -23,7 +23,7 @@
 
         protected override void Write(Client psr, NWriter wtr)
         {
-            wtr.Write((ushort) Offers.Length);
+            wtr.Write((ushort)Offers.Length);
             foreach (bool i in Offers)
                 wtr.Write(i);
         }

@@ -1,8 +1,8 @@
 ﻿#region
 
+using db.data;
 using System;
 using System.Linq;
-using db.data;
 using wServer.logic.loot;
 using wServer.realm.entities;
 
@@ -65,7 +65,7 @@ namespace wServer.realm.setpieces
 
             for (int x = 7; x < 24; x++) //Floor
                 for (int y = 7; y < 33; y++)
-                    t[x, y] = rand.Next()%3 == 0 ? 0 : 1;
+                    t[x, y] = rand.Next() % 3 == 0 ? 0 : 1;
 
             for (int x = 0; x < 7; x++) //Perimeter
                 for (int y = 0; y < 7; y++)

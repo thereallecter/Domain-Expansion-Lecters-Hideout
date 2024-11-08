@@ -31,7 +31,7 @@
             wtr.Write(TickId);
             wtr.Write(TickTime);
 
-            wtr.Write((ushort) UpdateStatuses.Length);
+            wtr.Write((ushort)UpdateStatuses.Length);
             foreach (ObjectStats i in UpdateStatuses)
                 i.Write(psr, wtr);
         }

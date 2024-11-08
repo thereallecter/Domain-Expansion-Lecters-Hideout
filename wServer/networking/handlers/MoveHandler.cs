@@ -2,7 +2,6 @@
 
 using wServer.networking.cliPackets;
 using wServer.realm;
-using wServer.realm.entities.player;
 
 #endregion
 
@@ -28,7 +27,7 @@ namespace wServer.networking.handlers
 
                 double newX = client.Player.X;
                 double newY = client.Player.Y;
-                
+
                 if (newX != packet.Position.X)
                 {
                     newX = packet.Position.X;
@@ -50,13 +49,13 @@ namespace wServer.networking.handlers
 
         private static void CheckLabConditions(Entity player, MovePacket packet)
         {
-            var tile = player.Owner.Map[(int) packet.Position.X, (int) packet.Position.Y];
+            var tile = player.Owner.Map[(int)packet.Position.X, (int)packet.Position.Y];
             switch (tile.TileId)
             {
                 //Green water
                 case 0xa9:
                 case 0x82:
-                    if(tile.ObjId != 0) return;
+                    if (tile.ObjId != 0) return;
                     if (!player.HasConditionEffect(ConditionEffectIndex.Hexed) ||
                         !player.HasConditionEffect(ConditionEffectIndex.Stunned) ||
                         !player.HasConditionEffect(ConditionEffectIndex.Speedy))

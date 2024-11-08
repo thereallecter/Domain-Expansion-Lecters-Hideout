@@ -24,7 +24,7 @@
         protected override void Write(Client psr, NWriter wtr)
         {
             wtr.Write(OwnerId);
-            wtr.Write((byte) SoundId);
+            wtr.Write((byte)SoundId);
         }
     }
 }

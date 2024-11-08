@@ -1,11 +1,4 @@
 ﻿#region
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using wServer.realm;
 using wServer.logic.behaviors;
 using wServer.logic.loot;
 using wServer.logic.transitions;
@@ -1424,14 +1417,14 @@ namespace wServer.logic
                     )
             )
             //.Init("OBJECTHERE",
-                //new State(
-              //      new EntityNotExistTransition("shtrs Abandoned Switch 1", 10, "OPENGATE")
+            //new State(
+            //      new EntityNotExistTransition("shtrs Abandoned Switch 1", 10, "OPENGATE")
             //        ),
-          //      new State("OPENGATE",
-        //            new OpenGate("shtrs Wooden Gate", 10)
-      //              )
-    //        )
-  //      )
+            //      new State("OPENGATE",
+            //            new OpenGate("shtrs Wooden Gate", 10)
+            //              )
+            //        )
+            //      )
             .Init("shtrs Wooden Gate",
                 new State(
                     new State("Idle",
@@ -1701,7 +1694,7 @@ namespace wServer.logic
                             ),
                         new State("Shoot1",
                             new Shoot(10, 1, projectileIndex: 2, coolDown: 10),
-                            new Shoot(10, 1, projectileIndex: 3, coolDown:10),
+                            new Shoot(10, 1, projectileIndex: 3, coolDown: 10),
                             new TimedTransition(100, "Shoot2")
                             ),
                         new State("Shoot2",

@@ -1,16 +1,8 @@
 ﻿using db;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using System.Xml;
-using System.Xml.Linq;
-using System.Xml.XPath;
 using System.Xml.Serialization;
 
 namespace server.account
@@ -22,7 +14,7 @@ namespace server.account
         protected override void HandleRequest()
         {
             string status = "<Error>Internal server error</Error>";
-            using(Database db = new Database())
+            using (Database db = new Database())
             {
                 Account acc;
                 if (CheckAccount(acc = db.Verify(Query["guid"], Query["password"], Program.GameData), db))

@@ -19,7 +19,7 @@ namespace wServer.realm
                 for (int y = -radius; y <= radius; y++)
                     for (int x = -radius; x <= radius; x++)
                     {
-                        if (x*x + y*y <= radius*radius)
+                        if (x * x + y * y <= radius * radius)
                             pts.Add(new IntPoint(x, y));
                     }
                 ret = points[radius] = pts.ToArray();

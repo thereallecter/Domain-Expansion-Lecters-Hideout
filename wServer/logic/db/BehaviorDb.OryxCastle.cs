@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wServer.logic.behaviors;
-using wServer.logic.transitions;
+﻿using wServer.logic.behaviors;
 using wServer.logic.loot;
+using wServer.logic.transitions;
 
 namespace wServer.logic
 {
@@ -157,7 +152,7 @@ namespace wServer.logic
                     new TierLoot(7, ItemType.Armor, 0.1),
                     new TierLoot(3, ItemType.Ring, 0.1)
                 )
-            
+
             )
             .Init("Oryx Stone Guardian Left",
                 new State(

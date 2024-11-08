@@ -156,7 +156,7 @@ namespace wServer.realm.entities.player
                 sent++;
             }
             FameCounter.TileSent(sent);
-             
+
             var dropEntities = GetRemovedEntities().Distinct().ToArray();
             clientEntities.RemoveWhere(_ => Array.IndexOf(dropEntities, _.Id) != -1);
 

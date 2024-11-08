@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wServer.realm.entities.player;
 using wServer.networking.svrPackets;
+using wServer.realm.entities.player;
 using wServer.realm.worlds;
 
 namespace wServer.realm
@@ -16,7 +13,7 @@ namespace wServer.realm
 
         public static GuildManager Add(Player player, Guild guildStruct)
         {
-            if(guildStruct == null) return null;
+            if (guildStruct == null) return null;
             GuildManager ret = null;
             if (CurrentManagers.ContainsKey(guildStruct.Name))
             {
@@ -197,6 +194,6 @@ namespace wServer.realm
             }
         }
 
-        public bool IsDefault{ get { return _guildStructs.Values.ToArray()[0].Name == ""; } }
+        public bool IsDefault { get { return _guildStructs.Values.ToArray()[0].Name == ""; } }
     }
 }

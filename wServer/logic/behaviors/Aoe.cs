@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using wServer.networking.svrPackets;
 using wServer.realm;
 using wServer.realm.entities;
-using wServer.realm.entities.player;
 
 namespace wServer.logic.behaviors
 {
@@ -18,7 +13,7 @@ namespace wServer.logic.behaviors
         private readonly bool players;
         private readonly int minDamage;
         private readonly int maxDamage;
-        private readonly bool noDef; 
+        private readonly bool noDef;
         private readonly ARGB color;
 
         public Aoe(double radius, bool players, int minDamage, int maxDamage, bool noDef, uint color)

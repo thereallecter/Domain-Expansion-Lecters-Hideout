@@ -1,12 +1,11 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
-using log4net;
 using wServer.networking.cliPackets;
-using wServer.networking.svrPackets;
-using FailurePacket = wServer.networking.svrPackets.FailurePacket;
 using wServer.realm;
+using FailurePacket = wServer.networking.svrPackets.FailurePacket;
 
 #endregion
 
@@ -33,7 +32,7 @@ namespace wServer.networking
         public void Handle(Client client, ClientPacket packet)
         {
             this.client = client;
-            HandlePacket(client, (T) packet);
+            HandlePacket(client, (T)packet);
         }
 
         public RealmManager Manager { get { return client.Manager; } }
@@ -43,7 +42,7 @@ namespace wServer.networking
 
         protected void SendFailure(string text)
         {
-            client.SendPacket(new FailurePacket {ErrorId = 0, ErrorDescription = text});
+            client.SendPacket(new FailurePacket { ErrorId = 0, ErrorDescription = text });
         }
     }
 
@@ -53,12 +52,12 @@ namespace wServer.networking
 
         static PacketHandlers()
         {
-            foreach (Type i in typeof (Packet).Assembly.GetTypes())
+            foreach (Type i in typeof(Packet).Assembly.GetTypes())
             {
-                if (typeof (IPacketHandler).IsAssignableFrom(i) &&
+                if (typeof(IPacketHandler).IsAssignableFrom(i) &&
                     !i.IsAbstract && !i.IsInterface)
                 {
-                    IPacketHandler pkt = (IPacketHandler) Activator.CreateInstance(i);
+                    IPacketHandler pkt = (IPacketHandler)Activator.CreateInstance(i);
                     Handlers.Add(pkt.ID, pkt);
                 }
             }

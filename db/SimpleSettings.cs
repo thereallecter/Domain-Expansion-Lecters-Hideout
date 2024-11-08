@@ -1,9 +1,9 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using log4net;
 
 #endregion
 
@@ -11,7 +11,7 @@ namespace db
 {
     public class SimpleSettings : IDisposable
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof (SimpleSettings));
+        private static readonly ILog log = LogManager.GetLogger(typeof(SimpleSettings));
 
         private readonly string cfgFile;
         private readonly string id;
@@ -122,7 +122,7 @@ namespace db
                 }
                 ret = values[key] = def;
             }
-            return (T) Convert.ChangeType(ret, typeof (T));
+            return (T)Convert.ChangeType(ret, typeof(T));
         }
 
         public void SetValue(string key, string val)

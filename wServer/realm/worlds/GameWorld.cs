@@ -1,7 +1,7 @@
 ﻿#region
 
-using System;
 using log4net;
+using System;
 using wServer.realm.entities;
 using wServer.realm.entities.player;
 using wServer.realm.setpieces;
@@ -12,7 +12,7 @@ namespace wServer.realm.worlds
 {
     internal class GameWorld : World
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof (GameWorld));
+        private static readonly ILog log = LogManager.GetLogger(typeof(GameWorld));
 
         private readonly int mapId;
         private readonly bool oryxPresent;

@@ -34,10 +34,10 @@
             Position.Write(psr, wtr);
             if (Records == null)
             {
-                wtr.Write((ushort) 0);
+                wtr.Write((ushort)0);
                 return;
             }
-            wtr.Write((ushort) Records.Length);
+            wtr.Write((ushort)Records.Length);
             foreach (TimedPosition i in Records)
                 i.Write(psr, wtr);
         }

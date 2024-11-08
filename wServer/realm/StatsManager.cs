@@ -35,7 +35,7 @@ namespace wServer.realm
         {
             if (player.HasConditionEffect(ConditionEffectIndex.Weak))
                 return 0.5f;
-            var ret = (0.5f + GetStats(2) / 75F*(2 - 0.5f));
+            var ret = (0.5f + GetStats(2) / 75F * (2 - 0.5f));
 
             if (player.HasConditionEffect(ConditionEffectIndex.Damaging))
                 ret *= 1.5f;
@@ -50,7 +50,7 @@ namespace wServer.realm
             if (host.HasConditionEffect(ConditionEffectIndex.ArmorBroken))
                 def = 0;
 
-            float limit = dmg*0.15f;
+            float limit = dmg * 0.15f;
 
             float ret;
             if (dmg - def < limit) ret = limit;
@@ -71,7 +71,7 @@ namespace wServer.realm
                 noDef)
                 def = 0;
 
-            float limit = dmg*0.15f;
+            float limit = dmg * 0.15f;
 
             float ret;
             if (dmg - def < limit) ret = limit;
@@ -85,7 +85,7 @@ namespace wServer.realm
 
         public static float GetSpeed(Entity entity, float stat)
         {
-            float ret = 4 + 5.6f*(stat/75f);
+            float ret = 4 + 5.6f * (stat / 75f);
             if (entity.HasConditionEffect(ConditionEffectIndex.Speedy))
                 ret *= 1.5f;
             if (entity.HasConditionEffect(ConditionEffectIndex.Slowed))
@@ -122,7 +122,7 @@ namespace wServer.realm
             if (player.HasConditionEffect(ConditionEffectIndex.Dazed))
                 dex = 0;
 
-            float ret = 1.5f + 6.5f*(dex/75f);
+            float ret = 1.5f + 6.5f * (dex / 75f);
             if (player.HasConditionEffect(ConditionEffectIndex.Berserk))
                 ret *= 1.5f;
             if (player.HasConditionEffect(ConditionEffectIndex.Stunned))
@@ -213,7 +213,7 @@ namespace wServer.realm
 
             public static uint obf1()
             {
-                return (uint) Math.Round(new Random().NextDouble()*(uint.MaxValue - 1) + 1);
+                return (uint)Math.Round(new Random().NextDouble() * (uint.MaxValue - 1) + 1);
             }
 
             public uint obf2()
@@ -223,15 +223,15 @@ namespace wServer.realm
 
             public float obf4()
             {
-                return this.obf3()/2147483647;
+                return this.obf3() / 2147483647;
             }
 
             public float obf5(float param1 = 0.0f, float param2 = 1.0f)
             {
-                float _loc3_ = this.obf3()/2147483647;
-                float _loc4_ = this.obf3()/2147483647;
-                float _loc5_ = (float) Math.Sqrt(-2*(float) Math.Log(_loc3_))*(float) Math.Cos(2*_loc4_*Math.PI);
-                return param1 + _loc5_*param2;
+                float _loc3_ = this.obf3() / 2147483647;
+                float _loc4_ = this.obf3() / 2147483647;
+                float _loc5_ = (float)Math.Sqrt(-2 * (float)Math.Log(_loc3_)) * (float)Math.Cos(2 * _loc4_ * Math.PI);
+                return param1 + _loc5_ * param2;
             }
 
             public uint obf6(uint param1, uint param2)
@@ -240,20 +240,20 @@ namespace wServer.realm
                 {
                     return param1;
                 }
-                return param1 + this.obf3()%(param2 - param1);
+                return param1 + this.obf3() % (param2 - param1);
             }
 
             public float obf7(float param1, float param2)
             {
-                return param1 + (param2 - param1)*this.obf4();
+                return param1 + (param2 - param1) * this.obf4();
             }
 
             private uint obf3()
             {
                 uint _loc1_ = 0;
                 uint _loc2_ = 0;
-                _loc2_ = 16807*(this.Seed & 65535);
-                _loc1_ = 16807*(this.Seed >> 16);
+                _loc2_ = 16807 * (this.Seed & 65535);
+                _loc1_ = 16807 * (this.Seed >> 16);
                 _loc2_ = _loc2_ + ((_loc1_ & 32767) << 16);
                 _loc2_ = _loc2_ + (_loc1_ >> 15);
                 if (_loc2_ > 2147483647)

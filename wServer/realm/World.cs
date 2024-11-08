@@ -1,20 +1,17 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using DungeonGenerator;
-using DungeonGenerator.Templates;
-using log4net;
 using wServer.networking;
-using wServer.networking.svrPackets;
 using wServer.realm.entities;
 using wServer.realm.entities.player;
-using wServer.realm.worlds;
 using wServer.realm.terrain;
+using wServer.realm.worlds;
 
 #endregion
 
@@ -466,7 +463,7 @@ namespace wServer.realm
 
         protected void LoadMap(string embeddedResource, MapType type)
         {
-            if(embeddedResource == null) return;
+            if (embeddedResource == null) return;
             var stream = typeof(RealmManager).Assembly.GetManifestResourceStream(embeddedResource);
             if (stream == null) throw new ArgumentException("Resource not found", nameof(embeddedResource));
 

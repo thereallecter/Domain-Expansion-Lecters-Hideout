@@ -66,7 +66,7 @@ namespace wServer.logic.behaviors.PetBehaviors
                         var dist = host.GetSpeed(0.5f) * (time.thisTickTimes / 1000f);
                         if (vect.Length > 2)
                             dist = host.GetSpeed(0.5f + ((float)player.Stats[4] / 100)) * (time.thisTickTimes / 1000f);
-                        else if(vect.Length > 3.5)
+                        else if (vect.Length > 3.5)
                             dist = host.GetSpeed(0.5f + (player.Stats[4] + (float)player.Boost[4] / 100)) * (time.thisTickTimes / 1000f);
                         else if (vect.Length > 5)
                             dist = host.GetSpeed(1.0f + (player.Stats[4] + (float)player.Boost[4] / 100)) * (time.thisTickTimes / 1000f);

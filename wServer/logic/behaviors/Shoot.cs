@@ -32,10 +32,10 @@ namespace wServer.logic.behaviors
         {
             this.radius = radius;
             this.count = count;
-            this.shootAngle = count == 1 ? 0 : (shootAngle ?? 360.0/count)*Math.PI/180;
-            this.fixedAngle = fixedAngle*Math.PI/180;
-            this.angleOffset = angleOffset*Math.PI/180;
-            this.defaultAngle = defaultAngle*Math.PI/180;
+            this.shootAngle = count == 1 ? 0 : (shootAngle ?? 360.0 / count) * Math.PI / 180;
+            this.fixedAngle = fixedAngle * Math.PI / 180;
+            this.angleOffset = angleOffset * Math.PI / 180;
+            this.defaultAngle = defaultAngle * Math.PI / 180;
             this.projectileIndex = projectileIndex;
             this.predictive = predictive;
             this.coolDownOffset = coolDownOffset;
@@ -65,7 +65,7 @@ namespace wServer.logic.behaviors
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {
             if (state == null) return;
-            int cool = (int) state;
+            int cool = (int)state;
             Status = CycleStatus.NotStarted;
 
             if (cool <= 0)
@@ -81,7 +81,7 @@ namespace wServer.logic.behaviors
                                (player == null ? defaultAngle.Value : Math.Atan2(player.Y - host.Y, player.X - host.X));
                     a += angleOffset;
                     if (predictive != 0 && player != null)
-                        a += Predict(host, player, desc)*predictive;
+                        a += Predict(host, player, desc) * predictive;
 
                     int dmg;
                     if (host is Character)
@@ -89,14 +89,14 @@ namespace wServer.logic.behaviors
                     else
                         dmg = Random.Next(desc.MinDamage, desc.MaxDamage);
 
-                    double startAngle = a - shootAngle*(count - 1)/2;
+                    double startAngle = a - shootAngle * (count - 1) / 2;
                     byte prjId = 0;
-                    Position prjPos = new Position {X = host.X, Y = host.Y};
+                    Position prjPos = new Position { X = host.X, Y = host.Y };
                     for (int i = 0; i < count; i++)
                     {
                         Projectile prj = host.CreateProjectile(
                             desc, host.ObjectType, dmg, time.tickTimes,
-                            prjPos, (float) (startAngle + shootAngle*i));
+                            prjPos, (float)(startAngle + shootAngle * i));
                         host.Owner.EnterWorld(prj);
                         if (i == 0)
                             prjId = prj.ProjectileId;

@@ -1,8 +1,8 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
-using log4net;
 using wServer.realm.entities.player;
 
 #endregion
@@ -11,7 +11,7 @@ namespace wServer.realm.commands
 {
     public abstract class Command
     {
-        public enum PermLevel
+        public enum RankName
         {
             PLAYER = 0,
 
@@ -25,10 +25,10 @@ namespace wServer.realm.commands
 
         protected static readonly ILog log = LogManager.GetLogger(typeof(Command));
 
-        public Command(string name, PermLevel permLevel = 0)
+        public Command(string name, RankName rank = RankName.PLAYER)
         {
             CommandName = name;
-            PermissionLevel = (int)permLevel;
+            PermissionLevel = (int)rank;
         }
 
         public string CommandName { get; }
@@ -38,11 +38,8 @@ namespace wServer.realm.commands
 
         private static int GetPermissionLevel(Player player)
         {
-            if (player.Client.Account.Rank >= (int)PermLevel.MODERATOR)
-                return 1;
-            return 0;
+            return player.Client.Account.Rank;
         }
-
 
         public bool HasPermission(Player player)
         {
@@ -66,7 +63,7 @@ namespace wServer.realm.commands
             }
             catch (Exception ex)
             {
-                log.Error("Error when executing the command.", ex);
+                // log.Error("Error when executing the command.", ex);
                 player.SendError("Error when executing the command.");
                 return false;
             }

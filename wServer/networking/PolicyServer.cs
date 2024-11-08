@@ -1,9 +1,9 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Net;
 using System.Net.Sockets;
-using log4net;
 
 #endregion
 
@@ -11,7 +11,7 @@ namespace wServer.networking
 {
     internal class PolicyServer
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof (PolicyServer));
+        private static readonly ILog log = LogManager.GetLogger(typeof(PolicyServer));
 
         private readonly TcpListener listener;
         private bool started;
@@ -35,8 +35,8 @@ namespace wServer.networking
                     wtr.WriteNullTerminatedString(@"<cross-domain-policy>
      <allow-access-from domain=""*"" to-ports=""*"" />
 </cross-domain-policy>");
-                    wtr.Write((byte) '\r');
-                    wtr.Write((byte) '\n');
+                    wtr.Write((byte)'\r');
+                    wtr.Write((byte)'\n');
                 }
                 cli.Close();
             }

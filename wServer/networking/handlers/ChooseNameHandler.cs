@@ -1,12 +1,10 @@
 ﻿#region
 
-using System;
-using System.Linq;
 using db;
 using MySql.Data.MySqlClient;
+using System;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
-using System.IO;
 
 #endregion
 
@@ -35,7 +33,7 @@ namespace wServer.networking.handlers
                     return;
                 }
             }
-                
+
             using (Database db = new Database())
             {
                 MySqlCommand cmdx = db.CreateQuery();

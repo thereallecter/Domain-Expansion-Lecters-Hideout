@@ -1,10 +1,6 @@
+using db.data;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using wServer.logic.loot;
-using wServer.realm.entities;
-using db.data;
 
 namespace wServer.realm.setpieces
 {
@@ -18,7 +14,7 @@ namespace wServer.realm.setpieces
         private static readonly string Tree = "Tree Jungle";
         private static readonly string Water = "GhostWater";
         private static readonly string Sand = "Ghost Water Beach";
-        
+
         Random rand = new Random();
         public void RenderSetPiece(World world, IntPoint pos)
         {

@@ -1,16 +1,15 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using log4net;
 using wServer.networking.svrPackets;
 using wServer.realm.entities;
 using wServer.realm.entities.player;
 using wServer.realm.setpieces;
 using wServer.realm.worlds;
-using wServer.networking;
 
 #endregion
 
@@ -470,7 +469,7 @@ namespace wServer.realm
                 if (state[i] != 2) continue;
                 var x = diff[i];
                 var t = (WmapTerrain)(i + 1);
-                for (var j = 0; j < x; )
+                for (var j = 0; j < x;)
                 {
                     var objType = GetRandomObjType(spawn[t].Item2);
                     if (objType == 0) continue;

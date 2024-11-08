@@ -2,13 +2,8 @@
 
 using db;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.IO;
-using System.Net;
 using System.Text;
-using System.Web;
 
 #endregion
 
@@ -19,12 +14,12 @@ namespace server.app
         protected override void HandleRequest()
         {
             string s = "[";
-            
+
             using (Database db = new Database())
             {
                 var toSerialize = GetGlobalNews(db);
                 int len = toSerialize.Count;
-            
+
                 for (int i = 0; i < len; i++)
                 {
                     if (toSerialize.Count > 1)

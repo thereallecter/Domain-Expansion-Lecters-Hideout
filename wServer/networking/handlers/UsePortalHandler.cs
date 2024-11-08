@@ -59,19 +59,19 @@ namespace wServer.networking.handlers
                             case 0x0d40:
                             case 0x070d:
                             case 0x070e:
-                            {
-                                if (client.Player.Manager.LastWorld.ContainsKey(client.Player.AccountId))
                                 {
-                                    World w = client.Player.Manager.LastWorld[client.Player.AccountId];
-                                    if (w != null && client.Player.Manager.Worlds.ContainsKey(w.Id))
-                                        world = w;
+                                    if (client.Player.Manager.LastWorld.ContainsKey(client.Player.AccountId))
+                                    {
+                                        World w = client.Player.Manager.LastWorld[client.Player.AccountId];
+                                        if (w != null && client.Player.Manager.Worlds.ContainsKey(w.Id))
+                                            world = w;
+                                        else
+                                            world = client.Player.Manager.GetWorld(World.NEXUS_ID);
+                                    }
                                     else
                                         world = client.Player.Manager.GetWorld(World.NEXUS_ID);
+                                    setWorldInstance = false;
                                 }
-                                else
-                                    world = client.Player.Manager.GetWorld(World.NEXUS_ID);
-                                setWorldInstance = false;
-                            }
                                 break;
                             case 0x0750:
                                 world = client.Player.Manager.GetWorld(World.MARKET);
@@ -106,7 +106,7 @@ namespace wServer.networking.handlers
                                 {
                                     try
                                     {
-                                        world = client.Manager.AddWorld((World) Activator.CreateInstance(worldType,
+                                        world = client.Manager.AddWorld((World)Activator.CreateInstance(worldType,
                                             System.Reflection.BindingFlags.CreateInstance, null, null,
                                             CultureInfo.InvariantCulture, null));
                                     }

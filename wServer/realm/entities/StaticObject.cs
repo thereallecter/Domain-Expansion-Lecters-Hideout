@@ -50,7 +50,7 @@ namespace wServer.realm.entities
             ObjectDesc desc;
             if (manager.GameData.ObjectDescs.TryGetValue(objType, out desc))
             {
-                if(desc.Class != null)
+                if (desc.Class != null)
                     if (desc.Class == "Container" || desc.Class.ContainsIgnoreCase("wall") ||
                         desc.Class == "Merchant" || desc.Class == "Portal") return false;
                 return !(desc.Static && !desc.Enemy && !desc.EnemyOccupySquare);
@@ -116,8 +116,8 @@ namespace wServer.realm.entities
                 {
                     if (ObjectDesc != null &&
                         (ObjectDesc.EnemyOccupySquare || ObjectDesc.OccupySquare))
-                        if (Owner!= null)
-                            Owner.Obstacles[(int) (X - 0.5), (int) (Y - 0.5)] = 0;
+                        if (Owner != null)
+                            Owner.Obstacles[(int)(X - 0.5), (int)(Y - 0.5)] = 0;
                     Owner?.LeaveWorld(this);
                     return false;
                 }

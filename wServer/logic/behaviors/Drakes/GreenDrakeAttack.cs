@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wServer.networking.svrPackets;
+﻿using wServer.networking.svrPackets;
 using wServer.realm;
 using wServer.realm.entities;
 
@@ -52,7 +47,7 @@ namespace wServer.logic.behaviors.Drakes
                         Effect = ConditionEffectIndex.Slowed,
                         DurationMS = 10000
                     });
-                    
+
                 }
                 cool = 300;
             }

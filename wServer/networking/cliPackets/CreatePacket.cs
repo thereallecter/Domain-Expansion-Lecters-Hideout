@@ -23,8 +23,8 @@
 
         protected override void Write(Client psr, NWriter wtr)
         {
-            wtr.Write((ushort) ClassType);
-            wtr.Write((ushort) SkinType);
+            wtr.Write((ushort)ClassType);
+            wtr.Write((ushort)SkinType);
         }
     }
 }

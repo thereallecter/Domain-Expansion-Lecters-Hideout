@@ -31,12 +31,12 @@ namespace wServer.realm.entities.player
             {
                 if (healing > 1)
                 {
-                    HP = Math.Min(Stats[0] + Boost[0], HP + (int) healing);
-                    healing -= (int) healing;
+                    HP = Math.Min(Stats[0] + Boost[0], HP + (int)healing);
+                    healing -= (int)healing;
                     UpdateCount++;
                     healCount++;
                 }
-                healing += 28*(time.thisTickTimes/1000f);
+                healing += 28 * (time.thisTickTimes / 1000f);
             }
             if (HasConditionEffect(ConditionEffectIndex.Quiet) &&
                 Mp > 0)
@@ -49,11 +49,11 @@ namespace wServer.realm.entities.player
             {
                 if (bleeding > 1)
                 {
-                    HP -= (int) bleeding;
-                    bleeding -= (int) bleeding;
+                    HP -= (int)bleeding;
+                    bleeding -= (int)bleeding;
                     UpdateCount++;
                 }
-                bleeding += 28*(time.thisTickTimes/1000f);
+                bleeding += 28 * (time.thisTickTimes / 1000f);
             }
 
             if (newbieTime > 0)
@@ -91,7 +91,7 @@ namespace wServer.realm.entities.player
 
         internal void SetTPDisabledPeriod()
         {
-            CanTPCooldownTime = 10*1000; // 10 seconds
+            CanTPCooldownTime = 10 * 1000; // 10 seconds
         }
 
         public bool TPCooledDown()

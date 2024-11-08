@@ -15,8 +15,8 @@ namespace wServer.logic.behaviors
         private bool returned;
         private float X;
         private float Y;
-        
-        public MoveTo(float X, float Y, double speed = 2, bool once = false, bool isMapPosition = false, bool instant=false)
+
+        public MoveTo(float X, float Y, double speed = 2, bool once = false, bool isMapPosition = false, bool instant = false)
         {
             this.isMapPosition = isMapPosition;
             this.speed = (float)speed;

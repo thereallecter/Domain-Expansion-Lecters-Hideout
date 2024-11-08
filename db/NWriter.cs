@@ -31,17 +31,17 @@ public class NWriter : BinaryWriter
 
     public override void Write(ushort value)
     {
-        base.Write((ushort) IPAddress.HostToNetworkOrder((short) value));
+        base.Write((ushort)IPAddress.HostToNetworkOrder((short)value));
     }
 
     public override void Write(uint value)
     {
-        base.Write((uint) IPAddress.HostToNetworkOrder((int) value));
+        base.Write((uint)IPAddress.HostToNetworkOrder((int)value));
     }
 
     public override void Write(ulong value)
     {
-        base.Write((ulong) IPAddress.HostToNetworkOrder((long) value));
+        base.Write((ulong)IPAddress.HostToNetworkOrder((long)value));
     }
 
     public override void Write(float value)
@@ -61,13 +61,13 @@ public class NWriter : BinaryWriter
     public void WriteNullTerminatedString(string str)
     {
         Write(Encoding.UTF8.GetBytes(str));
-        Write((byte) 0);
+        Write((byte)0);
     }
 
     public void WriteUTF(string str)
     {
         if (str == null)
-            Write((short) 0);
+            Write((short)0);
         else
         {
             var bytes = Encoding.UTF8.GetBytes(str);

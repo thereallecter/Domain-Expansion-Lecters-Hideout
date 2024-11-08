@@ -1,8 +1,6 @@
 ﻿#region
 
 using System.Collections.Generic;
-using db;
-using wServer.networking;
 using wServer.networking.svrPackets;
 using wServer.realm.entities.player;
 using wServer.realm.worlds;

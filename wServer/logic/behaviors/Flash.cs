@@ -18,7 +18,7 @@ namespace wServer.logic.behaviors
         public Flash(uint color, double flashPeriod, int flashRepeats)
         {
             this.color = color;
-            this.flashPeriod = (float) flashPeriod;
+            this.flashPeriod = (float)flashPeriod;
             this.flashRepeats = flashRepeats;
         }
 
@@ -31,7 +31,7 @@ namespace wServer.logic.behaviors
             host.Owner.BroadcastPacket(new ShowEffectPacket
             {
                 EffectType = EffectType.Flashing,
-                PosA = new Position {X = flashPeriod, Y = flashRepeats},
+                PosA = new Position { X = flashPeriod, Y = flashRepeats },
                 TargetId = host.Id,
                 Color = new ARGB(color)
             }, null);

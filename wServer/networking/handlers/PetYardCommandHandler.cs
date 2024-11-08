@@ -1,9 +1,5 @@
 ﻿using db;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
 using wServer.realm;
@@ -110,8 +106,8 @@ namespace wServer.networking.handlers
                 if (packet.Currency == CurrencyType.Fame)
                 {
                     switch (pet.PetRarity)
-                  	{
-                  		case Rarity.Common:
+                    {
+                        case Rarity.Common:
                             if (!TryDeduct(packet.Currency, client.Player, 10)) return;
                             break;
                         case Rarity.Uncommon:
@@ -128,7 +124,7 @@ namespace wServer.networking.handlers
                             break;
                         default:
                             throw new Exception("Invalid pet rarity");
-                  	}
+                    }
                 }
 
                 if (packet.Currency == CurrencyType.Gold)

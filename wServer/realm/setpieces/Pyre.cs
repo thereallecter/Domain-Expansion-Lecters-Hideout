@@ -1,8 +1,8 @@
 ﻿#region
 
+using db.data;
 using System;
 using System.Linq;
-using db.data;
 using wServer.logic.loot;
 using wServer.realm.entities;
 
@@ -41,9 +41,9 @@ namespace wServer.realm.setpieces
             for (int x = 0; x < Size; x++)
                 for (int y = 0; y < Size; y++)
                 {
-                    double dx = x - (Size/2.0);
-                    double dy = y - (Size/2.0);
-                    double r = Math.Sqrt(dx*dx + dy*dy) + rand.NextDouble()*4 - 2;
+                    double dx = x - (Size / 2.0);
+                    double dy = y - (Size / 2.0);
+                    double r = Math.Sqrt(dx * dx + dy * dy) + rand.NextDouble() * 4 - 2;
                     if (r <= 10)
                     {
                         WmapTile tile = world.Map[x + pos.X, y + pos.Y].Clone();

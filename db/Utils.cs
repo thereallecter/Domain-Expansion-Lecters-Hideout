@@ -184,7 +184,7 @@ public static class Utils
     public static short[] FromCommaSepString16(string x)
     {
         if (IsNullOrWhiteSpace(x)) return new short[0];
-        return x.Split(',').Select(_ => (short) FromString(_.Trim())).ToArray();
+        return x.Split(',').Select(_ => (short)FromString(_.Trim())).ToArray();
     }
 
     public static void Shuffle<T>(this IList<T> list)
@@ -195,8 +195,8 @@ public static class Utils
         while (n > 1)
         {
             byte[] box = new byte[1];
-            do provider.GetBytes(box); while (!(box[0] < n*(uint.MaxValue/n)));
-            int k = (box[0]%n);
+            do provider.GetBytes(box); while (!(box[0] < n * (uint.MaxValue / n)));
+            int k = (box[0] % n);
             n--;
             T value = list[k];
             list[k] = list[n];
@@ -226,12 +226,12 @@ public static class Utils
 
     public static T GetEnumByName<T>(string value)
     {
-        return (T) Enum.Parse(typeof (T), value, true);
+        return (T)Enum.Parse(typeof(T), value, true);
     }
 
     public static string GetEnumName<T>(object value)
     {
-        return Enum.GetName(typeof (T), value);
+        return Enum.GetName(typeof(T), value);
     }
 
     public static byte[] RandomBytes(int len)

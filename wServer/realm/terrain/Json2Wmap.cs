@@ -1,10 +1,10 @@
 ﻿#region
 
+using Ionic.Zlib;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Ionic.Zlib;
-using Newtonsoft.Json;
 
 #endregion
 
@@ -27,16 +27,16 @@ namespace wServer.realm.terrain
             for (int i = 0; i < obj.dict.Length; i++)
             {
                 loc o = obj.dict[i];
-                tileDict[(ushort) i] = new TerrainTile
+                tileDict[(ushort)i] = new TerrainTile
                 {
-                    TileId = o.ground == null ? (ushort) 0xff : manager.GameData.IdToTileType[o.ground],
+                    TileId = o.ground == null ? (ushort)0xff : manager.GameData.IdToTileType[o.ground],
                     TileObj = o.objs == null ? null : o.objs[0].id,
                     Name = o.objs == null ? "" : o.objs[0].name ?? "",
                     Terrain = TerrainType.None,
                     Region =
                         o.regions == null
                             ? TileRegion.None
-                            : (TileRegion) Enum.Parse(typeof (TileRegion), o.regions[0].id.Replace(' ', '_'))
+                            : (TileRegion)Enum.Parse(typeof(TileRegion), o.regions[0].id.Replace(' ', '_'))
                 };
             }
 
@@ -59,16 +59,16 @@ namespace wServer.realm.terrain
             for (int i = 0; i < obj.dict.Length; i++)
             {
                 loc o = obj.dict[i];
-                tileDict[(ushort) i] = new TerrainTile
+                tileDict[(ushort)i] = new TerrainTile
                 {
-                    TileId = o.ground == null ? (ushort) 0xff : manager.GameData.IdToObjectType[o.ground],
+                    TileId = o.ground == null ? (ushort)0xff : manager.GameData.IdToObjectType[o.ground],
                     TileObj = o.objs == null ? null : o.objs[0].id,
                     Name = o.objs == null ? "" : o.objs[0].name ?? "",
                     Terrain = TerrainType.None,
                     Region =
                         o.regions == null
                             ? TileRegion.None
-                            : (TileRegion) Enum.Parse(typeof (TileRegion), o.regions[0].id.Replace(' ', '_'))
+                            : (TileRegion)Enum.Parse(typeof(TileRegion), o.regions[0].id.Replace(' ', '_'))
                 };
             }
 
@@ -117,16 +117,16 @@ namespace wServer.realm.terrain
             for (int i = 0; i < obj.dict.Length; i++)
             {
                 loc o = obj.dict[i];
-                tileDict[(ushort) i] = new TerrainTile
+                tileDict[(ushort)i] = new TerrainTile
                 {
-                    TileId = o.ground == null ? (ushort) 0xff : manager.GameData.IdToObjectType[o.ground],
+                    TileId = o.ground == null ? (ushort)0xff : manager.GameData.IdToObjectType[o.ground],
                     TileObj = o.objs == null ? null : o.objs[0].id,
                     Name = o.objs == null ? "" : o.objs[0].name ?? "",
                     Terrain = TerrainType.None,
                     Region =
                         o.regions == null
                             ? TileRegion.None
-                            : (TileRegion) Enum.Parse(typeof (TileRegion), o.regions[0].id.Replace(' ', '_'))
+                            : (TileRegion)Enum.Parse(typeof(TileRegion), o.regions[0].id.Replace(' ', '_'))
                 };
             }
 

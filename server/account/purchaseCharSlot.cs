@@ -1,12 +1,8 @@
 ﻿#region
 
-using System.Collections.Specialized;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Web;
 using db;
 using MySql.Data.MySqlClient;
+using System.Text;
 
 #endregion
 
@@ -25,7 +21,7 @@ namespace server.account
                     MySqlCommand cmd = db.CreateQuery();
                     cmd.CommandText = "SELECT credits FROM stats WHERE accId=@accId;";
                     cmd.Parameters.AddWithValue("@accId", acc.AccountId);
-                    if ((int) cmd.ExecuteScalar() < acc.NextCharSlotPrice)
+                    if ((int)cmd.ExecuteScalar() < acc.NextCharSlotPrice)
                         status = Encoding.UTF8.GetBytes("<Error>Not enough Gold</Error>");
                     else
                     {

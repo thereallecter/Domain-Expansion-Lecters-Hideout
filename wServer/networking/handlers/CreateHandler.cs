@@ -31,12 +31,12 @@ namespace wServer.networking.handlers
 
                     cmd.CommandText = "SELECT maxCharSlot FROM accounts WHERE id=@accId;";
                     cmd.Parameters.AddWithValue("@accId", client.Account.AccountId);
-                    int maxChar = (int) cmd.ExecuteScalar();
+                    int maxChar = (int)cmd.ExecuteScalar();
 
                     cmd = dbx.CreateQuery();
                     cmd.CommandText = "SELECT COUNT(id) FROM characters WHERE accId=@accId AND dead = FALSE;";
                     cmd.Parameters.AddWithValue("@accId", client.Account.AccountId);
-                    int currChar = (int) (long) cmd.ExecuteScalar();
+                    int currChar = (int)(long)cmd.ExecuteScalar();
 
                     if (currChar >= maxChar)
                     {
@@ -44,7 +44,7 @@ namespace wServer.networking.handlers
                         return;
                     }
                 }
-                client.Character = Database.CreateCharacter(client.Manager.GameData, (ushort) packet.ClassType,
+                client.Character = Database.CreateCharacter(client.Manager.GameData, (ushort)packet.ClassType,
                     nextCharId);
 
                 int[] stats = new[]

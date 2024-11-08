@@ -8,7 +8,7 @@
         {
             ProjectileId = id;
             return CreateProjectile(desc, objType,
-                (int) StatsManager.GetAttackDamage(desc.MinDamage, desc.MaxDamage),
+                (int)StatsManager.GetAttackDamage(desc.MinDamage, desc.MaxDamage),
                 time, position, angle);
         }
     }

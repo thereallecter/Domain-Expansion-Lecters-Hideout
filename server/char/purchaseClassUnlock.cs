@@ -1,12 +1,9 @@
 ﻿#region
 
-using System;
-using System.Collections.Specialized;
-using System.IO;
-using System.Net;
-using System.Web;
 using db;
 using MySql.Data.MySqlClient;
+using System;
+using System.IO;
 
 #endregion
 

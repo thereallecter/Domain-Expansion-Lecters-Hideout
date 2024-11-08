@@ -4,8 +4,6 @@ using db;
 using MySql.Data.MySqlClient;
 using System;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Threading.Tasks;
 using wServer.networking.cliPackets;
 using wServer.realm;
 using wServer.realm.entities;
@@ -29,7 +27,7 @@ namespace wServer.networking.handlers
             client.Manager.Logic.AddPendingAction(t =>
             {
                 var container = client.Player.Owner.GetEntity(packet.SlotObject.ObjectId) as IContainer;
-                if(container == null) return;
+                if (container == null) return;
                 Item item;
                 switch (packet.SlotObject.SlotId)
                 {

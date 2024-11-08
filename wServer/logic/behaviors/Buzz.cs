@@ -16,8 +16,8 @@ namespace wServer.logic.behaviors
 
         public Buzz(double speed = 2, double dist = 0.5, Cooldown coolDown = new Cooldown())
         {
-            this.speed = (float) speed;
-            this.dist = (float) dist;
+            this.speed = (float)speed;
+            this.dist = (float)dist;
             this.coolDown = coolDown.Normalize(1);
         }
 
@@ -36,7 +36,7 @@ namespace wServer.logic.behaviors
             //    return;
             //}
 
-            var storage = (BuzzStorage) state;
+            var storage = (BuzzStorage)state;
 
             Status = CycleStatus.NotStarted;
 
@@ -60,8 +60,8 @@ namespace wServer.logic.behaviors
                     storage.RemainingDistance = this.dist;
                     Status = CycleStatus.Completed;
                 }
-                float dist = host.GetSpeed(speed)*(time.thisTickTimes/1000f);
-                host.ValidateAndMove(host.X + storage.Direction.X*dist, host.Y + storage.Direction.Y*dist);
+                float dist = host.GetSpeed(speed) * (time.thisTickTimes / 1000f);
+                host.ValidateAndMove(host.X + storage.Direction.X * dist, host.Y + storage.Direction.Y * dist);
                 host.UpdateCount++;
 
                 storage.RemainingDistance -= dist;

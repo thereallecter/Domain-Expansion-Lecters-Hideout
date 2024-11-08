@@ -25,7 +25,7 @@
             Position = Position.Read(psr, rdr);
             Radius = rdr.ReadSingle();
             Damage = rdr.ReadUInt16();
-            Effects = (ConditionEffectIndex) rdr.ReadByte();
+            Effects = (ConditionEffectIndex)rdr.ReadByte();
             EffectDuration = rdr.ReadSingle();
             OriginType = rdr.ReadInt16();
             //Color = ARGB.Read(psr, rdr);
@@ -36,7 +36,7 @@
             Position.Write(psr, wtr);
             wtr.Write(Radius);
             wtr.Write(Damage);
-            wtr.Write((byte) Effects);
+            wtr.Write((byte)Effects);
             wtr.Write(EffectDuration);
             wtr.Write(OriginType);
             //Color.Write(psr, wtr);

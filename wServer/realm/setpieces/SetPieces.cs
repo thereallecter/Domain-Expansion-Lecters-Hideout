@@ -1,9 +1,9 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using log4net;
 
 #endregion
 
@@ -11,7 +11,7 @@ namespace wServer.realm.setpieces
 {
     internal class SetPieces
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof (SetPieces));
+        private static readonly ILog log = LogManager.GetLogger(typeof(SetPieces));
 
         private static readonly List<Tuple<ISetPiece, int, int, WmapTerrain[]>> setPieces = new List
             <Tuple<ISetPiece, int, int, WmapTerrain[]>>
@@ -100,7 +100,7 @@ namespace wServer.realm.setpieces
                     {
                         pt.X = rand.Next(0, w);
                         pt.Y = rand.Next(0, h);
-                        rect = new Rect {x = pt.X, y = pt.Y, w = size, h = size};
+                        rect = new Rect { x = pt.X, y = pt.Y, w = size, h = size };
                         max--;
                     } while ((Array.IndexOf(dat.Item4, map[pt.X, pt.Y].Terrain) == -1 ||
                               rects.Any(_ => Rect.Intersects(rect, _))) &&

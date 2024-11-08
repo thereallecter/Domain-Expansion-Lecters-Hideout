@@ -1,13 +1,9 @@
 ﻿#region
 
-using System.Collections.Specialized;
-using System.IO;
-using System.Net;
+using db;
 using System.Text;
-using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
-using db;
 
 #endregion
 
@@ -23,7 +19,7 @@ namespace server.account
                 if (CheckAccount(acc, db))
                 {
                     XmlSerializer serializer = new XmlSerializer(acc.GetType(),
-                        new XmlRootAttribute(acc.GetType().Name) {Namespace = ""});
+                        new XmlRootAttribute(acc.GetType().Name) { Namespace = "" });
 
                     XmlWriterSettings xws = new XmlWriterSettings();
                     xws.Indent = true;

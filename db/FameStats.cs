@@ -1,10 +1,10 @@
 ﻿#region
 
+using db.data;
 using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
-using db.data;
 
 #endregion
 
@@ -318,7 +318,7 @@ public class FameStats
             bonus = Math.Floor(bonus) + (baseFame + Math.Floor(bonus)) * 0.1;
             doc.DocumentElement.AppendChild(x);
         }
-        if ((double) GodKills/(GodKills + MonsterKills) > 0.1) //Enemy of the Gods
+        if ((double)GodKills / (GodKills + MonsterKills) > 0.1) //Enemy of the Gods
         {
             XmlElement x = doc.CreateElement("Bonus");
             XmlAttribute idAttr = doc.CreateAttribute("id");
@@ -331,7 +331,7 @@ public class FameStats
             bonus = Math.Floor(bonus) + (baseFame + Math.Floor(bonus)) * 0.1;
             doc.DocumentElement.AppendChild(x);
         }
-        if ((double) GodKills/(GodKills + MonsterKills) > 0.5) //Slayer of the Gods
+        if ((double)GodKills / (GodKills + MonsterKills) > 0.5) //Slayer of the Gods
         {
             XmlElement x = doc.CreateElement("Bonus");
             XmlAttribute idAttr = doc.CreateAttribute("id");
@@ -357,7 +357,7 @@ public class FameStats
             bonus = Math.Floor(bonus) + (baseFame + Math.Floor(bonus)) * 0.1;
             doc.DocumentElement.AppendChild(x);
         }
-        if ((double) ShotsThatDamage/Shots > 0.25) //Accurate
+        if ((double)ShotsThatDamage / Shots > 0.25) //Accurate
         {
             XmlElement x = doc.CreateElement("Bonus");
             XmlAttribute idAttr = doc.CreateAttribute("id");
@@ -370,7 +370,7 @@ public class FameStats
             bonus = Math.Floor(bonus) + (baseFame + Math.Floor(bonus)) * 0.1;
             doc.DocumentElement.AppendChild(x);
         }
-        if ((double) ShotsThatDamage/Shots > 0.5) //Sharpshooter
+        if ((double)ShotsThatDamage / Shots > 0.5) //Sharpshooter
         {
             XmlElement x = doc.CreateElement("Bonus");
             XmlAttribute idAttr = doc.CreateAttribute("id");
@@ -383,7 +383,7 @@ public class FameStats
             bonus = Math.Floor(bonus) + (baseFame + Math.Floor(bonus)) * 0.1;
             doc.DocumentElement.AppendChild(x);
         }
-        if ((double) ShotsThatDamage/Shots > 0.75) //Sniper
+        if ((double)ShotsThatDamage / Shots > 0.75) //Sniper
         {
             XmlElement x = doc.CreateElement("Bonus");
             XmlAttribute idAttr = doc.CreateAttribute("id");

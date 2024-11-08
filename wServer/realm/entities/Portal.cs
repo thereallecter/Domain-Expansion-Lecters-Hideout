@@ -1,8 +1,6 @@
 ﻿#region
 
-using System;
 using System.Collections.Generic;
-using System.Globalization;
 
 #endregion
 
@@ -49,7 +47,7 @@ namespace wServer.realm.entities
 
         public override void Tick(RealmTime time)
         {
-            if(WorldInstance != null && IsRealmPortal)
+            if (WorldInstance != null && IsRealmPortal)
                 Usable = !(WorldInstance.Players.Count >= RealmManager.MAX_REALM_PLAYERS);
             base.Tick(time);
         }

@@ -1,13 +1,13 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
-using log4net;
 using wServer.realm.entities.player;
-using System.Collections.Generic;
 
 #endregion
 
@@ -15,7 +15,7 @@ namespace wServer.realm
 {
     public class LogicTicker
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof (LogicTicker));
+        private static readonly ILog log = LogManager.GetLogger(typeof(LogicTicker));
         public static RealmTime CurrentTime;
         private readonly ConcurrentQueue<Action<RealmTime>>[] pendings;
 
@@ -30,7 +30,7 @@ namespace wServer.realm
                 pendings[i] = new ConcurrentQueue<Action<RealmTime>>();
 
             TPS = manager.TPS;
-            MsPT = 1000/TPS;
+            MsPT = 1000 / TPS;
         }
 
         public RealmManager Manager { get; private set; }
@@ -42,7 +42,7 @@ namespace wServer.realm
 
         public void AddPendingAction(Action<RealmTime> callback, PendingPriority priority)
         {
-            pendings[(int) priority].Enqueue(callback);
+            pendings[(int)priority].Enqueue(callback);
         }
 
         public void TickLoop()
@@ -58,8 +58,8 @@ namespace wServer.realm
             {
                 if (Manager.Terminating) break;
 
-                long times = dt/MsPT;
-                dt -= times*MsPT;
+                long times = dt / MsPT;
+                dt -= times * MsPT;
                 times++;
 
                 long b = watch.ElapsedMilliseconds;
@@ -67,12 +67,12 @@ namespace wServer.realm
                 count += times;
                 if (times > 3)
                     log.Warn("LAGGED!| time:" + times + " dt:" + dt + " count:" + count + " time:" + b + " tps:" +
-                             count/(b/1000.0));
+                             count / (b / 1000.0));
 
                 t.tickTimes = b;
                 t.tickCount = count;
-                t.thisTickCounts = (int) times;
-                t.thisTickTimes = (int) (times*MsPT);
+                t.thisTickCounts = (int)times;
+                t.thisTickTimes = (int)(times * MsPT);
 
                 foreach (ConcurrentQueue<Action<RealmTime>> i in pendings)
                 {

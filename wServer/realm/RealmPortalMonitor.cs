@@ -1,9 +1,9 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using log4net;
 using wServer.realm.entities;
 using wServer.realm.worlds;
 
@@ -13,7 +13,7 @@ namespace wServer.realm
 {
     public class RealmPortalMonitor
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof (RealmPortalMonitor));
+        private static readonly ILog log = LogManager.GetLogger(typeof(RealmPortalMonitor));
 
         private readonly RealmManager manager;
         private readonly Nexus nexus;
@@ -45,7 +45,7 @@ namespace wServer.realm
             } while (
                 portals.Values.Any(_ => _.X == x && _.Y == y) ||
                 nexus.Map[x, y].Region != TileRegion.Realm_Portals);
-            return new Position {X = x, Y = y};
+            return new Position { X = x, Y = y };
         }
 
         public void WorldAdded(World world)
@@ -118,7 +118,7 @@ namespace wServer.realm
                 World[] worlds = portals.Keys.ToArray();
                 if (worlds.Length == 0)
                     return manager.Worlds[World.NEXUS_ID];
-                return worlds[Environment.TickCount%worlds.Length];
+                return worlds[Environment.TickCount % worlds.Length];
             }
         }
     }

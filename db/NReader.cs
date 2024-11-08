@@ -30,17 +30,17 @@ public class NReader : BinaryReader
 
     public override ushort ReadUInt16()
     {
-        return (ushort) IPAddress.NetworkToHostOrder((short) base.ReadUInt16());
+        return (ushort)IPAddress.NetworkToHostOrder((short)base.ReadUInt16());
     }
 
     public override uint ReadUInt32()
     {
-        return (uint) IPAddress.NetworkToHostOrder((int) base.ReadUInt32());
+        return (uint)IPAddress.NetworkToHostOrder((int)base.ReadUInt32());
     }
 
     public override ulong ReadUInt64()
     {
-        return (ulong) IPAddress.NetworkToHostOrder((long) base.ReadUInt64());
+        return (ulong)IPAddress.NetworkToHostOrder((long)base.ReadUInt64());
     }
 
     public override float ReadSingle()
@@ -63,7 +63,7 @@ public class NReader : BinaryReader
         byte b = ReadByte();
         while (b != 0)
         {
-            ret.Append((char) b);
+            ret.Append((char)b);
             b = ReadByte();
         }
         return ret.ToString();

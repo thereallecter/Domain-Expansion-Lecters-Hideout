@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using wServer.logic.behaviors;
-using wServer.logic.transitions;
+﻿using wServer.logic.behaviors;
 using wServer.logic.loot;
+using wServer.logic.transitions;
 
 namespace wServer.logic
 {
@@ -76,7 +71,7 @@ namespace wServer.logic
                 new State(
                      new Follow(0.32, 8, 1),
                      new Shoot(8.4, count: 8, projectileIndex: 0, coolDown: 3250),
-                     new Shoot(8.4, count: 7,  projectileIndex: 1, coolDown: 2500)
+                     new Shoot(8.4, count: 7, projectileIndex: 1, coolDown: 2500)
                     )
             )
                                     .Init("ic boss purifier",
@@ -99,7 +94,7 @@ namespace wServer.logic
                          new EntityExistsTransition("ic boss manager", 9999, "StagesBegin"),
                         new EntitiesNotExistsTransition(9999, "TheKingIsDead", "ic Esben the Unwilling")
                           ),
-                     new State("StagesBegin",  
+                     new State("StagesBegin",
                          new TransformOnDeath("ic boss purifier", 1, 1, 1),
                          new ConditionalEffect(ConditionEffectIndex.Invincible),
                           new EntitiesNotExistsTransition(9999, "leggo", "ic boss manager"),
@@ -166,7 +161,7 @@ namespace wServer.logic
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                         new Shoot(18, 2, 7, projectileIndex: 1, coolDown: 700),
                         new Shoot(10, 6, 7, projectileIndex: 1, predictive: 2, coolDown: 800),
-                        new Shoot(18, 1, 7, projectileIndex: 1,  coolDown: 14),
+                        new Shoot(18, 1, 7, projectileIndex: 1, coolDown: 14),
                           new EntitiesNotExistsTransition(9999, "spooked", "ic boss purifier"),
                         new TimedTransition(8750, "Esben1")
                         ),

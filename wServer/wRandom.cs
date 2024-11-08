@@ -10,7 +10,7 @@ namespace wServer
     {
         private uint seed;
 
-        public wRandom() : this((uint) Environment.TickCount)
+        public wRandom() : this((uint)Environment.TickCount)
         {
         }
 
@@ -27,13 +27,13 @@ namespace wServer
 
         public int Next(int min, int max)
         {
-            return (int) (min == max ? min : (min + (Sample()%(max - min))));
+            return (int)(min == max ? min : (min + (Sample() % (max - min))));
         }
 
         private uint Sample()
         {
-            uint lb = 16807*(seed & 0xFFFF);
-            uint hb = 16807*(seed >> 16);
+            uint lb = 16807 * (seed & 0xFFFF);
+            uint hb = 16807 * (seed >> 16);
             lb = lb + ((hb & 32767) << 16);
             lb = lb + (hb >> 15);
             if (lb > 2147483647)

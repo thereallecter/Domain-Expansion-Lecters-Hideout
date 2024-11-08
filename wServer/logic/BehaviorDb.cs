@@ -1,12 +1,12 @@
 ﻿#region
 
+using db.data;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-using db.data;
-using log4net;
 using wServer.logic.loot;
 using wServer.realm;
 using wServer.realm.entities;
@@ -18,7 +18,7 @@ namespace wServer.logic
     public partial class BehaviorDb
     {
         private static wRandom rand = new wRandom();
-        private static readonly ILog log = LogManager.GetLogger(typeof (BehaviorDb));
+        private static readonly ILog log = LogManager.GetLogger(typeof(BehaviorDb));
 
         private static int initializing;
         internal static BehaviorDb InitDb;
@@ -55,13 +55,13 @@ namespace wServer.logic
 
             FieldInfo[] fields = GetType()
                 .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
-                .Where(field => field.FieldType == typeof (_))
+                .Where(field => field.FieldType == typeof(_))
                 .ToArray();
             for (int i = 0; i < fields.Length; i++)
             {
                 FieldInfo field = fields[i];
                 log.InfoFormat("Loading behavior for '{0}'({1}/{2})...", field.Name, i + 1, fields.Length);
-                ((_) field.GetValue(this))();
+                ((_)field.GetValue(this))();
                 field.SetValue(this, null);
             }
 
@@ -83,7 +83,7 @@ namespace wServer.logic
         public void ResolveBehavior(Entity entity)
         {
             Tuple<State, Loot> def;
-            if (Definitions.TryGetValue((ushort) entity.ObjectType, out def))
+            if (Definitions.TryGetValue((ushort)entity.ObjectType, out def))
                 entity.SwitchTo(def.Item1);
         }
 
@@ -106,10 +106,10 @@ namespace wServer.logic
                 {
                     var loot = new Loot(defs);
                     rootState.Death += (sender, e) => loot.Handle((Enemy)e.Host, e.Time);
-                    InitDb.Definitions.Add((ushort) dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, loot));
+                    InitDb.Definitions.Add((ushort)dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, loot));
                 }
                 else
-                    InitDb.Definitions.Add((ushort) dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, null));
+                    InitDb.Definitions.Add((ushort)dat.IdToObjectType[objType], new Tuple<State, Loot>(rootState, null));
                 return this;
             }
         }

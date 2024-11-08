@@ -23,10 +23,10 @@ namespace wServer.logic.behaviors
         public Grenade(double radius, int damage, double range = 5,
             double? fixedAngle = null, Cooldown coolDown = new Cooldown())
         {
-            this.radius = (float) radius;
+            this.radius = (float)radius;
             this.damage = damage;
             this.range = range;
-            this.fixedAngle = fixedAngle*Math.PI/180;
+            this.fixedAngle = fixedAngle * Math.PI / 180;
             this.coolDown = coolDown.Normalize();
         }
 
@@ -37,7 +37,7 @@ namespace wServer.logic.behaviors
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {
-            int cool = (int) state;
+            int cool = (int)state;
 
             if (cool <= 0)
             {
@@ -50,8 +50,8 @@ namespace wServer.logic.behaviors
                     if (fixedAngle != null)
                         target = new Position
                         {
-                            X = (float) (range*Math.Cos(fixedAngle.Value)),
-                            Y = (float) (range*Math.Sin(fixedAngle.Value)),
+                            X = (float)(range * Math.Cos(fixedAngle.Value)),
+                            Y = (float)(range * Math.Sin(fixedAngle.Value)),
                         };
                     else
                         target = new Position
@@ -72,7 +72,7 @@ namespace wServer.logic.behaviors
                         {
                             Position = target,
                             Radius = radius,
-                            Damage = (ushort) damage,
+                            Damage = (ushort)damage,
                             EffectDuration = 0,
                             Effects = 0,
                             OriginType = (short)host.ObjectType

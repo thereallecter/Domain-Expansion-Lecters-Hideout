@@ -1,26 +1,21 @@
 ﻿#region
 
+using db;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using db;
-using db.JsonObjects;
+using wServer.networking;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
 using wServer.realm.entities;
 using wServer.realm.entities.player;
-using System.Globalization;
-using wServer.realm;
-using wServer.realm.worlds;
-using FailurePacket = wServer.networking.svrPackets.FailurePacket;
-using wServer.networking;
 
 #endregion
 
 namespace wServer.realm.commands
 {
-    // Does not require permlevel
+    // Does not require RankName
     internal class LeftToMax : Command
     {
         public LeftToMax() : base("lefttomax") { }
@@ -457,11 +452,10 @@ namespace wServer.realm.commands
         }
     }
 
-    #region Player Sets
-    // this will be basic player gear <= T6 gear
+    #region Sets
     internal class RogueCommand : Command
     {
-        public RogueCommand() : base("rouge", 0)
+        public RogueCommand() : base("rouge", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -480,7 +474,7 @@ namespace wServer.realm.commands
     }
     internal class ArcherCommand : Command
     {
-        public ArcherCommand() : base("archer", 0)
+        public ArcherCommand() : base("archer", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -499,7 +493,7 @@ namespace wServer.realm.commands
     }
     internal class WizardCommand : Command
     {
-        public WizardCommand() : base("wizard", 0)
+        public WizardCommand() : base("wizard", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -518,7 +512,7 @@ namespace wServer.realm.commands
     }
     internal class PriestCommand : Command
     {
-        public PriestCommand() : base("priest", 0)
+        public PriestCommand() : base("priest", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -537,7 +531,7 @@ namespace wServer.realm.commands
     }
     internal class WarriorCommand : Command
     {
-        public WarriorCommand() : base("warrior", 0)
+        public WarriorCommand() : base("warrior", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -556,7 +550,7 @@ namespace wServer.realm.commands
     }
     internal class KnightCommand : Command
     {
-        public KnightCommand() : base("knight", 0)
+        public KnightCommand() : base("knight", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -575,7 +569,7 @@ namespace wServer.realm.commands
     }
     internal class PaladinCommand : Command
     {
-        public PaladinCommand() : base("paladin", 0)
+        public PaladinCommand() : base("paladin", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -594,7 +588,7 @@ namespace wServer.realm.commands
     }
     internal class AssassinCommand : Command
     {
-        public AssassinCommand() : base("assassin", 0)
+        public AssassinCommand() : base("assassin", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -613,7 +607,7 @@ namespace wServer.realm.commands
     }
     internal class NecromancerCommand : Command
     {
-        public NecromancerCommand() : base("necro", 0)
+        public NecromancerCommand() : base("necro", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -632,7 +626,7 @@ namespace wServer.realm.commands
     }
     internal class HuntressCommand : Command
     {
-        public HuntressCommand() : base("huntress", 0)
+        public HuntressCommand() : base("huntress", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -651,7 +645,7 @@ namespace wServer.realm.commands
     }
     internal class MysticCommand : Command
     {
-        public MysticCommand() : base("mystic", 0)
+        public MysticCommand() : base("mystic", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -670,7 +664,7 @@ namespace wServer.realm.commands
     }
     internal class TricksterCommand : Command
     {
-        public TricksterCommand() : base("trickster", 0)
+        public TricksterCommand() : base("trickster", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -689,7 +683,7 @@ namespace wServer.realm.commands
     }
     internal class SorcererCommand : Command
     {
-        public SorcererCommand() : base("Sorcerer", 0)
+        public SorcererCommand() : base("sorcerer", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)
@@ -708,7 +702,7 @@ namespace wServer.realm.commands
     }
     internal class NinjaCommand : Command
     {
-        public NinjaCommand() : base("ninja", 0)
+        public NinjaCommand() : base("ninja", RankName.ADMIN)
         {
         }
         protected override bool Process(Player player, RealmTime time, string[] args)

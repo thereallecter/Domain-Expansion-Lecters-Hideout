@@ -1,23 +1,23 @@
 ﻿#region
 
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.Linq;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Net.NetworkInformation;
-using System.Threading;
 using db;
 using db.data;
 using log4net;
 using log4net.Config;
-using server.sfx;
-using System.Text;
 using MailKit.Net.Smtp;
 using MimeKit;
+using server.sfx;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading;
 
 #endregion
 
@@ -68,12 +68,12 @@ namespace server
             else
                 Logger.Error($"Port {port} is occupied. Can't start listening...\nPress ESC to exit.");
 
-            while (Console.ReadKey(true).Key != ConsoleKey.Escape);
+            while (Console.ReadKey(true).Key != ConsoleKey.Escape) ;
 
             Logger.Info("Terminating...");
             //To prevent a char/list account in use if
             //both servers are closed at the same time
-            while (currentRequests.Count > 0);
+            while (currentRequests.Count > 0) ;
             listener?.Stop();
             GameData.Dispose();
         }
@@ -98,7 +98,7 @@ namespace server
         {
             try
             {
-                Logger.InfoFormat("Request \"{0}\" from: {1}", 
+                Logger.InfoFormat("Request \"{0}\" from: {1}",
                     context.Request.Url.LocalPath, context.Request.RemoteEndPoint);
 
                 if (context.Request.Url.LocalPath.Contains("sfx") || context.Request.Url.LocalPath.Contains("music"))

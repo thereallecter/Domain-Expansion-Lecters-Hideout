@@ -30,12 +30,12 @@
 
         protected override void Write(Client psr, NWriter wtr)
         {
-            wtr.Write((ushort) MyItems.Length);
+            wtr.Write((ushort)MyItems.Length);
             foreach (TradeItem i in MyItems)
                 i.Write(psr, wtr);
 
             wtr.WriteUTF(YourName);
-            wtr.Write((ushort) YourItems.Length);
+            wtr.Write((ushort)YourItems.Length);
             foreach (TradeItem i in YourItems)
                 i.Write(psr, wtr);
         }

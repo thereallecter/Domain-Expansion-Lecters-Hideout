@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Drawing;
-using System.Collections;
 
 namespace db
 {
@@ -188,7 +188,7 @@ namespace db
                     qrCode.ModuleMatrix.Add(new BitArray(quietLine));
                 for (var i = 4; i < qrCode.ModuleMatrix.Count - 4; i++)
                 {
-                    var quietPart = new [] { false, false, false, false };
+                    var quietPart = new[] { false, false, false, false };
                     var tmpLine = new List<bool>(quietPart);
                     tmpLine.AddRange(qrCode.ModuleMatrix[i].Cast<bool>());
                     tmpLine.AddRange(quietPart);
@@ -215,7 +215,7 @@ namespace db
             {
                 var size = qrCode.ModuleMatrix.Count;
                 var fStr = new string(formatStr.Reverse().ToArray());
-                var modules = new [,] { { 8, 0, size - 1, 8 }, { 8, 1, size - 2, 8 }, { 8, 2, size - 3, 8 }, { 8, 3, size - 4, 8 }, { 8, 4, size - 5, 8 }, { 8, 5, size - 6, 8 }, { 8, 7, size - 7, 8 }, { 8, 8, size - 8, 8 }, { 7, 8, 8, size - 7 }, { 5, 8, 8, size - 6 }, { 4, 8, 8, size - 5 }, { 3, 8, 8, size - 4 }, { 2, 8, 8, size - 3 }, { 1, 8, 8, size - 2 }, { 0, 8, 8, size - 1 } };
+                var modules = new[,] { { 8, 0, size - 1, 8 }, { 8, 1, size - 2, 8 }, { 8, 2, size - 3, 8 }, { 8, 3, size - 4, 8 }, { 8, 4, size - 5, 8 }, { 8, 5, size - 6, 8 }, { 8, 7, size - 7, 8 }, { 8, 8, size - 8, 8 }, { 7, 8, 8, size - 7 }, { 5, 8, 8, size - 6 }, { 4, 8, 8, size - 5 }, { 3, 8, 8, size - 4 }, { 2, 8, 8, size - 3 }, { 1, 8, 8, size - 2 }, { 0, 8, 8, size - 1 } };
                 for (var i = 0; i < 15; i++)
                 {
                     var p1 = new Point(modules[i, 0], modules[i, 1]);
@@ -297,7 +297,7 @@ namespace db
 
             public static void ReserveSeperatorAreas(int size, ref List<Rectangle> blockedModules)
             {
-                blockedModules.AddRange(new []{
+                blockedModules.AddRange(new[]{
                     new Rectangle(7, 0, 1, 8),
                     new Rectangle(0, 7, 7, 1),
                     new Rectangle(0, size-8, 8, 1),
@@ -309,7 +309,7 @@ namespace db
 
             public static void ReserveVersionAreas(int size, int version, ref List<Rectangle> blockedModules)
             {
-                blockedModules.AddRange(new []{
+                blockedModules.AddRange(new[]{
                     new Rectangle(8, 0, 1, 6),
                     new Rectangle(8, 7, 1, 1),
                     new Rectangle(0, 8, 6, 1),
@@ -320,7 +320,7 @@ namespace db
 
                 if (version >= 7)
                 {
-                    blockedModules.AddRange(new []{
+                    blockedModules.AddRange(new[]{
                     new Rectangle(size-11, 0, 3, 6),
                     new Rectangle(0, size-11, 6, 3)
                 });
@@ -371,11 +371,11 @@ namespace db
                 var size = qrCode.ModuleMatrix.Count;
                 for (var i = 8; i < size - 8; i++)
                 {
-                    if (i%2 != 0) continue;
+                    if (i % 2 != 0) continue;
                     qrCode.ModuleMatrix[6][i] = true;
                     qrCode.ModuleMatrix[i][6] = true;
                 }
-                blockedModules.AddRange(new []{
+                blockedModules.AddRange(new[]{
                     new Rectangle(6, 8, 1, size-16),
                     new Rectangle(8, 6, size-16, 1)
                 });
@@ -666,14 +666,14 @@ namespace db
         private Polynom CalculateGeneratorPolynom(int numEccWords)
         {
             var generatorPolynom = new Polynom();
-            generatorPolynom.PolyItems.AddRange(new []{
+            generatorPolynom.PolyItems.AddRange(new[]{
                 new PolynomItem { Coefficient = 0, Exponent = 1},
                 new PolynomItem { Coefficient = 0, Exponent = 0}
             });
             for (var i = 1; i <= numEccWords - 1; i++)
             {
                 var multiplierPolynom = new Polynom();
-                multiplierPolynom.PolyItems.AddRange(new []{
+                multiplierPolynom.PolyItems.AddRange(new[]{
                     new PolynomItem { Coefficient = 0, Exponent = 1},
                     new PolynomItem { Coefficient = i, Exponent = 0}
                 });
@@ -770,16 +770,16 @@ namespace db
             switch (plainText.Length)
             {
                 case 2:
-                {
-                    var dec = Convert.ToInt32(plainText.Substring(0, plainText.Length));
-                    codeText += DecToBin(dec, 7);
-                }
+                    {
+                        var dec = Convert.ToInt32(plainText.Substring(0, plainText.Length));
+                        codeText += DecToBin(dec, 7);
+                    }
                     break;
                 case 1:
-                {
-                    var dec = Convert.ToInt32(plainText.Substring(0, plainText.Length));
-                    codeText += DecToBin(dec, 4);
-                }
+                    {
+                        var dec = Convert.ToInt32(plainText.Substring(0, plainText.Length));
+                        codeText += DecToBin(dec, 4);
+                    }
                     break;
             }
             return codeText;
@@ -853,7 +853,7 @@ namespace db
             var resultPolynom = new Polynom();
             foreach (var polItemRes in genPolynom.PolyItems.Select(polItemBase => new PolynomItem
             {
-                Coefficient = (polItemBase.Coefficient + leadTerm.Coefficient)%255,
+                Coefficient = (polItemBase.Coefficient + leadTerm.Coefficient) % 255,
                 Exponent = polItemBase.Exponent - lowerExponentBy
             }))
             {
@@ -877,7 +877,7 @@ namespace db
             var gluedPolynoms = new List<PolynomItem>();
             foreach (var exponent in exponentsToGlue)
             {
-                var polynomFixed = new PolynomItem {Exponent = exponent};
+                var polynomFixed = new PolynomItem { Exponent = exponent };
                 var coefficient = resultPolynom.PolyItems.Where(x => x.Exponent == exponent).Aggregate(0, (current, polynomOld) => current ^ GetIntValFromAlphaExp(polynomOld.Coefficient));
                 polynomFixed.Coefficient = GetAlphaExpFromIntVal(coefficient);
                 gluedPolynoms.Add(polynomFixed);
@@ -944,7 +944,7 @@ namespace db
             for (var i = 0; i < (4 * 6 * 40); i = i + (4 * 6))
             {
                 capacityEccTable.AddRange(
-                new []
+                new[]
                 {
                     new ECCInfo()
                     {

@@ -1,14 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using wServer.logic.behaviors;
 using wServer.logic.loot;
 using wServer.logic.transitions;
-using wServer.realm;
-using wServer.realm.entities;
-using wServer.realm.entities.player;
 
 namespace wServer.logic
 {
@@ -116,7 +108,7 @@ namespace wServer.logic
                  )))
                 .Init("Ghost Ship Anchor",
                     new State(
-                       new State("idle",                        
+                       new State("idle",
                        new ConditionalEffect(ConditionEffectIndex.Invincible)
                  ),
                     new State("tempestcloud",
@@ -183,7 +175,7 @@ namespace wServer.logic
                              new Wander(0.45),
                              new StayBack(0.3, 5)
                             ),
-                        new Shoot(8.4, count: 1, projectileIndex: 0,  coolDown: 450),
+                        new Shoot(8.4, count: 1, projectileIndex: 0, coolDown: 450),
                         new Shoot(8.4, count: 3, projectileIndex: 0, shootAngle: 20, coolDown: 1750),
                         new TimedTransition(3250, "1")
                         ),
@@ -201,7 +193,7 @@ namespace wServer.logic
                        new State("midfight",
                      new Order(100, "Ghost Ship Anchor", "tempestcloud"),
                       new Reproduce("Vengeful Spirit", densityMax: 1, spawnRadius: 1, coolDown: 1000),
-                      new TossObject("Water Mine", 5, coolDown: 2250),                      
+                      new TossObject("Water Mine", 5, coolDown: 2250),
                       new TimedTransition(10000, "countdown"),
                        new State("2",
                         new SetAltTexture(0),

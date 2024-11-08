@@ -2,10 +2,7 @@
 
 using db;
 using System;
-using System.Collections.Specialized;
 using System.IO;
-using System.Net;
-using System.Web;
 using System.Xml;
 
 #endregion
@@ -45,7 +42,7 @@ namespace server.mysterybox
                 var cmd = db.CreateQuery();
                 cmd.CommandText = "SELECT * FROM mysteryboxes WHERE id=@id AND boxEnd >= now();";
                 cmd.Parameters.AddWithValue("@id", id);
-                using(var rdr = cmd.ExecuteReader())
+                using (var rdr = cmd.ExecuteReader())
                 {
                     if (rdr.HasRows)
                     {

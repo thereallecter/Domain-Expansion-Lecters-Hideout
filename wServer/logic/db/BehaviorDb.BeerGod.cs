@@ -1,6 +1,6 @@
 ﻿using wServer.logic.behaviors;
-using wServer.logic.transitions;
 using wServer.logic.loot;
+using wServer.logic.transitions;
 
 namespace wServer.logic
 {
@@ -11,10 +11,10 @@ namespace wServer.logic
             new State(
                 new State(
                     new ConditionalEffect(ConditionEffectIndex.Invincible),
-                new State("default",                     
+                new State("default",
                      new PlayerWithinTransition(6, "grow")
                     ),
-                new State("grow",                    
+                new State("grow",
                      new ChangeSize(30, 145),
                      new TimedTransition(5500, "fight1")
                     )
@@ -33,7 +33,7 @@ namespace wServer.logic
                     new ItemLoot("Realm-wheat Hefeweizen", 1.00)
                 )
             )
-           
+
         ;
     }
 }

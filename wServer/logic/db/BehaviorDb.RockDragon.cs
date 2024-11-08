@@ -1,6 +1,6 @@
 ﻿using wServer.logic.behaviors;
-using wServer.logic.transitions;
 using wServer.logic.loot;
+using wServer.logic.transitions;
 
 namespace wServer.logic
 {
@@ -31,7 +31,7 @@ namespace wServer.logic
                         new TimedTransition(400, "weirdmovement")
                         ),
                     new State("weirdmovement",
-                        
+
                         new ConditionalEffect(ConditionEffectIndex.Invulnerable),
                        new StayAbove(2, 265),
                         new Sequence(
@@ -94,7 +94,7 @@ namespace wServer.logic
                     new TierLoot(4, ItemType.Ability, 0.15),
                     new TierLoot(5, ItemType.Ability, 0.1),
                     new TierLoot(5, ItemType.Ring, 0.05)
-                )            
+                )
             )
                 .Init("Body Segment Bomb",
                     new State(

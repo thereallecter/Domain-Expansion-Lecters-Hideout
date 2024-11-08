@@ -5,3 +5,7 @@
 11/7/2024 [11:53 PM] -> Rebalance player stats (ie... HP/MP Regen, HP/MP, XP, No Level Cap)
 						Level Up's will increase stats up to LVL 100, each LVLUP after will 
 							result in increased Fame etc...
+							
+11/8/2024 [12:17 AM] -> remove pet egg drops until pets are working
+11/8/2024 [12:18 AM] -> !!FIX THE PETS!!
+11/8/2024 [12:26 AM] -> Fix XML's (ie... export client xmls into server)

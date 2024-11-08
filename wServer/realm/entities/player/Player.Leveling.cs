@@ -77,13 +77,13 @@ namespace wServer.realm.entities.player
 
         private static int GetExpGoal(int level)
         {
-            return 50 + (level - 1)*100;
+            return 50 + (level - 1) * 100;
         }
 
         private static int GetLevelExp(int level)
         {
             if (level == 1) return 0;
-            return 50*(level - 1) + (level - 2)*(level - 1)*50;
+            return 50 * (level - 1) + (level - 2) * (level - 1) * 50;
         }
 
         static int GetFameGoal(int fame)
@@ -116,7 +116,7 @@ namespace wServer.realm.entities.player
         {
             var dx = a.X - b.X;
             var dy = a.Y - b.Y;
-            return (float) Math.Sqrt(dx*dx + dy*dy);
+            return (float)Math.Sqrt(dx * dx + dy * dy);
         }
 
         private Entity FindQuest()
@@ -132,9 +132,9 @@ namespace wServer.realm.entities.player
                     if (!questDat.TryGetValue(i.ObjectDesc.ObjectId, out x)) continue;
 
                     if ((Level < x.Item2 || Level > x.Item3)) continue;
-                    var score = (20 - Math.Abs((i.ObjectDesc.Level ?? 0) - Level))*x.Item1 -
+                    var score = (20 - Math.Abs((i.ObjectDesc.Level ?? 0) - Level)) * x.Item1 -
                                 //priority * level diff
-                                Dist(this, i)/100; //minus 1 for every 100 tile distance
+                                Dist(this, i) / 100; //minus 1 for every 100 tile distance
                     if (score < 0)
                         score = 1;
                     if (!(score > bestScore)) continue;
@@ -151,7 +151,7 @@ namespace wServer.realm.entities.player
 
         private void HandleQuest(RealmTime time)
         {
-            if (time.tickCount%500 != 0 && Quest?.Owner != null) return;
+            if (time.tickCount % 500 != 0 && Quest?.Owner != null) return;
             var newQuest = FindQuest();
             if (newQuest == null || newQuest == Quest) return;
             Owner.Timers.Add(new WorldTimer(100, (w, t) =>
@@ -167,8 +167,8 @@ namespace wServer.realm.entities.player
         private void CalculateFame()
         {
             int newFame;
-            if (Experience < 200*1000) newFame = Experience/1000;
-            else newFame = 200 + (Experience - 200*1000)/1000;
+            if (Experience < 200 * 1000) newFame = Experience / 1000;
+            else newFame = 200 + (Experience - 200 * 1000) / 1000;
             if (newFame == Fame) return;
             Fame = newFame;
             int newGoal;
@@ -242,7 +242,7 @@ namespace wServer.realm.entities.player
                 }, null);
             if (exp > 0)
             {
-                if(XpBoosted)
+                if (XpBoosted)
                     Experience += exp * 2;
                 else
                     Experience += exp;

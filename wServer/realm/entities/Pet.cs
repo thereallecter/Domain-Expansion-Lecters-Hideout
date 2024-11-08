@@ -1,10 +1,10 @@
 ﻿#region
 
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using MySql.Data.MySqlClient;
-using wServer.realm.entities.player;
 using wServer.networking.svrPackets;
+using wServer.realm.entities.player;
 using wServer.realm.worlds;
 
 #endregion
@@ -310,7 +310,7 @@ namespace wServer.realm.entities
             }
 
             for (int i = 0; i < 3; i++)
-			{
+            {
                 if (i == 0 && petStruct.FirstAbility != null)
                 {
                     ret.Add(new AbilityItem
@@ -341,8 +341,8 @@ namespace wServer.realm.entities
                     else
                         abilities.Remove(ability);
                 }
-			}
-            
+            }
+
 
             return ret;
         }

@@ -1,16 +1,13 @@
 ﻿using db;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Management;
-using System.IO;
-using System.Web;
 using Newtonsoft.Json;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Management;
+using System.Runtime.InteropServices;
+using System.Web;
+using System.Windows.Forms;
 
 namespace server.admin
 {
@@ -72,7 +69,7 @@ namespace server.admin
                     case "restartWServer":
                         hWnd = FindWindow(null, "Fabiano Swagger of Doom - World Server");
                         path = GetProcessPath(hWnd, out error);
-                        if(error)
+                        if (error)
                         {
                             WriteErrorLine(path);
                             return;

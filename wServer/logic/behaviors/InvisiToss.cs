@@ -23,7 +23,7 @@ namespace wServer.logic.behaviors
         {
             this.child = BehaviorDb.InitGameData.IdToObjectType[child];
             this.range = range;
-            this.angle = angle*Math.PI/180;
+            this.angle = angle * Math.PI / 180;
             this.coolDown = coolDown.Normalize();
             this.coolDownOffset = coolDownOffset;
         }
@@ -35,7 +35,7 @@ namespace wServer.logic.behaviors
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {
-            int cool = (int) state;
+            int cool = (int)state;
 
             if (cool <= 0)
             {
@@ -43,8 +43,8 @@ namespace wServer.logic.behaviors
 
                 Position target = new Position
                 {
-                    X = host.X + (float) (range*Math.Cos(angle.Value)),
-                    Y = host.Y + (float) (range*Math.Sin(angle.Value)),
+                    X = host.X + (float)(range * Math.Cos(angle.Value)),
+                    Y = host.Y + (float)(range * Math.Sin(angle.Value)),
                 };
                 host.Owner.Timers.Add(new WorldTimer(0, (world, t) =>
                 {

@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using DungeonGenerator;
+﻿using DungeonGenerator;
 using DungeonGenerator.Templates;
 using DungeonGenerator.Templates.Abyss;
 using DungeonGenerator.Templates.Lab;
 using DungeonGenerator.Templates.PirateCave;
 using log4net;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace wServer
 {
     public static class GeneratorCache
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(GeneratorCache)); 
+        private static readonly ILog log = LogManager.GetLogger(typeof(GeneratorCache));
         private static Dictionary<string, List<string>> cachedMaps;
 
         public static void Init()

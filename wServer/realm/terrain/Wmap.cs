@@ -1,10 +1,10 @@
 ﻿#region
 
+using db.data;
+using Ionic.Zlib;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using db.data;
-using Ionic.Zlib;
 using wServer.realm.entities;
 using wServer.realm.entities.merchant;
 
@@ -148,7 +148,7 @@ namespace wServer.realm.terrain
         {
             return new WmapTile
             {
-                UpdateCount = (byte) (UpdateCount + 1),
+                UpdateCount = (byte)(UpdateCount + 1),
                 TileId = TileId,
                 Name = Name,
                 ObjType = ObjType,
@@ -198,12 +198,12 @@ namespace wServer.realm.terrain
             for (ushort i = 0; i < c; i++)
             {
                 WmapTile tile = new WmapTile();
-                tile.TileId = (byte) reader.ReadInt16();
+                tile.TileId = (byte)reader.ReadInt16();
                 string obj = reader.ReadString();
-                tile.ObjType = string.IsNullOrEmpty(obj) ? (ushort) 0 : data.IdToObjectType[obj];
+                tile.ObjType = string.IsNullOrEmpty(obj) ? (ushort)0 : data.IdToObjectType[obj];
                 tile.Name = reader.ReadString();
-                tile.Terrain = (WmapTerrain) reader.ReadByte();
-                tile.Region = (TileRegion) reader.ReadByte();
+                tile.Terrain = (WmapTerrain)reader.ReadByte();
+                tile.Region = (TileRegion)reader.ReadByte();
                 dict.Add(tile);
             }
             Width = reader.ReadInt32();
@@ -246,12 +246,12 @@ namespace wServer.realm.terrain
             for (ushort i = 0; i < c; i++)
             {
                 WmapTile tile = new WmapTile();
-                tile.TileId = (byte) reader.ReadInt16();
+                tile.TileId = (byte)reader.ReadInt16();
                 string obj = reader.ReadString();
-                tile.ObjType = string.IsNullOrEmpty(obj) ? (ushort) 0 : data.IdToObjectType[obj];
+                tile.ObjType = string.IsNullOrEmpty(obj) ? (ushort)0 : data.IdToObjectType[obj];
                 tile.Name = reader.ReadString();
-                tile.Terrain = (WmapTerrain) reader.ReadByte();
-                tile.Region = (TileRegion) reader.ReadByte();
+                tile.Terrain = (WmapTerrain)reader.ReadByte();
+                tile.Region = (TileRegion)reader.ReadByte();
                 tile.Elevation = reader.ReadByte();
                 dict.Add(tile);
             }
@@ -295,12 +295,12 @@ namespace wServer.realm.terrain
             for (ushort i = 0; i < c; i++)
             {
                 WmapTile tile = new WmapTile();
-                tile.TileId = (byte) reader.ReadInt16();
+                tile.TileId = (byte)reader.ReadInt16();
                 string obj = reader.ReadString();
-                tile.ObjType = string.IsNullOrEmpty(obj) ? (ushort) 0 : data.IdToObjectType[obj];
+                tile.ObjType = string.IsNullOrEmpty(obj) ? (ushort)0 : data.IdToObjectType[obj];
                 tile.Name = reader.ReadString();
-                tile.Terrain = (WmapTerrain) reader.ReadByte();
-                tile.Region = (TileRegion) reader.ReadByte();
+                tile.Terrain = (WmapTerrain)reader.ReadByte();
+                tile.Region = (TileRegion)reader.ReadByte();
                 dict.Add(tile);
             }
             Width = reader.ReadInt32();
@@ -356,25 +356,25 @@ namespace wServer.realm.terrain
                                 entity.Size = Utils.FromString(kv[1]);
                                 break;
                             case "eff":
-                                entity.ConditionEffects = (ConditionEffects) Utils.FromString(kv[1]);
+                                entity.ConditionEffects = (ConditionEffects)Utils.FromString(kv[1]);
                                 break;
                             case "conn":
                                 (entity as ConnectedObject).Connection =
-                                    ConnectionInfo.Infos[(uint) Utils.FromString(kv[1])];
+                                    ConnectionInfo.Infos[(uint)Utils.FromString(kv[1])];
                                 break;
                             case "mtype":
                                 (entity as Merchants).Custom = true;
                                 (entity as Merchants).MType = Utils.FromString(kv[1]);
                                 break;
-                                //case "mcount":
-                                //    entity.Stats[StatsType.MerchantRemainingCount] = Utils.FromString(kv[1]); break;    NOT NEEDED FOR NOW
-                                //case "mtime":
-                                //    entity.Stats[StatsType.MerchantRemainingMinute] = Utils.FromString(kv[1]); break;
+                            //case "mcount":
+                            //    entity.Stats[StatsType.MerchantRemainingCount] = Utils.FromString(kv[1]); break;    NOT NEEDED FOR NOW
+                            //case "mtime":
+                            //    entity.Stats[StatsType.MerchantRemainingMinute] = Utils.FromString(kv[1]); break;
                             case "mcost":
                                 (entity as SellableObject).Price = Utils.FromString(kv[1]);
                                 break;
                             case "mcur":
-                                (entity as SellableObject).Currency = (CurrencyType) Utils.FromString(kv[1]);
+                                (entity as SellableObject).Currency = (CurrencyType)Utils.FromString(kv[1]);
                                 break;
                                 //case "nstar":
                                 //    entity.Stats[StatsType.NameChangerStar] = Utils.FromString(kv[1]); break;

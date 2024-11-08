@@ -1,9 +1,9 @@
 ﻿#region
 
+using db.data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using db.data;
 using wServer.realm;
 using wServer.realm.entities;
 using wServer.realm.entities.player;
@@ -109,11 +109,11 @@ namespace wServer.logic.loot
 
     public class TierLoot : ILootDef
     {
-        public static readonly int[] WeaponT = {1, 2, 3, 8, 17, 24};
-        public static readonly int[] AbilityT = {4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 25};
-        public static readonly int[] ArmorT = {6, 7, 14};
-        public static readonly int[] RingT = {9};
-        public static readonly int[] PotionT = {10};
+        public static readonly int[] WeaponT = { 1, 2, 3, 8, 17, 24 };
+        public static readonly int[] AbilityT = { 4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 25 };
+        public static readonly int[] ArmorT = { 6, 7, 14 };
+        public static readonly int[] RingT = { 9 };
+        public static readonly int[] PotionT = { 10 };
         private readonly double probability;
 
         private readonly byte tier;
@@ -158,7 +158,7 @@ namespace wServer.logic.loot
                 .Select(item => item.Value)
                 .ToArray();
             foreach (Item i in candidates)
-                lootDefs.Add(new LootDef(i, probability/candidates.Length, lootState));
+                lootDefs.Add(new LootDef(i, probability / candidates.Length, lootState));
         }
     }
 
@@ -179,7 +179,7 @@ namespace wServer.logic.loot
             string lootState, IList<LootDef> lootDefs)
         {
             Lootstate = lootState;
-            if (playerDat != null && playerDat.Item2/enemy.ObjectDesc.MaxHP >= threshold)
+            if (playerDat != null && playerDat.Item2 / enemy.ObjectDesc.MaxHP >= threshold)
             {
                 foreach (ILootDef i in children)
                     i.Populate(manager, enemy, null, rand, lootState, lootDefs);
@@ -242,10 +242,10 @@ namespace wServer.logic.loot
     {
         public static ILootDef[] DefaultEggLoot(EggRarity maxRarity)
         {
-            switch(maxRarity)
+            switch (maxRarity)
             {
                 case EggRarity.Common:
-                    return new ILootDef[1] {new EggLoot(EggRarity.Common, 0.1) };
+                    return new ILootDef[1] { new EggLoot(EggRarity.Common, 0.1) };
                 case EggRarity.Uncommon:
                     return new ILootDef[2] { new EggLoot(EggRarity.Common, 0.1), new EggLoot(EggRarity.Uncommon, 0.05) };
                 case EggRarity.Rare:

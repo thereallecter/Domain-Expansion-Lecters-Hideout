@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using wServer.realm;
 using wServer.realm.entities;
 
@@ -24,7 +20,7 @@ namespace wServer.logic.behaviors
             this.target = BehaviorDb.InitGameData.IdToObjectType[target];
             this.min = min;
             this.max = max;
-            this.probability = (float) probability;
+            this.probability = (float)probability;
             this.returnToSpawn = returnToSpawn;
             this.targetStateName = targetState;
             this.range = range;

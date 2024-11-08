@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace wServer.networking.svrPackets
+﻿namespace wServer.networking.svrPackets
 {
     public class QuestFetchResponsePacket : ServerPacket
     {
@@ -16,14 +10,14 @@ namespace wServer.networking.svrPackets
 
         public override PacketID ID
         {
-        	get { return PacketID.QUESTFETCHRESPONSE; }
+            get { return PacketID.QUESTFETCHRESPONSE; }
         }
-        
+
         public override Packet CreateInstance()
         {
             return new QuestFetchResponsePacket();
         }
-        
+
         protected override void Read(Client client, NReader rdr)
         {
             Tier = rdr.ReadInt32();
@@ -31,7 +25,7 @@ namespace wServer.networking.svrPackets
             Description = rdr.ReadUTF();
             Image = rdr.ReadUTF();
         }
-        
+
         protected override void Write(Client client, NWriter wtr)
         {
             wtr.Write(Tier);

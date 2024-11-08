@@ -20,9 +20,9 @@ namespace wServer.logic.behaviors
         public Follow(double speed, double acquireRange = 10, double range = 6,
             int duration = 0, Cooldown coolDown = new Cooldown())
         {
-            this.speed = (float) speed;
-            this.acquireRange = (float) acquireRange;
-            this.range = (float) range;
+            this.speed = (float)speed;
+            this.acquireRange = (float)acquireRange;
+            this.range = (float)range;
             this.duration = duration;
             this.coolDown = coolDown.Normalize(duration == 0 ? 0 : 1000);
         }
@@ -31,7 +31,7 @@ namespace wServer.logic.behaviors
         {
             FollowState s;
             if (state == null) s = new FollowState();
-            else s = (FollowState) state;
+            else s = (FollowState)state;
 
             Status = CycleStatus.NotStarted;
 
@@ -75,11 +75,11 @@ namespace wServer.logic.behaviors
                     if (vect.Length > range)
                     {
                         Status = CycleStatus.InProgress;
-                        vect.X -= Random.Next(-2, 2)/2f;
-                        vect.Y -= Random.Next(-2, 2)/2f;
+                        vect.X -= Random.Next(-2, 2) / 2f;
+                        vect.Y -= Random.Next(-2, 2) / 2f;
                         vect.Normalize();
-                        float dist = host.GetSpeed(speed)*(time.thisTickTimes/1000f);
-                        host.ValidateAndMove(host.X + vect.X*dist, host.Y + vect.Y*dist);
+                        float dist = host.GetSpeed(speed) * (time.thisTickTimes / 1000f);
+                        host.ValidateAndMove(host.X + vect.X * dist, host.Y + vect.Y * dist);
                         host.UpdateCount++;
                     }
                     else

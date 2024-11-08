@@ -2,12 +2,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
-using wServer.realm.commands;
-using wServer.realm.entities;
 using wServer.realm.entities.player;
 
 #endregion
@@ -55,7 +50,7 @@ namespace wServer.realm.commands
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
-            if(!player.Guild.IsDefault)
+            if (!player.Guild.IsDefault)
             {
                 try
                 {
@@ -161,7 +156,7 @@ namespace wServer.realm.commands
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
-            if(String.IsNullOrWhiteSpace(args[0]))
+            if (String.IsNullOrWhiteSpace(args[0]))
             {
                 player.SendInfo("Usage: /join <guild name>");
                 return false;

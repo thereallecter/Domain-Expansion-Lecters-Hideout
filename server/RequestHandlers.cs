@@ -2,7 +2,6 @@
 
 using db;
 using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net;
@@ -38,7 +37,7 @@ namespace server
             HandleRequest();
         }
 
-        public bool CheckAccount(Account acc, Database db, bool checkAccInUse=true)
+        public bool CheckAccount(Account acc, Database db, bool checkAccInUse = true)
         {
             if (acc == null && !String.IsNullOrWhiteSpace(Query["password"]))
             {

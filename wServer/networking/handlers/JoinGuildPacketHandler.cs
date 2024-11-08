@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using wServer.networking.cliPackets;
 using wServer.realm;
-using wServer.networking.svrPackets;
-using db;
-using wServer.realm.entities;
-using wServer.realm.entities.player;
 
 namespace wServer.networking.handlers
 {
@@ -22,7 +15,7 @@ namespace wServer.networking.handlers
 
         void Handle(Client client, JoinGuildPacket packet)
         {
-            if(!client.Player.Invited)
+            if (!client.Player.Invited)
             {
                 client.Player.SendInfoWithTokens("server.guild_not_invited", new KeyValuePair<string, object>[1]
                 {

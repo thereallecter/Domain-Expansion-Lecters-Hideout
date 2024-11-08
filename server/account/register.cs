@@ -1,16 +1,13 @@
 ﻿#region
 
-using System;
-using System.Collections.Specialized;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
 using db;
 using MySql.Data.MySqlClient;
+using System;
+using System.Globalization;
+using System.IO;
 using System.Net.Mail;
+using System.Text;
+using System.Text.RegularExpressions;
 
 #endregion
 
@@ -34,7 +31,7 @@ namespace server.account
                 return;
             }
 
-            if(!IsValidEmail(Query["newGuid"]))
+            if (!IsValidEmail(Query["newGuid"]))
             {
                 using (StreamWriter wtr = new StreamWriter(Context.Response.OutputStream))
                     wtr.Write("<Error>WebRegister.invalid_email_address</Error>");
@@ -119,7 +116,7 @@ namespace server.account
                 return false;
 
             // Return true if strIn is in valid e-mail format. 
-            if(Regex.IsMatch(strIn,
+            if (Regex.IsMatch(strIn,
                       @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
                       @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$",
                       RegexOptions.IgnoreCase))

@@ -93,16 +93,16 @@ namespace wServer.logic
         public void Tick(RealmTime time)
         {
             elapsed += time.thisTickTimes;
-            if (elapsed > 1000*60)
+            if (elapsed > 1000 * 60)
             {
-                elapsed -= 1000*60;
+                elapsed -= 1000 * 60;
                 stats.MinutesActive++;
             }
         }
 
         public void RemoveProjectile(Projectile projectile)
         {
-            if(projs.Contains(projectile))
+            if (projs.Contains(projectile))
                 projs.Remove(projectile);
         }
     }

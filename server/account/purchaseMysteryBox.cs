@@ -1,11 +1,11 @@
 ﻿#region
 
-using System;
-using System.IO;
-using System.Linq;
 using db;
 using MySql.Data.MySqlClient;
 using server.mysterybox;
+using System;
+using System.IO;
+using System.Linq;
 using System.Xml;
 
 #endregion
@@ -136,7 +136,7 @@ namespace server.account
             XmlDocument doc = new XmlDocument();
             XmlNode success = doc.CreateElement("Success");
             doc.AppendChild(success);
-            
+
             XmlNode awards = doc.CreateElement("Awards");
             awards.InnerText = res.Awards.Replace(" ", String.Empty);
             success.AppendChild(awards);

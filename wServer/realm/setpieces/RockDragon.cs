@@ -1,5 +1,5 @@
-﻿using System;
-using db.data;
+﻿using db.data;
+using System;
 using wServer.realm.entities;
 
 namespace wServer.realm.setpieces

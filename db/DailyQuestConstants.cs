@@ -33,7 +33,7 @@ namespace db
         public static string GetDescriptionByTier(int tier)
         {
             if (tier == -1) return null;
-            if(Descriptions.Length - 1 >= tier - 1)
+            if (Descriptions.Length - 1 >= tier - 1)
                 return Descriptions[tier - 1];
             throw new ArgumentException("Invalid tier");
         }

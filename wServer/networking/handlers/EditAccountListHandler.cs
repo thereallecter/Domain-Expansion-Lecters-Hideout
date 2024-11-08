@@ -1,6 +1,5 @@
 ﻿#region
 
-using System.Collections.Generic;
 using db;
 using wServer.networking.cliPackets;
 using wServer.networking.svrPackets;
@@ -21,14 +20,14 @@ namespace wServer.networking.handlers
         protected override void HandlePacket(Client client, EditAccountListPacket packet)
         {
             Player target;
-            if(client.Player.Owner == null) return;
+            if (client.Player.Owner == null) return;
             client.Manager.Logic.AddPendingAction(t =>
             {
                 using (Database db = new Database())
                 {
                     target = client.Player.Owner.GetEntity(packet.ObjectId) is Player ? client.Player.Owner.GetEntity(packet.ObjectId) as Player : null;
                     if (target == null) return;
-                    if(client.Account.AccountId == target.AccountId)
+                    if (client.Account.AccountId == target.AccountId)
                     {
                         SendFailure("You cannot do that with yourself.");
                         return;
@@ -60,7 +59,7 @@ namespace wServer.networking.handlers
                             }
                             break;
                     }
-                            
+
                     //List<string> list;
                     //if (packet.AccountListId == LOCKED_LIST_ID)
                     //    list = client.Player.Locked;

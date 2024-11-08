@@ -1,5 +1,6 @@
 ﻿#region
 
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +9,6 @@ using System.Linq;
 using System.Reflection;
 using System.Xml.Linq;
 using System.Xml.XPath;
-using log4net;
 
 #endregion
 
@@ -16,7 +16,7 @@ namespace db.data
 {
     public class XmlData : IDisposable
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof (XmlData));
+        private static readonly ILog log = LogManager.GetLogger(typeof(XmlData));
         private readonly XElement addition;
 
         private readonly Dictionary<string, ushort> id2type_obj;
@@ -116,7 +116,7 @@ namespace db.data
         public IDictionary<ushort, PetStruct> TypeToPet { get; private set; }
         public IDictionary<string, PetSkin> IdToPetSkin { get; private set; }
         public IDictionary<ushort, SetTypeSkin> SetTypeSkins { get; private set; }
-        
+
 
         public string[] AdditionXml
         {
@@ -270,7 +270,7 @@ namespace db.data
         {
             if (prevUpdateCount != updateCount)
             {
-                addXml = new[] {addition.ToString()};
+                addXml = new[] { addition.ToString() };
                 prevUpdateCount = updateCount;
             }
         }

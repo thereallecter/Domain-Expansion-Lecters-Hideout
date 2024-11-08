@@ -1,9 +1,9 @@
 ﻿#region
 
+using db.data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using db.data;
 using wServer.logic.loot;
 using wServer.realm.entities;
 
@@ -46,7 +46,7 @@ namespace wServer.realm.setpieces
 
             for (int x = 0; x < 23; x++) //Floor
                 for (int y = 0; y < 35; y++)
-                    t[x, y] = rand.Next()%3 == 0 ? 0 : 1;
+                    t[x, y] = rand.Next() % 3 == 0 ? 0 : 1;
 
             for (int y = 0; y < 35; y++) //Perimeters
                 t[0, y] = t[22, y] = 2;
@@ -57,10 +57,10 @@ namespace wServer.realm.setpieces
             for (int y = 0; y < 11; y++) //Crosses
                 for (int x = 0; x < 7; x++)
                 {
-                    if (rand.Next()%3 > 0)
-                        t[2 + 3*x, 2 + 3*y] = 4;
+                    if (rand.Next() % 3 > 0)
+                        t[2 + 3 * x, 2 + 3 * y] = 4;
                     else
-                        pts.Add(new IntPoint(2 + 3*x, 2 + 3*y));
+                        pts.Add(new IntPoint(2 + 3 * x, 2 + 3 * y));
                 }
 
             for (int x = 0; x < 23; x++) //Corruption

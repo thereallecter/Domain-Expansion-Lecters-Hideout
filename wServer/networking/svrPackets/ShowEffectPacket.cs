@@ -20,7 +20,7 @@
 
         protected override void Read(Client psr, NReader rdr)
         {
-            EffectType = (EffectType) rdr.ReadByte();
+            EffectType = (EffectType)rdr.ReadByte();
             TargetId = rdr.ReadInt32();
             PosA = Position.Read(psr, rdr);
             PosB = Position.Read(psr, rdr);
@@ -29,7 +29,7 @@
 
         protected override void Write(Client psr, NWriter wtr)
         {
-            wtr.Write((byte) EffectType);
+            wtr.Write((byte)EffectType);
             wtr.Write(TargetId);
             PosA.Write(psr, wtr);
             PosB.Write(psr, wtr);
