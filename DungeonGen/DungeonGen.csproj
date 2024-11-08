@@ -82,6 +82,13 @@
     <Compile Include="Templates\PirateCave\Overlay.cs" />
     <Compile Include="Templates\PirateCave\PirateCaveTemplate.cs" />
     <Compile Include="Templates\PirateCave\StartRoom.cs" />
+    <Compile Include="Templates\UndeadLair\Background.cs" />
+    <Compile Include="Templates\UndeadLair\BossRoom.cs" />
+    <Compile Include="Templates\UndeadLair\Corridor.cs" />
+    <Compile Include="Templates\UndeadLair\NormalRoom.cs" />
+    <Compile Include="Templates\UndeadLair\Overlay.cs" />
+    <Compile Include="Templates\UndeadLair\StartRoom.cs" />
+    <Compile Include="Templates\UndeadLair\UndeadLairTemplate.cs" />
     <Compile Include="Zlib.cs" />
   </ItemGroup>
   <ItemGroup>

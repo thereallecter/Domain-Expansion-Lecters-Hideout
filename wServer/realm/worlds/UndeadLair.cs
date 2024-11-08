@@ -11,7 +11,7 @@ namespace wServer.realm.worlds
         public UndeadLair()
         {
             Name = "Undead Lair";
-            ClientWorldName = "dungeons.Undead_Lair";
+            ClientWorldName = "Undead Lair";
             Dungeon = true;
             Background = 0;
             AllowTeleport = true;
@@ -19,12 +19,9 @@ namespace wServer.realm.worlds
 
         protected override void Init()
         {
-            LoadMap("wServer.realm.worlds.maps.udl.jm", MapType.Json);
+            LoadMap(GeneratorCache.NextUndeadLair(Seed));
         }
 
-        public override World GetInstance(Client psr)
-        {
-            return Manager.AddWorld(new UndeadLair());
-        }
+        public override World GetInstance(Client psr) => Manager.AddWorld(new UndeadLair());
     }
 }

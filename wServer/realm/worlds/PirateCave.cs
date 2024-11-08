@@ -1,4 +1,6 @@
-﻿namespace wServer.realm.worlds
+﻿using wServer.networking;
+
+namespace wServer.realm.worlds
 {
     public class PirateCave : World
     {
@@ -15,5 +17,7 @@
         {
             LoadMap(GeneratorCache.NextPirateCave(Seed));
         }
+
+        public override World GetInstance(Client psr) => Manager.AddWorld(new PirateCave());
     }
 }

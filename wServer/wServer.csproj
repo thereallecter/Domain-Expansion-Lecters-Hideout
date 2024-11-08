@@ -514,7 +514,6 @@
     <Compile Include="realm\Oryx.cs" />
     <Compile Include="realm\worlds\OceanTrench.cs" />
     <Compile Include="realm\worlds\OryxCastle.cs" />
-    <Compile Include="realm\worlds\RandRealm.cs" />
     <Compile Include="realm\worlds\Test.cs" />
     <Compile Include="realm\worlds\Tutorial.cs" />
     <Compile Include="realm\worlds\UndeadLair.cs" />
@@ -615,7 +614,6 @@
     <EmbeddedResource Include="realm\worlds\maps\nexusprod.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\vaulttest.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\world1.wmap" />
-    <EmbeddedResource Include="realm\worlds\maps\abyss.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\kitchen.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\oceantrench.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\OryxCastle.wmap" />
@@ -624,7 +622,6 @@
     <EmbeddedResource Include="realm\worlds\maps\tutorial.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\arena.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\winecellar.wmap" />
-    <EmbeddedResource Include="realm\worlds\maps\abyss2.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\nexusLimbo.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\tomb.wmap" />
     <EmbeddedResource Include="realm\worlds\maps\UDL1.wmap" />

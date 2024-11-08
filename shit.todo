@@ -1,11 +1,29 @@
-11/7/2024 [11:05 PM] -> make sure commands are properly formatted and consistent
-11/7/2024 [11:15 PM] -> effects to items (ie... Doku does poison)
-11/7/2024 [11:34 PM] -> make pets vanity
-11/7/2024 [11:41 PM] -> rebuild all dungeons using DungeonGen
-11/7/2024 [11:53 PM] -> Rebalance player stats (ie... HP/MP Regen, HP/MP, XP, No Level Cap)
-						Level Up's will increase stats up to LVL 100, each LVLUP after will 
-							result in increased Fame etc...
-							
-11/8/2024 [12:17 AM] -> remove pet egg drops until pets are working
-11/8/2024 [12:18 AM] -> !!FIX THE PETS!!
-11/8/2024 [12:26 AM] -> Fix XML's (ie... export client xmls into server)
+11/07/2024 [11:05 PM]
+	-> make sure commands are properly formatted and consistent
+11/07/2024 [11:15 PM] 
+	-> effects to items (ie... Doku does poison)
+11/07/2024 [11:34 PM] 
+	-> make pets vanity
+11/07/2024 [11:41 PM] 
+	-> rebuild all dungeons using DungeonGen
+11/07/2024 [11:53 PM] 
+	-> Rebalance player stats (ie... HP/MP Regen, HP/MP, XP, No Level Cap)
+		Level Up's will increase stats up to LVL 100, each LVLUP after will 
+		result in increased Fame etc...
+11/08/2024 [12:17 AM]
+	-> remove pet egg drops until pets are working
+11/08/2024 [01:51 AM]
+	-> !!FIX THE PETS!!
+	-> Fix XML's (ie... export client xmls into server)
+	-> Clean up Behaviors
+	-> Cleanup Nexus.wmap (Start work on Lecter's Hideout)
+	-> Convert project from Realm Of The Mad God into a standalone game engine
+		Do this by stripping Realm Of The Mad God down to it's bare components
+		and functionalites. Then, rebuild it from the ground up to become, Lecter's Hideout.
+		Using the RotMG systems as a game engine
+11/08/2024 [03:19 AM]
+	-> Undead Lair is now generating using dungeon gen
+	-> still needs the correct tiles/objects/enemies
+	-> Can be done later, im tired XD
+11/08/2024 [03:20 AM]
+	-> Am finally going to bed
