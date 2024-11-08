@@ -3,7 +3,9 @@
     public enum CycleStatus
     {
         NotStarted,
+
         InProgress,
+
         Completed
     }
 

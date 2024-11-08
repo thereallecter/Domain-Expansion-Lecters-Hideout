@@ -62,30 +62,39 @@ namespace wServer.networking.handlers
                                         }
                                         client.Player.HpPotionPrice = 10;
                                         break;
+
                                     case 10:
                                         client.Player.HpPotionPrice = 20;
                                         break;
+
                                     case 20:
                                         client.Player.HpPotionPrice = 40;
                                         break;
+
                                     case 40:
                                         client.Player.HpPotionPrice = 80;
                                         break;
+
                                     case 80:
                                         client.Player.HpPotionPrice = 120;
                                         break;
+
                                     case 120:
                                         client.Player.HpPotionPrice = 200;
                                         break;
+
                                     case 200:
                                         client.Player.HpPotionPrice = 300;
                                         break;
+
                                     case 300:
                                         client.Player.HpPotionPrice = 450;
                                         break;
+
                                     case 450:
                                         client.Player.HpPotionPrice = 600;
                                         break;
+
                                     case 600:
                                         break;
                                 }
@@ -95,31 +104,40 @@ namespace wServer.networking.handlers
                                     {
                                         case 5:
                                             break;
+
                                         case 10:
                                             client.Player.HpFirstPurchaseTime = true;
                                             client.Player.HpPotionPrice = 5;
                                             break;
+
                                         case 20:
                                             client.Player.HpPotionPrice = 10;
                                             break;
+
                                         case 40:
                                             client.Player.HpPotionPrice = 20;
                                             break;
+
                                         case 80:
                                             client.Player.HpPotionPrice = 40;
                                             break;
+
                                         case 120:
                                             client.Player.HpPotionPrice = 80;
                                             break;
+
                                         case 200:
                                             client.Player.HpPotionPrice = 120;
                                             break;
+
                                         case 300:
                                             client.Player.HpPotionPrice = 200;
                                             break;
+
                                         case 450:
                                             client.Player.HpPotionPrice = 300;
                                             break;
+
                                         case 600:
                                             client.Player.HpPotionPrice = 450;
                                             break;
@@ -134,6 +152,7 @@ namespace wServer.networking.handlers
                             }
                         }
                         break;
+
                     case 255:
                         item = client.Player.Manager.GameData.Items[packet.SlotObject.ObjectType];
 
@@ -163,30 +182,39 @@ namespace wServer.networking.handlers
                                         }
                                         client.Player.MpPotionPrice = 10;
                                         break;
+
                                     case 10:
                                         client.Player.MpPotionPrice = 20;
                                         break;
+
                                     case 20:
                                         client.Player.MpPotionPrice = 40;
                                         break;
+
                                     case 40:
                                         client.Player.MpPotionPrice = 80;
                                         break;
+
                                     case 80:
                                         client.Player.MpPotionPrice = 120;
                                         break;
+
                                     case 120:
                                         client.Player.MpPotionPrice = 200;
                                         break;
+
                                     case 200:
                                         client.Player.MpPotionPrice = 300;
                                         break;
+
                                     case 300:
                                         client.Player.MpPotionPrice = 450;
                                         break;
+
                                     case 450:
                                         client.Player.MpPotionPrice = 600;
                                         break;
+
                                     case 600:
                                         break;
                                 }
@@ -196,31 +224,40 @@ namespace wServer.networking.handlers
                                     {
                                         case 5:
                                             break;
+
                                         case 10:
                                             client.Player.MpFirstPurchaseTime = true;
                                             client.Player.MpPotionPrice = 5;
                                             break;
+
                                         case 20:
                                             client.Player.MpPotionPrice = 10;
                                             break;
+
                                         case 40:
                                             client.Player.MpPotionPrice = 20;
                                             break;
+
                                         case 80:
                                             client.Player.MpPotionPrice = 40;
                                             break;
+
                                         case 120:
                                             client.Player.MpPotionPrice = 80;
                                             break;
+
                                         case 200:
                                             client.Player.MpPotionPrice = 120;
                                             break;
+
                                         case 300:
                                             client.Player.MpPotionPrice = 200;
                                             break;
+
                                         case 450:
                                             client.Player.MpPotionPrice = 300;
                                             break;
+
                                         case 600:
                                             client.Player.MpPotionPrice = 450;
                                             break;
@@ -233,6 +270,7 @@ namespace wServer.networking.handlers
                             }
                         }
                         break;
+
                     default:
                         item = container.Inventory[packet.SlotObject.SlotId];
                         break;

@@ -11,8 +11,11 @@ namespace wServer.logic.behaviors
         //State storage: none
 
         private readonly ushort children;
+
         private readonly double range;
+
         private readonly string targetStateName;
+
         private State targetState;
 
         public Order(double range, string children, string targetState)
@@ -33,7 +36,6 @@ namespace wServer.logic.behaviors
             }
             return null;
         }
-
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {

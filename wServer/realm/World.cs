@@ -20,23 +20,40 @@ namespace wServer.realm
     public abstract class World : IDisposable
     {
         public const int TUT_ID = -1;
+
         public const int NEXUS_ID = -2;
+
         //public const int RAND_REALM = -3;
         public const int NEXUS_LIMBO = -3;
+
         public const int VAULT_ID = -5;
+
         public const int TEST_ID = -6;
+
         public const int GAUNTLET = -7;
+
         public const int WC = -8;
+
         public const int ARENA = -9;
+
         public const int GHALL = -10;
+
         public const int MARKET = -11;
+
         public const int PETYARD_ID = -12;
+
         public const int DAILY_QUEST_ID = -13;
+
         public const int GUILD_ID = -14;
+
         protected static readonly ILog Log = LogManager.GetLogger(typeof(World));
+
         public string ExtraVar = "Default";
+
         private int entityInc;
+
         private RealmManager manager;
+
         private bool canBeClosed;
 
         protected World()
@@ -53,7 +70,7 @@ namespace wServer.realm
             ShowDisplays = true;
             MaxPlayers = -1;
 
-            //Mark world for removal after 2 minutes if the 
+            //Mark world for removal after 2 minutes if the
             //world is a dungeon and if no players in there;
             Timers.Add(new WorldTimer(120 * 1000, (w, t) =>
             {
@@ -472,9 +489,11 @@ namespace wServer.realm
                 case MapType.Wmap:
                     FromWorldMap(stream);
                     break;
+
                 case MapType.Json:
                     FromWorldMap(new MemoryStream(Json2Wmap.Convert(Manager, new StreamReader(stream).ReadToEnd())));
                     break;
+
                 default:
                     throw new ArgumentException("Invalid MapType");
             }
@@ -511,6 +530,7 @@ namespace wServer.realm
     public enum MapType
     {
         Wmap,
+
         Json
     }
 }

@@ -47,7 +47,9 @@ namespace terrain
     internal class PolygonMap
     {
         private readonly HashSet<MapNode> oceans = new HashSet<MapNode>();
+
         private readonly int seed;
+
         private readonly HashSet<MapNode> waters = new HashSet<MapNode>();
 
         public PolygonMap(int seed)

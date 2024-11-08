@@ -12,7 +12,9 @@ namespace wServer.logic.behaviors
     {
         //State storage: charge state
         private readonly float range;
+
         private readonly float speed;
+
         private Cooldown coolDown;
 
         public Charge(double speed = 4, float range = 10, Cooldown coolDown = new Cooldown())
@@ -70,6 +72,7 @@ namespace wServer.logic.behaviors
         private class ChargeState
         {
             public Vector2 Direction;
+
             public int RemainingTime;
         }
     }

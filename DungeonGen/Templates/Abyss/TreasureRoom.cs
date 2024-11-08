@@ -26,17 +26,21 @@ namespace DungeonGenerator.Templates.Abyss
 {
     internal class TreasureRoom : FixedRoom
     {
-        public override RoomType Type { get { return RoomType.Special; } }
+        public override RoomType Type
+        { get { return RoomType.Special; } }
 
-        public override int Width { get { return 15; } }
+        public override int Width
+        { get { return 15; } }
 
-        public override int Height { get { return 21; } }
+        public override int Height
+        { get { return 21; } }
 
-        static readonly Tuple<Direction, int>[] connections = {
+        private static readonly Tuple<Direction, int>[] connections = {
             Tuple.Create(Direction.South, 6)
         };
 
-        public override Tuple<Direction, int>[] ConnectionPoints { get { return connections; } }
+        public override Tuple<Direction, int>[] ConnectionPoints
+        { get { return connections; } }
 
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {

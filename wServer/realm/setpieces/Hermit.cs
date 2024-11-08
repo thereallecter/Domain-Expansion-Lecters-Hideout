@@ -6,6 +6,7 @@ namespace wServer.realm.setpieces
     internal class Hermit : ISetPiece
     {
         private static readonly string[] Ground = { "Dark Water", "Shallow Water", "Dark Grass" };
+
         private static readonly string[] Pillars = { "Grey Pillar", "Broken Grey Pillar" };
 
         private readonly Random rand = new Random();

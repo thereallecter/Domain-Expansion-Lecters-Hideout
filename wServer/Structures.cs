@@ -48,6 +48,7 @@ namespace wServer
     public struct IntPoint
     {
         public int X;
+
         public int Y;
 
         public IntPoint(int x, int y)
@@ -60,8 +61,11 @@ namespace wServer
     public struct TradeItem
     {
         public bool Included;
+
         public int Item;
+
         public int SlotType;
+
         public bool Tradeable;
 
         public static TradeItem Read(Client psr, NReader rdr)
@@ -86,31 +90,52 @@ namespace wServer
     public enum EffectType
     {
         Potion = 1,
+
         Teleport = 2,
+
         Stream = 3,
+
         Throw = 4,
+
         AreaBlast = 5, //radius=pos1.x
+
         Dead = 6,
+
         Trail = 7,
+
         Diffuse = 8, //radius=dist(pos1,pos2)
+
         Flow = 9,
+
         Trap = 10, //radius=pos1.x
+
         Lightning = 11, //particleSize=pos2.x
+
         Concentrate = 12, //radius=dist(pos1,pos2)
+
         BlastWave = 13, //origin=pos1, radius = pos2.x
+
         Earthquake = 14,
+
         Flashing = 15, //period=pos1.x, numCycles=pos1.y
+
         BeachBall = 16,
+
         ElectricBolts = 17, //If a pet paralyzes a monster
+
         ElectricFlashing = 18, //If a monster got paralyzed from a electric pet
+
         SavageEffect = 19 //If a pet is standing still (this white particles)
     }
 
     public struct ARGB
     {
         public byte A;
+
         public byte B;
+
         public byte G;
+
         public byte R;
 
         public ARGB(uint argb)
@@ -143,7 +168,9 @@ namespace wServer
     public struct ObjectSlot
     {
         public int ObjectId;
+
         public ushort ObjectType;
+
         public byte SlotId;
 
         public static ObjectSlot Read(Client psr, NReader rdr)
@@ -171,6 +198,7 @@ namespace wServer
     public struct TimedPosition
     {
         public Position Position;
+
         public int Time;
 
         public static TimedPosition Read(Client psr, NReader rdr)
@@ -196,6 +224,7 @@ namespace wServer
     public struct Position
     {
         public float X;
+
         public float Y;
 
         public Position(float x, float y)
@@ -227,6 +256,7 @@ namespace wServer
     public struct ObjectDef
     {
         public ushort ObjectType;
+
         public ObjectStats Stats;
 
         public static ObjectDef Read(Client psr, NReader rdr)
@@ -247,7 +277,9 @@ namespace wServer
     public struct ObjectStats
     {
         public int Id;
+
         public Position Position;
+
         public KeyValuePair<StatsType, object>[] Stats;
 
         public static ObjectStats Read(Client psr, NReader rdr)

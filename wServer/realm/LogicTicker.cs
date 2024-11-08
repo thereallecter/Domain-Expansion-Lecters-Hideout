@@ -16,10 +16,13 @@ namespace wServer.realm
     public class LogicTicker
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(LogicTicker));
+
         public static RealmTime CurrentTime;
+
         private readonly ConcurrentQueue<Action<RealmTime>>[] pendings;
 
         public int MsPT;
+
         public int TPS;
 
         public LogicTicker(RealmManager manager)

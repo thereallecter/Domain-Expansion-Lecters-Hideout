@@ -14,8 +14,11 @@ namespace wServer.realm.setpieces
     internal class Graveyard : ISetPiece
     {
         private static readonly string Floor = "Grass";
+
         private static readonly string WallA = "Grey Wall";
+
         private static readonly string WallB = "Destructible Grey Wall";
+
         private static readonly string Cross = "Cross";
 
         private static readonly Loot chest = new Loot(
@@ -73,7 +76,6 @@ namespace wServer.realm.setpieces
                     else if (p < 0.4)
                         t[x, y]++;
                 }
-
 
             //Boss & Chest
             IntPoint pt = pts[rand.Next(0, pts.Count)];

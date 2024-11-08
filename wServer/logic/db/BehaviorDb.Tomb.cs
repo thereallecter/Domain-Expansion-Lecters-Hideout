@@ -3,6 +3,7 @@
 using wServer.logic.behaviors;
 using wServer.logic.loot;
 using wServer.logic.transitions;
+
 #endregion
 
 namespace wServer.logic
@@ -692,7 +693,7 @@ namespace wServer.logic
                                                 ),
                                                 new HpLessTransition(0.98, "2Phase1")
                                         ),
-                                        //                                      If Anchor Don't Exist  
+                                        //                                      If Anchor Don't Exist
                                         new State("Phase1",
                                                 new ConditionalEffect(ConditionEffectIndex.Armored),
                                                 new Prioritize(
@@ -970,7 +971,7 @@ namespace wServer.logic
                                                 ),
                                                 new HpLessTransition(0.98, "1Phase2")
                                         ),
-                                        //                                      If Anchor Don't Exist  
+                                        //                                      If Anchor Don't Exist
                                         new State("1Phase",
                                                 new ConditionalEffect(ConditionEffectIndex.Armored),
                                                 new Taunt(0.99, "Nut, protect me at once!"),
@@ -1076,7 +1077,7 @@ namespace wServer.logic
                                                 new Shoot(20, count: 1, fixedAngle: 350, projectileIndex: 5),
                                                 new Shoot(20, count: 1, projectileIndex: 2, coolDown: 500, predictive: 0.5)
                                         ),
-                                        //                                                                                              IfAnchorExist  
+                                        //                                                                                              IfAnchorExist
                                         new State("1Phase2",
                                                 new ConditionalEffect(ConditionEffectIndex.Armored),
                                                 new Taunt(0.99, "Nut, protect me at once!"),

@@ -7,7 +7,6 @@
         public string Description { get; set; }
         public string Image { get; set; }
 
-
         public override PacketID ID
         {
             get { return PacketID.QUESTFETCHRESPONSE; }

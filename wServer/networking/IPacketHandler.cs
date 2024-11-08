@@ -14,12 +14,14 @@ namespace wServer.networking
     internal interface IPacketHandler
     {
         PacketID ID { get; }
+
         void Handle(Client client, ClientPacket packet);
     }
 
     internal abstract class PacketHandlerBase<T> : IPacketHandler where T : ClientPacket
     {
         protected ILog log;
+
         private Client client;
 
         public PacketHandlerBase()
@@ -35,8 +37,10 @@ namespace wServer.networking
             HandlePacket(client, (T)packet);
         }
 
-        public RealmManager Manager { get { return client.Manager; } }
-        public Client Client { get { return client; } }
+        public RealmManager Manager
+        { get { return client.Manager; } }
+        public Client Client
+        { get { return client; } }
 
         protected abstract void HandlePacket(Client client, T packet);
 

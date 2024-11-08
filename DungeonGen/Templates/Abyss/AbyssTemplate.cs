@@ -26,14 +26,21 @@ namespace DungeonGenerator.Templates.Abyss
     public class AbyssTemplate : DungeonTemplate
     {
         internal static readonly TileType RedSmallChecks = new TileType(0x003c, "Red Small Checks");
+
         internal static readonly TileType Lava = new TileType(0x0070, "Lava");
+
         internal static readonly TileType Space = new TileType(0x00fe, "Space");
 
         internal static readonly ObjectType RedWall = new ObjectType(0x0150, "Red Wall");
+
         internal static readonly ObjectType RedTorchWall = new ObjectType(0x0151, "Red Torch Wall");
+
         internal static readonly ObjectType PartialRedFloor = new ObjectType(0x0153, "Partial Red Floor");
+
         internal static readonly ObjectType RedPillar = new ObjectType(0x017e, "Red Pillar");
+
         internal static readonly ObjectType BrokenRedPillar = new ObjectType(0x0183, "Broken Red Pillar");
+
         internal static readonly ObjectType CowardicePortal = new ObjectType(0x0703, "Portal of Cowardice");
 
         internal static readonly ObjectType AbyssImp = new ObjectType(0x66d, "Imp of the Abyss");
@@ -58,20 +65,26 @@ namespace DungeonGenerator.Templates.Abyss
             MapTemplate = ReadTemplate(typeof(AbyssTemplate));
         }
 
-        public override int MaxDepth { get { return 50; } }
+        public override int MaxDepth
+        { get { return 50; } }
 
-        NormDist targetDepth;
-        public override NormDist TargetDepth { get { return targetDepth; } }
+        private NormDist targetDepth;
+        public override NormDist TargetDepth
+        { get { return targetDepth; } }
 
-        NormDist specialRmCount;
-        public override NormDist SpecialRmCount { get { return specialRmCount; } }
+        private NormDist specialRmCount;
+        public override NormDist SpecialRmCount
+        { get { return specialRmCount; } }
 
-        NormDist specialRmDepthDist;
-        public override NormDist SpecialRmDepthDist { get { return specialRmDepthDist; } }
+        private NormDist specialRmDepthDist;
+        public override NormDist SpecialRmDepthDist
+        { get { return specialRmDepthDist; } }
 
-        public override Range RoomSeparation { get { return new Range(0, 1); } }
+        public override Range RoomSeparation
+        { get { return new Range(0, 1); } }
 
-        public override int CorridorWidth { get { return 3; } }
+        public override int CorridorWidth
+        { get { return 3; } }
 
         public override void Initialize()
         {

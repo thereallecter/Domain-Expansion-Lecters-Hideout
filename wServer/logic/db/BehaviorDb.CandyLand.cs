@@ -485,6 +485,5 @@ namespace wServer.logic
                 new StayCloseToSpawn(0.5, 2)
                 )
             );
-
     }
 }

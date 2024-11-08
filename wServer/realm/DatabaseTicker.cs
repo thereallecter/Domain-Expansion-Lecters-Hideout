@@ -41,6 +41,7 @@ namespace wServer.realm
         public class DatabaseCollection
         {
             private object requestLock;
+
             private Dictionary<Database, bool> databases;
 
             public DatabaseCollection()
@@ -106,7 +107,7 @@ namespace wServer.realm
 //        }
 //
 //        public void TickLoop()
-//        {  
+//        {
 //            log.Info("Database loop started.");
 //            do
 //            {

@@ -24,7 +24,6 @@ namespace wServer.realm
             return Math.Sqrt(a.DistSqr(b));
         }
 
-
         public static bool AnyPlayerNearby(this Entity entity)
         {
             foreach (Player i in entity.Owner.PlayersCollision.HitTest(entity.X, entity.Y, 16).OfType<Player>())
@@ -56,7 +55,6 @@ namespace wServer.realm
         {
             return entity.Owner.GetEntity(entityId);
         }
-
 
         /// <summary>
         /// Only for enemys

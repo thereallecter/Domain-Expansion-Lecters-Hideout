@@ -12,6 +12,7 @@ namespace terrain
     internal class MapFeatures
     {
         private readonly PolygonMap map;
+
         private readonly Random rand;
 
         public MapFeatures(PolygonMap map, int seed)

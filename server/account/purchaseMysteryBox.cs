@@ -52,6 +52,7 @@ namespace server.account
                                     return;
                                 }
                                 break;
+
                             case 1:
                                 if (acc.Stats.Fame < box.Sale.Price)
                                 {
@@ -74,6 +75,7 @@ namespace server.account
                                     return;
                                 }
                                 break;
+
                             case 1:
                                 if (acc.Stats.Fame < box.Price.Amount)
                                 {
@@ -140,7 +142,6 @@ namespace server.account
             XmlNode awards = doc.CreateElement("Awards");
             awards.InnerText = res.Awards.Replace(" ", String.Empty);
             success.AppendChild(awards);
-
 
             XmlNode goldLeft = doc.CreateElement(res.Currency == 0 ? "Gold" : "Fame");
             goldLeft.InnerText = res.GoldLeft.ToString();

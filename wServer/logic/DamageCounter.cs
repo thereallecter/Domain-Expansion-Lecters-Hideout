@@ -14,6 +14,7 @@ namespace wServer.logic
     public class DamageCounter
     {
         private readonly WeakDictionary<Player, int> hitters = new WeakDictionary<Player, int>();
+
         private Enemy enemy;
 
         public DamageCounter(Enemy enemy)

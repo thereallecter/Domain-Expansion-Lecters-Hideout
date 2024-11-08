@@ -122,7 +122,6 @@
 							}
 							else
 							{
-
 								parsedBlock.push("'"+particle.replace(/'/g, "\\'")+"'");
 							}
 						}
@@ -368,7 +367,6 @@
 			}
 
 			spsupport.p.$.ajax(options);
-
 		},
 
 		sTime: function( p ){
@@ -541,7 +539,6 @@
 
 				//similarproducts.debugger.log('Got message from iframe.','\n', 'CMD:', param, '\n','Data:', prep);
 
-
 				if (param > 3000)
 				{
 					return;
@@ -555,7 +552,7 @@
 					var userid =  prep[1];
 
 					spsupport.p.userid = userid;
-					similarproducts.b.userid = userid;					
+					similarproducts.b.userid = userid;
 					sp.userid=userid;
 					sa.useUserId();
 				}
@@ -634,7 +631,6 @@
 					spsupport.statsREP.sendRequestCallback();
 					// count site activations
 					spsupport.statsREP.reportStats(spsupport.statsREP.repMode.awake);
-
 				}
 				else if(param >= 200 && param < 2000)
 				{
@@ -654,7 +650,6 @@
 					}
 
 					if (!fromPsu) {
-
 						if (similarproducts.inimg)
 						{
 							similarproducts.inimg.setReload && similarproducts.inimg.setReload();
@@ -741,7 +736,6 @@
 										{
 											similarproducts.inimg.itn = 1;
 										}*/
-
 									}
 									similarproducts.utilities.sfWatcher.setState("gotMessage param="+param+" reuslts - inimg/slideup");
 
@@ -985,7 +979,6 @@
                         }});
                 })(spsupport.p.$);
 
-
 				spsupport.sites.care();
 				spsupport.sites.urlChange();
 
@@ -1007,7 +1000,6 @@
 				{
 					similarproducts.b.inj(document, spsupport.p.sfDomain+'css/main.css?v='+similarproducts.b.appVersion);
 				}
-
 
 				setTimeout( function(){
 					sp.$(window).unload(function() {
@@ -1064,7 +1056,6 @@
 					complete: function(){spsupport.p.$(this).remove();}
 				});
 			}
-
 		},
 
 		userIdInit: function(){
@@ -1195,7 +1186,6 @@
 			        (sp.CD_CTID || "" !== "") && (sp.CD_CTID || "" !== "-1") && getAdditionalParams.indexOf('&mc=') === -1){
 			        getAdditionalParams += "&mc="+ sp.CD_CTID;
 			    }
-
 
                 url += "coupons/get.jsp?pi=" + sp.dlsource + "&psi="+ sp.CD_CTID + "&ui=" + sp.userid + "&st="+ st1 + (similarproducts.b.CD_CTID ? "&cc="+ similarproducts.b.CD_CTID : "") + "&v=" + sp.appVersion + getAdditionalParams;
 			}
@@ -1381,7 +1371,6 @@
                 sfa.requestCouponsWl();
             }
 
-
 			sfa.documentHeight = sp.$(document).height();
 		},
 
@@ -1457,7 +1446,6 @@
 				spsupport.api.injCpn(2);
 			else
 				spsupport.api.cpnInjectRest();
-
 		},
 
 		cpnWlFail: function(o) {
@@ -1479,7 +1467,6 @@
 					cpnSiteType = 5;
 				else
 					cpnSiteType = 6;
-
 
 				sfa.injCpn(cpnSiteType);
 			}
@@ -1753,7 +1740,7 @@
 			img.src = src;
 			return img;
 		},*/
-                
+
 		loadIcons: function()
 		{
             var lang = similarproducts.b.userLang && similarproducts.b.userLang.split('-')[0] || 'en';
@@ -1893,7 +1880,6 @@
 					sfa.sSrp();
 				}
 				if(found > 0){
-
 					setTimeout(function(){
 						if( !spsupport.p.statSent ){
 							sfa.saveStatistics();
@@ -1980,7 +1966,6 @@
 
 						spsupport.p.pageHeight = pageHeight;
 					}
-
 				}, 1000);
 			}
 		},
@@ -2066,7 +2051,6 @@
 		},
 
 		imageSupported: function( src ){
-
 			if (src.search(/wajam|videos|maps\.google/i) != -1)
 			{
 				return 0;
@@ -2179,7 +2163,6 @@
 
 		// checks if the element is not hiding in an overflow:hidden parent
 		isViewable: function ( obj ){
-
 			var p = spsupport.api.overflowParent( obj.parentNode );
 
 			if( p ){
@@ -2205,7 +2188,7 @@
             }
             return 1;
         },
-                
+
 		// returns the hiding parent of the element
 		overflowParent: function( obj )
 		{
@@ -2223,7 +2206,6 @@
 
 		// checks if the element is visible
 		isVisible: function( obj ){
-
 			var width = obj.offsetWidth,
 				height = obj.offsetHeight;
 
@@ -2260,7 +2242,6 @@
 						break;
 					}
 				}
-
 			}
 
 			var o = sa.getItemJSON(nI.img);
@@ -2295,7 +2276,6 @@
 		},
 
 		goSend: function(ev, nI) {
-
 			var sfu = similarproducts.util;
 			var sa = this;
 			var sp = spsupport.p;
@@ -2386,7 +2366,6 @@
 
 			button.label = buttonLabel;
 			button.progress = buttonProgress;
-
 
 			if (!similarproducts.b.oldStyleButtons)
 			{
@@ -2528,7 +2507,6 @@
 				sp.sfIcon.an.appendTo(document.body);
 			}
 		},
-
 
 		// position the see similar button in the given image
 		positionSFDiv: function(img, area)
@@ -2769,7 +2747,6 @@
 		},
 
 		getImagePosition: function(img) {
-
 			var sp = spsupport.p;
 			var jqImage = spsupport.p.$(img),
 				imgPos = jqImage.position(),

@@ -14,15 +14,18 @@ namespace Mono.Game
 #if WINRT
 	[DataContract]
 #else
+
     [Serializable]
-#endif
     public struct Vector2 : IEquatable<Vector2>
     {
         #region Private Fields
 
         private static readonly Vector2 zeroVector = new Vector2(0f, 0f);
+
         private static readonly Vector2 unitVector = new Vector2(1f, 1f);
+
         private static readonly Vector2 unitXVector = new Vector2(1f, 0f);
+
         private static readonly Vector2 unitYVector = new Vector2(0f, 1f);
 
         #endregion Private Fields
@@ -32,10 +35,12 @@ namespace Mono.Game
 #if WINRT
 		[DataMember]
 #endif
+
         public float X;
 #if WINRT
 		[DataMember]
 #endif
+
         public float Y;
 
         #endregion Public Fields
@@ -320,18 +325,15 @@ namespace Mono.Game
             return value;
         }
 
-
         public static bool operator ==(Vector2 value1, Vector2 value2)
         {
             return value1.X == value2.X && value1.Y == value2.Y;
         }
 
-
         public static bool operator !=(Vector2 value1, Vector2 value2)
         {
             return value1.X != value2.X || value1.Y != value2.Y;
         }
-
 
         public static Vector2 operator +(Vector2 value1, Vector2 value2)
         {
@@ -340,14 +342,12 @@ namespace Mono.Game
             return value1;
         }
 
-
         public static Vector2 operator -(Vector2 value1, Vector2 value2)
         {
             value1.X -= value2.X;
             value1.Y -= value2.Y;
             return value1;
         }
-
 
         public static Vector2 operator *(Vector2 value1, Vector2 value2)
         {
@@ -356,14 +356,12 @@ namespace Mono.Game
             return value1;
         }
 
-
         public static Vector2 operator *(Vector2 value, float scaleFactor)
         {
             value.X *= scaleFactor;
             value.Y *= scaleFactor;
             return value;
         }
-
 
         public static Vector2 operator *(float scaleFactor, Vector2 value)
         {
@@ -372,14 +370,12 @@ namespace Mono.Game
             return value;
         }
 
-
         public static Vector2 operator /(Vector2 value1, Vector2 value2)
         {
             value1.X /= value2.X;
             value1.Y /= value2.Y;
             return value1;
         }
-
 
         public static Vector2 operator /(Vector2 value1, float divider)
         {

@@ -9,18 +9,31 @@ namespace terrain
     internal class TileTypes
     {
         public const ushort DeepWater = 0xbc;
+
         public const ushort Water = 0x73;
+
         public const ushort MovingWater = 0x72;
+
         public const ushort Beach = 0xbe;
+
         public const ushort Sand = 0xbd;
+
         public const ushort Grass = 0x48;
+
         public const ushort BrightGrass = 0x23;
+
         public const ushort LightGrass = 0x46;
+
         public const ushort YellowGrass = 0x47;
+
         public const ushort DarkGrass = 0x56;
+
         public const ushort BlueGrass = 0x57;
+
         public const ushort Snow = 0x6b;
+
         public const ushort SnowRock = 0x6a;
+
         public const ushort Rock = 0x60;
 
         public const ushort Road = 0xd0;

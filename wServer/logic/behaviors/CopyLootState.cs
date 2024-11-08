@@ -6,6 +6,7 @@ namespace wServer.logic.behaviors
     public class CopyLootState : Behavior
     {
         private readonly ushort children;
+
         private readonly double radius;
 
         public CopyLootState(string children, double radius = 10)
@@ -25,6 +26,7 @@ namespace wServer.logic.behaviors
             }
         }
 
-        protected override void TickCore(Entity host, RealmTime time, ref object state) { }
+        protected override void TickCore(Entity host, RealmTime time, ref object state)
+        { }
     }
 }

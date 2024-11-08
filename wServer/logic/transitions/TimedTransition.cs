@@ -11,6 +11,7 @@ namespace wServer.logic.transitions
         //State storage: cooldown timer
 
         private readonly bool randomized;
+
         private readonly int time;
 
         public TimedTransition(int time, string targetState, bool randomized = false)

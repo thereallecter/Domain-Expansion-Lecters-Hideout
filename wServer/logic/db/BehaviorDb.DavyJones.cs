@@ -273,8 +273,6 @@ namespace wServer.logic
                         new Taunt(true, "Purple Key has been found!"),
                         new Decay(200)
 
-
-
                     )
                 )
             )
@@ -287,8 +285,6 @@ namespace wServer.logic
                     new State("Cycle",
                         new Taunt(true, "Red Key has been found!"),
                         new Decay(200)
-
-
 
                     )
                 )
@@ -303,8 +299,6 @@ namespace wServer.logic
                         new Taunt(true, "Green Key has been found!"),
                         new Decay(200)
 
-
-
                     )
                 )
             )
@@ -317,8 +311,6 @@ namespace wServer.logic
                     new State("Cycle",
                         new Taunt(true, "Yellow Key has been found!"),
                         new Decay(200)
-
-
 
                     )
                 )

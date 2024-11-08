@@ -106,9 +106,6 @@ namespace wServer.logic
                 ),
                 new ItemLoot("Healing Ichor", 0.2)
 
-
-
-
             );
     }
 }

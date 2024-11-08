@@ -29,7 +29,7 @@ namespace DungeonGenerator
 {
     public static class JsonMap
     {
-        struct TileComparer : IEqualityComparer<DungeonTile>
+        private struct TileComparer : IEqualityComparer<DungeonTile>
         {
             public bool Equals(DungeonTile x, DungeonTile y)
             {

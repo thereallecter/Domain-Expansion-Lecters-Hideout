@@ -26,8 +26,9 @@ namespace DungeonGenerator.Templates.PirateCave
 {
     internal class NormalRoom : Room
     {
-        readonly int w;
-        readonly int h;
+        private readonly int w;
+
+        private readonly int h;
 
         public NormalRoom(int w, int h)
         {
@@ -35,11 +36,14 @@ namespace DungeonGenerator.Templates.PirateCave
             this.h = h;
         }
 
-        public override RoomType Type { get { return RoomType.Normal; } }
+        public override RoomType Type
+        { get { return RoomType.Normal; } }
 
-        public override int Width { get { return w; } }
+        public override int Width
+        { get { return w; } }
 
-        public override int Height { get { return h; } }
+        public override int Height
+        { get { return h; } }
 
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {
@@ -73,6 +77,7 @@ namespace DungeonGenerator.Templates.PirateCave
                             numBoss--;
                         }
                         break;
+
                     case 1:
                         if (numMinion > 0)
                         {
@@ -83,6 +88,7 @@ namespace DungeonGenerator.Templates.PirateCave
                             numMinion--;
                         }
                         break;
+
                     case 2:
                         if (numPet > 0)
                         {

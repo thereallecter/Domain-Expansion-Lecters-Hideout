@@ -13,6 +13,7 @@ namespace wServer.logic.behaviors
         //State storage: cooldown timer
 
         private readonly float distance;
+
         private readonly float speed;
 
         public StayBack(double speed, double distance = 8)

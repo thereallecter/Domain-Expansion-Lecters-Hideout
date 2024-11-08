@@ -1,7 +1,9 @@
 ﻿#region
+
 using wServer.logic.behaviors;
 using wServer.logic.loot;
 using wServer.logic.transitions;
+
 #endregion
 
 namespace wServer.logic
@@ -1274,8 +1276,6 @@ namespace wServer.logic
                         )
                     )
             )
-
-
 
             .Init("shtrs Fire Mage",
                 new State(

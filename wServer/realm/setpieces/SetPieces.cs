@@ -117,8 +117,11 @@ namespace wServer.realm.setpieces
         private struct Rect
         {
             public int h;
+
             public int w;
+
             public int x;
+
             public int y;
 
             public static bool Intersects(Rect r1, Rect r2)

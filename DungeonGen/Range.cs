@@ -27,6 +27,7 @@ namespace DungeonGenerator
         public static readonly Range Zero = new Range(0, 0);
 
         public readonly int Begin;
+
         public readonly int End;
 
         public Range(int begin, int end)

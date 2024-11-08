@@ -19,14 +19,18 @@ namespace wServer.networking
     public enum ProtocalStage
     {
         Connected,
+
         Handshaked,
+
         Ready,
+
         Disconnected
     }
 
     public class Client : IDisposable
     {
         public const string SERVER_VERSION = "27.7.X2";
+
         private bool disposed;
 
         private static readonly ILog log = LogManager.GetLogger(typeof(Client));
@@ -184,6 +188,7 @@ namespace wServer.networking
             {
                 case "Pong":
                     break;
+
                 case "LevelUp":
                     break;
             }

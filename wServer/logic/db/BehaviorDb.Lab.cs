@@ -497,6 +497,5 @@ namespace wServer.logic
                     )
                 )
             );
-
     }
 }

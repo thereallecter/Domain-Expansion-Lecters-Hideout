@@ -25,9 +25,11 @@ namespace wServer.networking.handlers
                     case PetYardCommandPacket.UPGRADE_PET_YARD:
                         UpgradePetYard(client, packet);
                         break;
+
                     case PetYardCommandPacket.FEED_PET:
                         FeedPet(client, packet);
                         break;
+
                     case PetYardCommandPacket.FUSE_PET:
                         FusePet(client, packet);
                         break;
@@ -54,12 +56,15 @@ namespace wServer.networking.handlers
                         case 1:
                             if (!TryDeduct(packet.Currency, client.Player, 500)) return;
                             break;
+
                         case 2:
                             if (!TryDeduct(packet.Currency, client.Player, 2000)) return;
                             break;
+
                         case 3:
                             if (!TryDeduct(packet.Currency, client.Player, 25000)) return;
                             break;
+
                         case 4:
                             if (!TryDeduct(packet.Currency, client.Player, 50000)) return;
                             break;
@@ -73,12 +78,15 @@ namespace wServer.networking.handlers
                         case 1:
                             if (!TryDeduct(packet.Currency, client.Player, 150)) return;
                             break;
+
                         case 2:
                             if (!TryDeduct(packet.Currency, client.Player, 400)) return;
                             break;
+
                         case 3:
                             if (!TryDeduct(packet.Currency, client.Player, 1200)) return;
                             break;
+
                         case 4:
                             if (!TryDeduct(packet.Currency, client.Player, 2000)) return;
                             break;
@@ -110,18 +118,23 @@ namespace wServer.networking.handlers
                         case Rarity.Common:
                             if (!TryDeduct(packet.Currency, client.Player, 10)) return;
                             break;
+
                         case Rarity.Uncommon:
                             if (!TryDeduct(packet.Currency, client.Player, 30)) return;
                             break;
+
                         case Rarity.Rare:
                             if (!TryDeduct(packet.Currency, client.Player, 100)) return;
                             break;
+
                         case Rarity.Legendary:
                             if (!TryDeduct(packet.Currency, client.Player, 350)) return;
                             break;
+
                         case Rarity.Divine:
                             if (!TryDeduct(packet.Currency, client.Player, 1000)) return;
                             break;
+
                         default:
                             throw new Exception("Invalid pet rarity");
                     }
@@ -134,18 +147,23 @@ namespace wServer.networking.handlers
                         case Rarity.Common:
                             if (!TryDeduct(packet.Currency, client.Player, 5)) return;
                             break;
+
                         case Rarity.Uncommon:
                             if (!TryDeduct(packet.Currency, client.Player, 12)) return;
                             break;
+
                         case Rarity.Rare:
                             if (!TryDeduct(packet.Currency, client.Player, 30)) return;
                             break;
+
                         case Rarity.Legendary:
                             if (!TryDeduct(packet.Currency, client.Player, 60)) return;
                             break;
+
                         case Rarity.Divine:
                             if (!TryDeduct(packet.Currency, client.Player, 150)) return;
                             break;
+
                         default:
                             throw new Exception("Invalid pet rarity");
                     }
@@ -182,17 +200,22 @@ namespace wServer.networking.handlers
                     case Rarity.Common:
                         if (!TryDeduct(packet.Currency, client.Player, 300)) return;
                         break;
+
                     case Rarity.Uncommon:
                         if (!TryDeduct(packet.Currency, client.Player, 1000)) return;
                         break;
+
                     case Rarity.Rare:
                         if (!TryDeduct(packet.Currency, client.Player, 4000)) return;
                         break;
+
                     case Rarity.Legendary:
                         if (!TryDeduct(packet.Currency, client.Player, 15000)) return;
                         break;
+
                     case Rarity.Divine:
                         return;
+
                     default:
                         throw new Exception("Invalid pet rarity");
                 }
@@ -205,17 +228,22 @@ namespace wServer.networking.handlers
                     case Rarity.Common:
                         if (!TryDeduct(packet.Currency, client.Player, 100)) return;
                         break;
+
                     case Rarity.Uncommon:
                         if (!TryDeduct(packet.Currency, client.Player, 240)) return;
                         break;
+
                     case Rarity.Rare:
                         if (!TryDeduct(packet.Currency, client.Player, 600)) return;
                         break;
+
                     case Rarity.Legendary:
                         if (!TryDeduct(packet.Currency, client.Player, 1800)) return;
                         break;
+
                     case Rarity.Divine:
                         return;
+
                     default:
                         throw new Exception("Invalid pet rarity");
                 }

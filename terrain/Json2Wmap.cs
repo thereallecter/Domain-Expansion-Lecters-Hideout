@@ -89,8 +89,11 @@ namespace terrain
         public struct json_dat
         {
             public byte[] data;
+
             public int width;
+
             public int height;
+
             public loc[] dict;
         }
 
@@ -98,7 +101,9 @@ namespace terrain
         public struct loc
         {
             public string ground;
+
             public obj[] objs;
+
             public obj[] regions;
         }
 
@@ -106,6 +111,7 @@ namespace terrain
         public struct obj
         {
             public string name;
+
             public string id;
         }
     }

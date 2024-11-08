@@ -187,6 +187,7 @@ namespace wServer.logic
                     new ItemLoot("Helm of the Juggernaut", 0.005)
                 )
             );
+
         #endregion
     }
 }

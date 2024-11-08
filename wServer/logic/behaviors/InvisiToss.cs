@@ -13,9 +13,13 @@ namespace wServer.logic.behaviors
         //State storage: cooldown timer
 
         private readonly ushort child;
+
         private readonly int coolDownOffset;
+
         private readonly double range;
+
         private double? angle;
+
         private Cooldown coolDown;
 
         public InvisiToss(string child, double range = 5, double? angle = null,

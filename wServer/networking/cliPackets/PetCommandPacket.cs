@@ -3,7 +3,9 @@
     public class PetCommandPacket : ClientPacket
     {
         public const int FOLLOW_PET = 1;
+
         public const int UNFOLLOW_PET = 2;
+
         public const int RELEASE_PET = 3;
 
         public int CommandId { get; set; }

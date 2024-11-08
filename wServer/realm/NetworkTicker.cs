@@ -19,7 +19,9 @@ namespace wServer.realm
     public class NetworkTicker //Sync network processing
     {
         private static readonly ConcurrentQueue<Work> pendings = new ConcurrentQueue<Work>();
+
         private static SpinWait loopLock = new SpinWait();
+
         private readonly ILog log = LogManager.GetLogger(typeof(NetworkTicker));
 
         public NetworkTicker(RealmManager manager)
@@ -33,7 +35,6 @@ namespace wServer.realm
         {
             pendings.Enqueue(new Work(parrent, pkt));
         }
-
 
         public void TickLoop()
         {

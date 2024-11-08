@@ -18,6 +18,7 @@ namespace wServer.realm.worlds
             new ConcurrentDictionary<Tuple<Container, VaultChest>, int>();
 
         private readonly bool isLimbo;
+
         private Client psr;
         public string AccountId { get; private set; }
 

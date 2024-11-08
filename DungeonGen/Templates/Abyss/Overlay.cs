@@ -26,17 +26,17 @@ namespace DungeonGenerator.Templates.Abyss
 {
     internal class Overlay : MapRender
     {
-        static readonly DungeonObject floor = new DungeonObject
+        private static readonly DungeonObject floor = new DungeonObject
         {
             ObjectType = AbyssTemplate.PartialRedFloor
         };
 
-        static readonly DungeonObject broken = new DungeonObject
+        private static readonly DungeonObject broken = new DungeonObject
         {
             ObjectType = AbyssTemplate.BrokenRedPillar
         };
 
-        byte[,] GenerateHeightMap(int w, int h)
+        private byte[,] GenerateHeightMap(int w, int h)
         {
             float[,] map = new float[w, h];
             int maxR = Math.Min(w, h);
@@ -81,12 +81,12 @@ namespace DungeonGenerator.Templates.Abyss
             return norm;
         }
 
-        static int Lerp(int a, int b, float val)
+        private static int Lerp(int a, int b, float val)
         {
             return a + (int)((b - a) * val);
         }
 
-        void RenderBackground()
+        private void RenderBackground()
         {
             const int Sample = 4;
 
@@ -121,7 +121,7 @@ namespace DungeonGenerator.Templates.Abyss
                 }
         }
 
-        void RenderSafeGround()
+        private void RenderSafeGround()
         {
             StartRoom startRm = null;
             foreach (var room in Graph.Rooms)
@@ -150,7 +150,7 @@ namespace DungeonGenerator.Templates.Abyss
                 }
         }
 
-        void RenderLavaGround(Point a, Point b)
+        private void RenderLavaGround(Point a, Point b)
         {
             Rasterizer.DrawLine(a, b, (x, y) =>
             {
@@ -164,7 +164,7 @@ namespace DungeonGenerator.Templates.Abyss
             }, 1);
         }
 
-        void RenderBossEdge(Room src, Room dst, Direction direction, int offset)
+        private void RenderBossEdge(Room src, Room dst, Direction direction, int offset)
         {
             switch (direction)
             {
@@ -197,7 +197,7 @@ namespace DungeonGenerator.Templates.Abyss
             }
         }
 
-        void RenderConnection()
+        private void RenderConnection()
         {
             foreach (var room in Graph.Rooms)
             {
@@ -254,7 +254,7 @@ namespace DungeonGenerator.Templates.Abyss
             }
         }
 
-        void RenderPillars()
+        private void RenderPillars()
         {
             var buf = Rasterizer.Bitmap;
             int w = Rasterizer.Width, h = Rasterizer.Height;
@@ -267,7 +267,7 @@ namespace DungeonGenerator.Templates.Abyss
                 }
         }
 
-        void RenderWalls()
+        private void RenderWalls()
         {
             var wallA = new DungeonTile
             {

@@ -13,8 +13,11 @@ namespace wServer.realm.entities
     internal class MerchantLists
     {
         public static int[] AccessoryClothList;
+
         public static int[] AccessoryDyeList;
+
         public static int[] ClothingClothList;
+
         public static int[] ClothingDyeList;
 
         public static Dictionary<int, Tuple<int, CurrencyType>> prices = new Dictionary<int, Tuple<int, CurrencyType>>
@@ -88,7 +91,7 @@ namespace wServer.realm.entities
             {0xa8f, new Tuple<int, CurrencyType>(250, CurrencyType.Fame)}, //Hippogriff Hide Armor t11
             {0xa8e, new Tuple<int, CurrencyType>(100, CurrencyType.Fame)}, //Roc Leather Armor T10
             {0xad3, new Tuple<int, CurrencyType>(51, CurrencyType.Fame)}, //Drake Hide Armor T9
-     
+
             //ABILITIES
             {0xb25, new Tuple<int, CurrencyType>(400, CurrencyType.Fame)}, //Tome Of Holy Guidance T6
             {0xa5b, new Tuple<int, CurrencyType>(175, CurrencyType.Fame)}, //Tome of Divine Favor T5
@@ -120,7 +123,7 @@ namespace wServer.realm.entities
             {0xc58, new Tuple<int, CurrencyType>(175, CurrencyType.Fame)}, //Ice Star T5
 
             //PET FOOD
-            {0xccc, new Tuple<int, CurrencyType>(5000, CurrencyType.Fame)}, //Ambrosia 
+            {0xccc, new Tuple<int, CurrencyType>(5000, CurrencyType.Fame)}, //Ambrosia
             {0xccb, new Tuple<int, CurrencyType>(60, CurrencyType.Fame)}, //Fries
             {0xcca, new Tuple<int, CurrencyType>(360, CurrencyType.Fame)}, //Grapes Of Wrath
             {0xcc9, new Tuple<int, CurrencyType>(20, CurrencyType.Fame)}, //Soft Drink
@@ -185,14 +188,23 @@ namespace wServer.realm.entities
         };
 
         public static int[] store10List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store11List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store12List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store13List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store14List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store15List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store16List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store17List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store18List = { 0xb41, 0xbab, 0xbad, 0xbac };
+
         public static int[] store19List = { 0xb41, 0xbab, 0xbad, 0xbac };
 
         public static int[] store1List =

@@ -34,16 +34,22 @@ namespace DungeonGenerator.Templates.Lab
             Evil = 1,
 
             ConnectionMask = 6,
+
             Conn_Floor = 0,
+
             Conn_None = 2,
+
             Conn_Destructible = 4
         }
 
-        struct RoomTemplate
+        private struct RoomTemplate
         {
             public readonly Rect Bounds;
+
             public readonly Range NumBranches;
+
             public readonly RoomFlags Flags;
+
             public readonly Tuple<Direction, int>[] Connections;
 
             public RoomTemplate(Rect bounds, Range numBranches, RoomFlags flags, params Tuple<Direction, int>[] connections)
@@ -55,14 +61,14 @@ namespace DungeonGenerator.Templates.Lab
             }
         }
 
-        static Rect Rect(int x, int y, int w, int h)
+        private static Rect Rect(int x, int y, int w, int h)
         {
             return new Rect(x, y, x + w, y + h);
         }
 
         #region Templates
 
-        static readonly RoomTemplate[] roomTemplates = {
+        private static readonly RoomTemplate[] roomTemplates = {
             new RoomTemplate(Rect(24, 0, 26, 24),
                 new Range(1, 4), RoomFlags.Conn_Floor,
                 Tuple.Create(Direction.North, 11),
@@ -194,12 +200,13 @@ namespace DungeonGenerator.Templates.Lab
                 )
         };
 
-        #endregion
+        #endregion Templates
 
-        readonly int currentId;
-        RoomTemplate current;
+        private readonly int currentId;
 
-        static readonly DungeonObject destWall = new DungeonObject
+        private RoomTemplate current;
+
+        private static readonly DungeonObject destWall = new DungeonObject
         {
             ObjectType = LabTemplate.DestructibleWall
         };
@@ -237,17 +244,23 @@ namespace DungeonGenerator.Templates.Lab
             current = roomTemplates[currentId];
         }
 
-        public override RoomType Type { get { return RoomType.Normal; } }
+        public override RoomType Type
+        { get { return RoomType.Normal; } }
 
-        public override int Width { get { return current.Bounds.MaxX - current.Bounds.X; } }
+        public override int Width
+        { get { return current.Bounds.MaxX - current.Bounds.X; } }
 
-        public override int Height { get { return current.Bounds.MaxY - current.Bounds.Y; } }
+        public override int Height
+        { get { return current.Bounds.MaxY - current.Bounds.Y; } }
 
-        public override Tuple<Direction, int>[] ConnectionPoints { get { return current.Connections; } }
+        public override Tuple<Direction, int>[] ConnectionPoints
+        { get { return current.Connections; } }
 
-        public override Range NumBranches { get { return current.NumBranches; } }
+        public override Range NumBranches
+        { get { return current.NumBranches; } }
 
-        public RoomFlags Flags { get { return current.Flags; } }
+        public RoomFlags Flags
+        { get { return current.Flags; } }
 
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {
@@ -274,6 +287,7 @@ namespace DungeonGenerator.Templates.Lab
                         Object = destWall
                     };
                     break;
+
                 default:
                     return;
             }

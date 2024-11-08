@@ -11,8 +11,11 @@ namespace wServer.logic.behaviors
     {
         //State storage: Spawn state
         private readonly ushort children;
+
         private readonly int initialSpawn;
+
         private readonly int maxChildren;
+
         private Cooldown coolDown;
 
         public Spawn(string children, int maxChildren = 5, double initialSpawn = 0.5, Cooldown coolDown = new Cooldown())
@@ -65,6 +68,7 @@ namespace wServer.logic.behaviors
         private class SpawnState
         {
             public int CurrentNumber;
+
             public int RemainingTime;
         }
     }

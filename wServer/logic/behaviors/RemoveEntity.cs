@@ -6,6 +6,7 @@ namespace wServer.logic.behaviors
     public class RemoveEntity : Behavior
     {
         private readonly float dist;
+
         private readonly string children;
 
         public RemoveEntity(double dist, string children)
@@ -22,6 +23,7 @@ namespace wServer.logic.behaviors
                     host.Owner.LeaveWorld(e);
         }
 
-        protected override void TickCore(Entity host, RealmTime time, ref object state) { }
+        protected override void TickCore(Entity host, RealmTime time, ref object state)
+        { }
     }
 }

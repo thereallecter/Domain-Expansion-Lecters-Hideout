@@ -9,7 +9,9 @@ namespace terrain
     internal class Rasterizer<T>
     {
         private const float StepFactor = 2f;
+
         private readonly int h;
+
         private readonly int w;
 
         public Rasterizer(int w, int h)
@@ -54,15 +56,18 @@ namespace terrain
             {
                 case 0:
                     return;
+
                 case 1:
                     Buffer[(int)x, (int)y] = val;
                     break;
+
                 case 2:
                     Buffer[(int)x, (int)y] = val;
                     Buffer[(int)x + 1, (int)y] = val;
                     Buffer[(int)x, (int)y + 1] = val;
                     Buffer[(int)x + 1, (int)y + 1] = val;
                     break;
+
                 default:
                     for (int _x = 0; _x < w; _x++)
                         for (int _y = 0; _y < w; _y++)
@@ -79,15 +84,18 @@ namespace terrain
             {
                 case 0:
                     return;
+
                 case 1:
                     Buffer[(int)x, (int)y] = transform(Buffer[(int)x, (int)y]);
                     break;
+
                 case 2:
                     Buffer[(int)x, (int)y] = transform(Buffer[(int)x, (int)y]);
                     Buffer[(int)x + 1, (int)y] = transform(Buffer[(int)x + 1, (int)y]);
                     Buffer[(int)x, (int)y + 1] = transform(Buffer[(int)x, (int)y + 1]);
                     Buffer[(int)x + 1, (int)y + 1] = transform(Buffer[(int)x + 1, (int)y + 1]);
                     break;
+
                 default:
                     for (int _x = 0; _x < w; _x++)
                         for (int _y = 0; _y < w; _y++)
@@ -127,7 +135,6 @@ namespace terrain
             if (yMin < 0) yMin = 0;
             if (yMax >= h) yMax = h - 1;
 
-
             // Scan line from min to max
             for (int y = yMin; y <= yMax; y++)
             {
@@ -155,7 +162,7 @@ namespace terrain
                     vyi = vyj;
                 }
 
-                // Sort the intersections from left to right using Insertion sort 
+                // Sort the intersections from left to right using Insertion sort
                 // It's faster than Array.Sort for this small data set
                 double t;
                 int j;
@@ -379,7 +386,6 @@ namespace terrain
                 DrawLineBresenham(tx1, ty1, x3, y3, transform, width);
             }
         }
-
 
         public void DrawCurve(double[] points, double tension, T val, int width)
         {

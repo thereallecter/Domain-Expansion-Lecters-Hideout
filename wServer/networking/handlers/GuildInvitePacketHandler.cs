@@ -8,14 +8,15 @@ namespace wServer.networking.handlers
 {
     class GuildInvitePacketHandler : PacketHandlerBase<GuildInvitePacket>
     {
-        public override PacketID ID { get { return PacketID.GUILDINVITE; } }
+        public override PacketID ID
+        { get { return PacketID.GUILDINVITE; } }
 
         protected override void HandlePacket(Client client, GuildInvitePacket packet)
         {
             client.Manager.Logic.AddPendingAction(t => Handle(client.Player, packet));
         }
 
-        void Handle(Player player, GuildInvitePacket packet)
+        private void Handle(Player player, GuildInvitePacket packet)
         {
             if (player.Guild.IsDefault)
             {

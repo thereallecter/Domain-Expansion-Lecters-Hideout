@@ -12,6 +12,7 @@ namespace wServer
     public static class GeneratorCache
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(GeneratorCache));
+
         private static Dictionary<string, List<string>> cachedMaps;
 
         public static void Init()
@@ -23,7 +24,9 @@ namespace wServer
         }
 
         public static string NextAbyss(uint seed) => nextMap(seed, "Abyss of Demons", new AbyssTemplate());
+
         public static string NextLab(uint seed) => nextMap(seed, "Mad Lab", new LabTemplate());
+
         public static string NextPirateCave(uint seed) => nextMap(seed, "Pirate Cave", new PirateCaveTemplate());
 
         private static string nextMap(uint seed, string key, DungeonTemplate template)

@@ -11,11 +11,17 @@ namespace wServer.logic.behaviors
     public class DropPortalOnDeath : Behavior
     {
         private readonly int despawnTime;
+
         private readonly int dropDelay;
+
         private readonly ushort objType;
+
         private readonly int percent;
+
         private readonly string stringObjType;
+
         private readonly float xAdjustment;
+
         private readonly float yAdjustment;
 
         public DropPortalOnDeath(ushort objType, int percent, int dropDelaySec = 0, float XAdjustment = 0,

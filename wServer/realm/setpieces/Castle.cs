@@ -13,10 +13,15 @@ namespace wServer.realm.setpieces
     internal class Castle : ISetPiece
     {
         private static readonly string Floor = "Rock";
+
         private static readonly string Bridge = "Bridge";
+
         private static readonly string WaterA = "Shallow Water";
+
         private static readonly string WaterB = "Dark Water";
+
         private static readonly string WallA = "Grey Wall";
+
         private static readonly string WallB = "Destructible Grey Wall";
 
         private static readonly Loot chest = new Loot(
@@ -125,7 +130,6 @@ namespace wServer.realm.setpieces
                         tile.ObjType = 0;
                         world.Map[x + pos.X, y + pos.Y] = tile;
                     }
-
                     else if (t[x, y] == 2)
                     {
                         WmapTile tile = world.Map[x + pos.X, y + pos.Y].Clone();
@@ -140,7 +144,6 @@ namespace wServer.realm.setpieces
                         tile.ObjType = 0;
                         world.Map[x + pos.X, y + pos.Y] = tile;
                     }
-
                     else if (t[x, y] == 4)
                     {
                         WmapTile tile = world.Map[x + pos.X, y + pos.Y].Clone();
@@ -158,7 +161,6 @@ namespace wServer.realm.setpieces
                         wall.Move(x + pos.X + 0.5f, y + pos.Y + 0.5f);
                         world.EnterWorld(wall);
                     }
-
                     else if (t[x, y] == 6)
                     {
                         WmapTile tile = world.Map[x + pos.X, y + pos.Y].Clone();

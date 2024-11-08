@@ -38,6 +38,7 @@ namespace wServer.logic.behaviors.PetBehaviors
         protected bool HasAbility(Ability type) => Pet?.GetLevels().Any(_ => _.Ability == type) ?? false;
 
         protected abstract bool PlayerOwnerRequired { get; }
+
         protected abstract void TickCore(Pet pet, RealmTime time, ref object state);
 
         protected static class Curve
@@ -47,6 +48,7 @@ namespace wServer.logic.behaviors.PetBehaviors
                 // Todo: Add exponential increase formula
                 return -1;
             }
+
             public static float ExponentialDecrease(float min, float max, float ratio, int level)
             {
                 // Todo: Add exponential decrease formula

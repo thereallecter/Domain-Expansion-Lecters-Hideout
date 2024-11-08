@@ -15,7 +15,6 @@
             Entity chestSpawner = Entity.Resolve(world.Manager, "shtrs encounterchestspawner");
             chestSpawner.Move(pos.X, pos.Y + 5f);
 
-
             Entity blobombSpawner1 = Entity.Resolve(world.Manager, "shtrs blobomb maker");
             blobombSpawner1.Move(pos.X, pos.Y + 5f);
 

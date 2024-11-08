@@ -15,15 +15,21 @@ namespace wServer.realm.entities.merchant
     public class Merchants : SellableObject
     {
         private const int BUY_NO_GOLD = 3;
+
         private const int BUY_NO_FAME = 6;
+
         private const int BUY_NO_FORTUNETOKENS = 9;
+
         private const int MERCHANT_SIZE = 100;
+
         private static readonly ILog log = LogManager.GetLogger(typeof(Merchants));
 
         private readonly Dictionary<int, Tuple<int, CurrencyType>> prices = MerchantLists.prices;
 
         private bool closing;
+
         private bool newMerchant;
+
         private int tickcount;
 
         public static Random Random { get; private set; }
@@ -164,6 +170,7 @@ namespace wServer.realm.entities.merchant
                                     Message = "{\"key\":\"server.not_enough_gold\"}"
                                 });
                                 break;
+
                             case CurrencyType.Fame:
                                 player.Client.SendPacket(new BuyResultPacket
                                 {
@@ -171,6 +178,7 @@ namespace wServer.realm.entities.merchant
                                     Message = "{\"key\":\"server.not_enough_fame\"}"
                                 });
                                 break;
+
                             case CurrencyType.FortuneTokens:
                                 player.Client.SendPacket(new BuyResultPacket
                                 {

@@ -14,14 +14,23 @@ namespace wServer.logic.behaviors
         //State storage: cooldown timer
 
         protected readonly double angleOffset;
+
         protected readonly int coolDownOffset;
+
         protected readonly int count;
+
         protected readonly double predictive;
+
         protected readonly int projectileIndex;
+
         protected readonly double radius;
+
         protected readonly double shootAngle;
+
         protected double? fixedAngle;
+
         protected Cooldown coolDown;
+
         protected double? defaultAngle;
 
         public Shoot(double radius, int count = 1, double? shootAngle = null,
@@ -55,7 +64,6 @@ namespace wServer.logic.behaviors
 
             double originalAngle = Math.Atan2(history.Value.Y - host.Y, history.Value.X - host.X);
             double newAngle = Math.Atan2(target.Y - host.Y, target.X - host.X);
-
 
             float bulletSpeed = desc.Speed / 100;
             double angularVelo = (newAngle - originalAngle) / (100 / 1000f);

@@ -6,6 +6,7 @@ namespace wServer.logic.behaviors
     public class CopyDamageOnDeath : Behavior
     {
         private float dist;
+
         private string child;
 
         public CopyDamageOnDeath(string child, float dist = 50)
@@ -26,6 +27,7 @@ namespace wServer.logic.behaviors
             };
         }
 
-        protected override void TickCore(Entity host, RealmTime time, ref object state) { }
+        protected override void TickCore(Entity host, RealmTime time, ref object state)
+        { }
     }
 }

@@ -13,9 +13,13 @@ namespace wServer.logic.behaviors
         //State storage: cooldown timer
 
         private readonly ushort? children;
+
         private readonly int densityMax;
+
         private readonly double densityRadius;
+
         private readonly double spawnRadius;
+
         private Cooldown coolDown;
 
         public Reproduce(string children = null, double densityRadius = 10, int densityMax = 5, double spawnRadius = -1,

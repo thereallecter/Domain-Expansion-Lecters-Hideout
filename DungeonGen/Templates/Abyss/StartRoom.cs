@@ -26,7 +26,8 @@ namespace DungeonGenerator.Templates.Abyss
 {
     internal class StartRoom : Room
     {
-        readonly int len;
+        private readonly int len;
+
         internal Point portalPos;
 
         public StartRoom(int len)
@@ -34,11 +35,14 @@ namespace DungeonGenerator.Templates.Abyss
             this.len = len;
         }
 
-        public override RoomType Type { get { return RoomType.Start; } }
+        public override RoomType Type
+        { get { return RoomType.Start; } }
 
-        public override int Width { get { return len; } }
+        public override int Width
+        { get { return len; } }
 
-        public override int Height { get { return len; } }
+        public override int Height
+        { get { return len; } }
 
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {

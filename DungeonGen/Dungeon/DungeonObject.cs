@@ -26,6 +26,7 @@ namespace DungeonGenerator.Dungeon
     public struct ObjectType
     {
         public readonly uint Id;
+
         public readonly string Name;
 
         public ObjectType(uint id, string name)
@@ -63,6 +64,7 @@ namespace DungeonGenerator.Dungeon
     public class DungeonObject
     {
         public ObjectType ObjectType;
+
         public KeyValuePair<string, string>[] Attributes = Empty<KeyValuePair<string, string>>.Array;
     }
 }

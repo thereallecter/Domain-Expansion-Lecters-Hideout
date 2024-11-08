@@ -13,7 +13,9 @@ namespace wServer.realm.worlds
     public class BoshyArena : World
     {
         private bool ready = true;
+
         private bool waiting;
+
         public int wave = 1;
 
         public BoshyArena()
@@ -35,15 +37,18 @@ namespace wServer.realm.worlds
             "Flamer King", "Lair Skeleton King", "Native Fire Sprite", "Native Ice Sprite", "Native Magic Sprite", "Nomadic Shaman", "Ogre King", "Orc King", "Red Spider", "Sand Phantom",
             "Swarm", "Tawny Warg", "Vampire Bat", "Wasp Queen", "Weretiger"
         };
+
         private readonly string[] NormalEnemies =
         {
             "Aberrant of Oryx", "Abomination of Oryx", "Adult White Dragon", "Assassin of Oryx", "Bile of Oryx", "Gigacorn",
             "Great Lizard", "Minotaur", "Monstrosity of Oryx", "Phoenix Reborn", "Shambling Sludge", "Urgle"
         };
+
         private readonly string[] Gods =
         {
             "Beholder", "Ent God", "Flying Brain", "Djinn", "Ghost God", "Leviathan", "Medusa", "Slime God", "Sprite God", "White Demon"
         };
+
         private readonly string[] Bosses =
         {
             "Tomb Defender", "Tomb Attacker", "Tomb Support", "Arachna the Spider Queen", "Archdemon Malphas", "Crystal Prisoner", "Grand Sphinx", "Limon the Sprite God",

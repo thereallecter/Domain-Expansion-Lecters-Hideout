@@ -59,7 +59,9 @@
         public struct TileData
         {
             public int Tile;
+
             public short X;
+
             public short Y;
         }
     }

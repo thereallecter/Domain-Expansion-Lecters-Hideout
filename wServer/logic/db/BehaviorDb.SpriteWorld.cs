@@ -323,7 +323,5 @@ namespace wServer.logic
                     new EggLoot(EggRarity.Uncommon, 0.05)
                     )
             );
-
-
     }
 }

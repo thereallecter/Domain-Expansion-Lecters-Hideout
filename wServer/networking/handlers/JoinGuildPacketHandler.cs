@@ -6,14 +6,15 @@ namespace wServer.networking.handlers
 {
     class JoinGuildPacketHandler : PacketHandlerBase<JoinGuildPacket>
     {
-        public override PacketID ID { get { return PacketID.JOINGUILD; } }
+        public override PacketID ID
+        { get { return PacketID.JOINGUILD; } }
 
         protected override void HandlePacket(Client client, JoinGuildPacket packet)
         {
             client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
         }
 
-        void Handle(Client client, JoinGuildPacket packet)
+        private void Handle(Client client, JoinGuildPacket packet)
         {
             if (!client.Player.Invited)
             {

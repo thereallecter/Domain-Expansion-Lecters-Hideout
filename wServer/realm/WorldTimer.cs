@@ -10,12 +10,17 @@ namespace wServer.realm
     public class WorldTimer
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(WorldTimer));
+
         private readonly Action<World, RealmTime> cb;
+
         private readonly int total;
+
         private int remain;
+
         private bool destroy;
 
-        public int Remaining { get { return remain; } }
+        public int Remaining
+        { get { return remain; } }
 
         public WorldTimer(int tickMs, Action<World, RealmTime> callback)
         {

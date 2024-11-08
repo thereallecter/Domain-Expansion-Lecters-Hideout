@@ -10,10 +10,15 @@ namespace terrain
     internal unsafe class BitmapBuffer
     {
         private readonly Bitmap bmp;
+
         private readonly int h;
+
         private readonly int w;
+
         private BitmapData dat;
+
         private byte* ptr;
+
         private int s;
 
         public BitmapBuffer(Bitmap bmp)

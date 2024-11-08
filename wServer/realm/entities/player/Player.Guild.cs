@@ -6,6 +6,7 @@
         {
             return Name;
         }
+
         public string ResolveRankName(int rank)
         {
             string name;

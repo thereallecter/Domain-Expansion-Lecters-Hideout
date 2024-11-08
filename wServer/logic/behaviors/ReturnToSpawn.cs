@@ -8,7 +8,9 @@ namespace wServer.logic.behaviors
     public class ReturnToSpawn : CycleBehavior
     {
         private readonly float speed;
+
         private bool once;
+
         private bool returned;
 
         public ReturnToSpawn(bool once = false, double speed = 2)

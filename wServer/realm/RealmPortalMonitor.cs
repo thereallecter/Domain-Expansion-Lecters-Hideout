@@ -16,9 +16,13 @@ namespace wServer.realm
         private static readonly ILog log = LogManager.GetLogger(typeof(RealmPortalMonitor));
 
         private readonly RealmManager manager;
+
         private readonly Nexus nexus;
+
         private readonly Random rand = new Random();
+
         private readonly object worldLock = new object();
+
         public Dictionary<World, Portal> portals = new Dictionary<World, Portal>();
 
         public RealmPortalMonitor(RealmManager manager)

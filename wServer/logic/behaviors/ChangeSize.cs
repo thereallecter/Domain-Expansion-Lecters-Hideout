@@ -11,6 +11,7 @@ namespace wServer.logic.behaviors
         //State storage: cooldown timer
 
         private readonly int rate;
+
         private readonly int target;
 
         public ChangeSize(int rate, int target)

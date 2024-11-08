@@ -7,14 +7,15 @@ namespace wServer.networking.handlers
 {
     class ChangeGuildRankPacketHandler : PacketHandlerBase<ChangeGuildRankPacket>
     {
-        public override PacketID ID { get { return PacketID.CHANGEGUILDRANK; } }
+        public override PacketID ID
+        { get { return PacketID.CHANGEGUILDRANK; } }
 
         protected override void HandlePacket(Client client, ChangeGuildRankPacket packet)
         {
             client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
         }
 
-        void Handle(Client client, ChangeGuildRankPacket packet)
+        private void Handle(Client client, ChangeGuildRankPacket packet)
         {
             client.Manager.Database.DoActionAsync(db =>
             {

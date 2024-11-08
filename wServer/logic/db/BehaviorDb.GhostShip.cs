@@ -189,7 +189,6 @@ namespace wServer.logic
                          )
                         ),
 
-
                        new State("midfight",
                      new Order(100, "Ghost Ship Anchor", "tempestcloud"),
                       new Reproduce("Vengeful Spirit", densityMax: 1, spawnRadius: 1, coolDown: 1000),
@@ -261,8 +260,6 @@ namespace wServer.logic
                     new EggLoot(EggRarity.Legendary, 0.005)
                 )
             )
-
-
 
         ;
     }

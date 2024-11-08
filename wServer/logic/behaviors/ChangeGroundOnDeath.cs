@@ -9,7 +9,9 @@ namespace wServer.logic.behaviors
     public class ChangeGroundOnDeath : Behavior
     {
         private readonly int dist;
+
         private readonly string[] groundToChange;
+
         private readonly string[] targetType;
 
         /// <summary>

@@ -22,12 +22,15 @@ namespace server.fame
                 case "week":
                     span = "(time >= DATE_SUB(NOW(), INTERVAL 1 WEEK))";
                     break;
+
                 case "month":
                     span = "(time >= DATE_SUB(NOW(), INTERVAL 1 MONTH))";
                     break;
+
                 case "all":
                     span = "TRUE";
                     break;
+
                 default:
                     status = Encoding.UTF8.GetBytes("<Error>Invalid fame list</Error>");
                     break;

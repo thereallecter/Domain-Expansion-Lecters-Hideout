@@ -7,13 +7,21 @@ namespace wServer.logic.behaviors
     public class MoveTo : CycleBehavior
     {
         private readonly float speed;
+
         private readonly float baseX;
+
         private readonly float baseY;
+
         private readonly bool isMapPosition;
+
         private readonly bool instant;
+
         private bool once;
+
         private bool returned;
+
         private float X;
+
         private float Y;
 
         public MoveTo(float X, float Y, double speed = 2, bool once = false, bool isMapPosition = false, bool instant = false)

@@ -5,6 +5,7 @@ namespace wServer.logic.transitions
     public class EntitiesNotExistsTransition : Transition
     {
         private readonly double dist;
+
         private readonly string[] childrens;
 
         public EntitiesNotExistsTransition(double dist, string targetState, params string[] childrens)

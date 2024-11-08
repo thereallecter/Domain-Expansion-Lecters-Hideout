@@ -11,6 +11,7 @@ namespace wServer.realm.setpieces
     internal class Grove : ISetPiece
     {
         private static readonly string Floor = "Light Grass";
+
         private static readonly string Tree = "Cherry Tree";
 
         private readonly Random rand = new Random();

@@ -14,6 +14,7 @@ namespace wServer.realm.entities
     public class Pet : Entity, IPlayer
     {
         private Random rand;
+
         private Position? spawn;
 
         public Pet(RealmManager manager, PetItem petData, Player playerOwner)
@@ -213,6 +214,7 @@ namespace wServer.realm.entities
                         item.Abilities[2].Power = 1;
                         item.Abilities[2].Points = 0;
                         break;
+
                     case 2:
                         item.MaxAbilityPower = 70;
                         item.Abilities[0].Power = 50;
@@ -222,6 +224,7 @@ namespace wServer.realm.entities
                         item.Abilities[2].Power = 1;
                         item.Abilities[2].Points = 0;
                         break;
+
                     case 3:
                         item.MaxAbilityPower = 90;
                         item.Abilities[0].Power = 70;
@@ -231,6 +234,7 @@ namespace wServer.realm.entities
                         item.Abilities[2].Power = 30;
                         item.Abilities[2].Points = 2080;
                         break;
+
                     case 4:
                         item.MaxAbilityPower = 100;
                         item.Abilities[0].Power = 90;
@@ -240,6 +244,7 @@ namespace wServer.realm.entities
                         item.Abilities[2].Power = 50;
                         item.Abilities[2].Points = 10607;
                         break;
+
                     default:
                         item.MaxAbilityPower = 30;
                         item.Abilities[0].Power = 1;
@@ -301,9 +306,11 @@ namespace wServer.realm.entities
                 case Rarity.Uncommon:
                     power = 30;
                     break;
+
                 case Rarity.Rare:
                     power = 50;
                     break;
+
                 case Rarity.Legendary:
                     power = 70;
                     break;
@@ -342,7 +349,6 @@ namespace wServer.realm.entities
                         abilities.Remove(ability);
                 }
             }
-
 
             return ret;
         }
@@ -389,7 +395,8 @@ namespace wServer.realm.entities
             newPetStruct = s;
         }
 
-        public void Damage(int dmg, Entity chr) { }
+        public void Damage(int dmg, Entity chr)
+        { }
 
         public bool IsVisibleToEnemy()
         {

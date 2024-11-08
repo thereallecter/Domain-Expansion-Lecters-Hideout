@@ -10,6 +10,7 @@ namespace wServer.realm.setpieces
     internal class Building : ISetPiece
     {
         private static readonly string Floor = "Brown Lines";
+
         private static readonly string Wall = "Wooden Wall";
 
         private readonly Random rand = new Random();

@@ -69,7 +69,6 @@ namespace wServer.realm.setpieces
             o[bas + 7, bas + 23] = o[bas + 8, bas + 23] = o[bas + 9, bas + 23] =
                 o[bas + 13, bas + 23] = o[bas + 14, bas + 23] = o[bas + 15, bas + 23] = 1;
 
-
             for (int y = 0; y < 4; y++) //Columns
                 for (int x = 0; x < 4; x++)
                     o[bas + 5 + x * 4, bas + 5 + y * 4] = 3;

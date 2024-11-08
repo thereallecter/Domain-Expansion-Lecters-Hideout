@@ -61,8 +61,11 @@ using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 using Json.Reflection;
+
 #if !SIMPLE_JSON_NO_LINQ_EXPRESSION
+
 using System.Linq.Expressions;
+
 #endif
 #if SIMPLE_JSON_DYNAMIC
 using System.Dynamic;
@@ -511,21 +514,35 @@ namespace Json
         static class SimpleJson
     {
         private const int TOKEN_NONE = 0;
+
         private const int TOKEN_CURLY_OPEN = 1;
+
         private const int TOKEN_CURLY_CLOSE = 2;
+
         private const int TOKEN_SQUARED_OPEN = 3;
+
         private const int TOKEN_SQUARED_CLOSE = 4;
+
         private const int TOKEN_COLON = 5;
+
         private const int TOKEN_COMMA = 6;
+
         private const int TOKEN_STRING = 7;
+
         private const int TOKEN_NUMBER = 8;
+
         private const int TOKEN_TRUE = 9;
+
         private const int TOKEN_FALSE = 10;
+
         private const int TOKEN_NULL = 11;
+
         private const int BUILDER_CAPACITY = 2000;
 
         private static readonly char[] EscapeTable;
+
         private static readonly char[] EscapeCharacters = { '"', '\\', '\b', '\f', '\n', '\r', '\t' };
+
         private static readonly string EscapeCharactersString = new string(EscapeCharacters);
 
         static SimpleJson()
@@ -773,21 +790,28 @@ namespace Json
             {
                 case TOKEN_STRING:
                     return ParseString(json, ref index, ref success);
+
                 case TOKEN_NUMBER:
                     return ParseNumber(json, ref index, ref success);
+
                 case TOKEN_CURLY_OPEN:
                     return ParseObject(json, ref index, ref success);
+
                 case TOKEN_SQUARED_OPEN:
                     return ParseArray(json, ref index, ref success);
+
                 case TOKEN_TRUE:
                     NextToken(json, ref index);
                     return true;
+
                 case TOKEN_FALSE:
                     NextToken(json, ref index);
                     return false;
+
                 case TOKEN_NULL:
                     NextToken(json, ref index);
                     return null;
+
                 case TOKEN_NONE:
                     break;
             }
@@ -963,16 +987,22 @@ namespace Json
             {
                 case '{':
                     return TOKEN_CURLY_OPEN;
+
                 case '}':
                     return TOKEN_CURLY_CLOSE;
+
                 case '[':
                     return TOKEN_SQUARED_OPEN;
+
                 case ']':
                     return TOKEN_SQUARED_CLOSE;
+
                 case ',':
                     return TOKEN_COMMA;
+
                 case '"':
                     return TOKEN_STRING;
+
                 case '0':
                 case '1':
                 case '2':
@@ -985,6 +1015,7 @@ namespace Json
                 case '9':
                 case '-':
                     return TOKEN_NUMBER;
+
                 case ':':
                     return TOKEN_COLON;
             }
@@ -1238,9 +1269,6 @@ namespace Json
     }
 
     [GeneratedCode("simple-json", "1.0.0")]
-#if SIMPLE_JSON_INTERNAL
-    internal
-#else
     public
 #endif
         interface IJsonSerializerStrategy
@@ -1260,10 +1288,13 @@ namespace Json
         class PocoJsonSerializerStrategy : IJsonSerializerStrategy
     {
         internal IDictionary<Type, ReflectionUtils.ConstructorDelegate> ConstructorCache;
+
         internal IDictionary<Type, IDictionary<string, ReflectionUtils.GetDelegate>> GetCache;
+
         internal IDictionary<Type, IDictionary<string, KeyValuePair<Type, ReflectionUtils.SetDelegate>>> SetCache;
 
         internal static readonly Type[] EmptyTypes = new Type[0];
+
         internal static readonly Type[] ArrayConstructorParameterTypes = { typeof(int) };
 
         private static readonly string[] Iso8601Format =
@@ -1651,10 +1682,12 @@ namespace Json
                 return type.GetTypeInfo();
             }
 #else
+
             public static Type GetTypeInfo(Type type)
             {
                 return type;
             }
+
 #endif
 
             public static Attribute GetAttribute(MemberInfo info, Type type)
@@ -2040,7 +2073,9 @@ namespace Json
             public sealed class ThreadSafeDictionary<TKey, TValue> : IDictionary<TKey, TValue>
             {
                 private readonly object _lock = new object();
+
                 private readonly ThreadSafeDictionaryValueFactory<TKey, TValue> _valueFactory;
+
                 private Dictionary<TKey, TValue> _dictionary;
 
                 public ThreadSafeDictionary(ThreadSafeDictionaryValueFactory<TKey, TValue> valueFactory)

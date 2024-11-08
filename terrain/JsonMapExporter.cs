@@ -78,25 +78,30 @@ namespace terrain
             }
         }
 
-
         private struct json_dat
         {
             public byte[] data;
+
             public loc[] dict;
+
             public int height;
+
             public int width;
         }
 
         private struct loc
         {
             public string ground;
+
             public obj[] objs;
+
             public obj[] regions;
         }
 
         private struct obj
         {
             public string id;
+
             public string name;
         }
     }

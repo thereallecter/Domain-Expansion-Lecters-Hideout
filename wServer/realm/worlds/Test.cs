@@ -37,6 +37,7 @@ namespace wServer.realm.worlds
             }
         }
 
-        protected override void Init() { }
+        protected override void Init()
+        { }
     }
 }

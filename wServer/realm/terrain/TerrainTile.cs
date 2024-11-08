@@ -9,17 +9,29 @@ namespace wServer.realm.terrain
     internal enum TerrainType
     {
         None,
+
         Mountains,
+
         HighSand,
+
         HighPlains,
+
         HighForest,
+
         MidSand,
+
         MidPlains,
+
         MidForest,
+
         LowSand,
+
         LowPlains,
+
         LowForest,
+
         ShoreSand,
+
         ShorePlains,
     }
 

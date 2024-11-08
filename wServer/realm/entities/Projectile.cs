@@ -17,6 +17,7 @@ namespace wServer.realm.entities
     public class Projectile : Entity
     {
         private readonly HashSet<Entity> hitted = new HashSet<Entity>();
+
         private CollisionMap<Entity> collisionMap;
 
         public Projectile(RealmManager manager, ProjectileDesc desc)

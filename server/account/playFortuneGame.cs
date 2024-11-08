@@ -11,6 +11,7 @@ namespace server.account
         private static Dictionary<string, int[]> CurrentGames = new Dictionary<string, int[]>();
 
         private const int GOLD = 0;
+
         private const int FORTUNETOKENS = 2;
 
         protected override void HandleRequest()

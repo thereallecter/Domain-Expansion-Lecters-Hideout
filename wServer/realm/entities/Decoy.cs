@@ -16,9 +16,13 @@ namespace wServer.realm.entities
         private static readonly Random rand = new Random();
 
         private readonly int duration;
+
         private readonly Player player;
+
         private readonly float speed;
+
         private Vector2 direction;
+
         private bool exploded;
 
         public Decoy(RealmManager manager, Player player, int duration, float tps)
@@ -41,9 +45,11 @@ namespace wServer.realm.entities
             }
         }
 
-        public void Damage(int dmg, Entity chr) { }
+        public void Damage(int dmg, Entity chr)
+        { }
 
-        public bool IsVisibleToEnemy() { return true; }
+        public bool IsVisibleToEnemy()
+        { return true; }
 
         private Vector2 GetRandDirection()
         {

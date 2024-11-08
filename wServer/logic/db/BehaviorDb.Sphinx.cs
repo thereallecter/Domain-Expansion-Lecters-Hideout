@@ -91,6 +91,7 @@ namespace wServer.logic
                         )
                     )
                 );
+
         //
         //        new QueuedBehavior(
         //            SetConditionEffect.Instance(ConditionEffectIndex.Invulnerable),

@@ -15,7 +15,9 @@ namespace wServer.realm.worlds
         private static readonly ILog log = LogManager.GetLogger(typeof(GameWorld));
 
         private readonly int mapId;
+
         private readonly bool oryxPresent;
+
         private string displayname;
 
         public GameWorld(int mapId, string name, bool oryxPresent)

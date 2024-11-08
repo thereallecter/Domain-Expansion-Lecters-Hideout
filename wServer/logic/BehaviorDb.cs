@@ -18,10 +18,13 @@ namespace wServer.logic
     public partial class BehaviorDb
     {
         private static wRandom rand = new wRandom();
+
         private static readonly ILog log = LogManager.GetLogger(typeof(BehaviorDb));
 
         private static int initializing;
+
         internal static BehaviorDb InitDb;
+
         private static int randCount = 0;
 
         internal static wRandom Random

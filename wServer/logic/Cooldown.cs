@@ -9,6 +9,7 @@ namespace wServer.logic
     public struct Cooldown
     {
         public readonly int CoolDown;
+
         public readonly int Variance;
 
         public Cooldown(int cooldown, int variance)

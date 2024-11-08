@@ -13,8 +13,11 @@ namespace wServer.realm.entities
     public class Enemy : Character
     {
         private readonly bool stat;
+
         private DamageCounter counter;
+
         private float bleeding;
+
         private Position? pos;
 
         public Enemy(RealmManager manager, ushort objType)

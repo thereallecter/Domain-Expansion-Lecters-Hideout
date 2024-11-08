@@ -26,7 +26,7 @@ namespace DungeonGenerator
 {
     public static class Zlib
     {
-        static uint ADLER32(byte[] data)
+        private static uint ADLER32(byte[] data)
         {
             const uint MODULO = 0xfff1;
             uint A = 1, B = 0;

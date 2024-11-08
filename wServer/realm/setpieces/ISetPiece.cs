@@ -3,6 +3,7 @@
     internal interface ISetPiece
     {
         int Size { get; }
+
         void RenderSetPiece(World world, IntPoint pos);
     }
 }

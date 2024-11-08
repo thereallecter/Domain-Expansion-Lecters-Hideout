@@ -5,7 +5,9 @@ namespace DungeonGenerator
     public class DungeonGen
     {
         private readonly int seed;
+
         private readonly Generator gen;
+
         private Rasterizer ras;
 
         public DungeonGen(int seed, DungeonTemplate template)

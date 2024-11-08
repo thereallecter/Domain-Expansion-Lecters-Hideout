@@ -139,7 +139,6 @@ namespace server
                             SendFile("game/404.html", context);
                     }
                 }
-
                 else
                 {
                     handler = Activator.CreateInstance(t, null, null);
@@ -154,7 +153,6 @@ namespace server
                     }
                     else
                         (handler as RequestHandler).HandleRequest(context);
-
                 }
             }
             catch (Exception e)
@@ -262,18 +260,23 @@ namespace server
                 case "php":
                     ret = "text/html";
                     break;
+
                 case "js":
                     ret = "text/javascript";
                     break;
+
                 case "swf":
                     ret = "application/x-shockwave-flash";
                     break;
+
                 case "css":
                     ret = "text/css";
                     break;
+
                 case "png":
                     ret = "image/png";
                     break;
+
                 case "gif":
                     ret = "image/gif";
                     break;

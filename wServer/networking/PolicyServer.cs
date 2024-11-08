@@ -14,6 +14,7 @@ namespace wServer.networking
         private static readonly ILog log = LogManager.GetLogger(typeof(PolicyServer));
 
         private readonly TcpListener listener;
+
         private bool started;
 
         public PolicyServer()

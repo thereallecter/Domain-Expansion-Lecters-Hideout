@@ -5,6 +5,7 @@ namespace wServer.logic.behaviors
     public class ConditionalBehavior : Behavior
     {
         private readonly ConditionEffectIndex effect;
+
         private readonly Behavior behavior;
 
         public ConditionalBehavior(ConditionEffectIndex effect, Behavior behavior)

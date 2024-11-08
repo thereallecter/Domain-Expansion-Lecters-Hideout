@@ -14,7 +14,9 @@ namespace wServer.realm.setpieces
     internal class Oasis : ISetPiece
     {
         private static readonly string Floor = "Light Grass";
+
         private static readonly string Water = "Shallow Water";
+
         private static readonly string Tree = "Palm Tree";
 
         private static readonly Loot chest = new Loot(

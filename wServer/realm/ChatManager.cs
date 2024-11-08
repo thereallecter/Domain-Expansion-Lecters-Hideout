@@ -8,9 +8,10 @@ namespace wServer.realm
 {
     public class ChatManager
     {
-        static ILog log = LogManager.GetLogger(typeof(ChatManager));
+        private static ILog log = LogManager.GetLogger(typeof(ChatManager));
 
-        RealmManager manager;
+        private RealmManager manager;
+
         public ChatManager(RealmManager manager)
         {
             this.manager = manager;

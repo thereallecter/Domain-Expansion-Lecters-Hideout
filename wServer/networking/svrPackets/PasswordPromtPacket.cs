@@ -3,7 +3,9 @@
     public class PasswordPromtPacket : ServerPacket
     {
         public const int SIGN_IN = 2;
+
         public const int SEND_EMAIL_AND_SIGN_IN = 3;
+
         public const int REGISTER = 4;
 
         public int CleanPasswordStatus { get; set; }

@@ -14,12 +14,10 @@
 
         protected override void Read(Client client, NReader rdr)
         {
-
         }
 
         protected override void Write(Client client, NWriter wtr)
         {
-
         }
     }
 }

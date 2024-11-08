@@ -26,8 +26,9 @@ namespace DungeonGenerator.Templates.Abyss
 {
     internal class NormalRoom : Room
     {
-        readonly int w;
-        readonly int h;
+        private readonly int w;
+
+        private readonly int h;
 
         public NormalRoom(int w, int h)
         {
@@ -35,11 +36,14 @@ namespace DungeonGenerator.Templates.Abyss
             this.h = h;
         }
 
-        public override RoomType Type { get { return RoomType.Normal; } }
+        public override RoomType Type
+        { get { return RoomType.Normal; } }
 
-        public override int Width { get { return w; } }
+        public override int Width
+        { get { return w; } }
 
-        public override int Height { get { return h; } }
+        public override int Height
+        { get { return h; } }
 
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {
@@ -47,7 +51,6 @@ namespace DungeonGenerator.Templates.Abyss
             {
                 TileType = AbyssTemplate.RedSmallChecks
             });
-
 
             int numImp = new Range(0, 2).Random(rand);
             int numDemon = new Range(2, 4).Random(rand);
@@ -75,6 +78,7 @@ namespace DungeonGenerator.Templates.Abyss
                             numImp--;
                         }
                         break;
+
                     case 1:
                         if (numDemon > 0)
                         {
@@ -85,6 +89,7 @@ namespace DungeonGenerator.Templates.Abyss
                             numDemon--;
                         }
                         break;
+
                     case 2:
                         if (numBrute > 0)
                         {
@@ -95,6 +100,7 @@ namespace DungeonGenerator.Templates.Abyss
                             numBrute--;
                         }
                         break;
+
                     case 3:
                         if (numSkull > 0)
                         {

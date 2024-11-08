@@ -31,8 +31,11 @@ namespace DungeonGenerator
         Initialize = 5,
 
         Background = 6,
+
         Corridor = 7,
+
         Room = 8,
+
         Overlay = 9,
 
         Finish = 10
@@ -40,11 +43,13 @@ namespace DungeonGenerator
 
     public class Rasterizer
     {
-        readonly Random rand;
-        readonly DungeonGraph graph;
-        readonly BitmapRasterizer<DungeonTile> rasterizer;
+        private readonly Random rand;
 
-        static readonly TileType Space = new TileType(0x00fe, "Space");
+        private readonly DungeonGraph graph;
+
+        private readonly BitmapRasterizer<DungeonTile> rasterizer;
+
+        private static readonly TileType Space = new TileType(0x00fe, "Space");
 
         public RasterizationStep Step { get; set; }
 
@@ -64,7 +69,7 @@ namespace DungeonGenerator
             }
         }
 
-        void RunStep()
+        private void RunStep()
         {
             switch (Step)
             {
@@ -99,7 +104,7 @@ namespace DungeonGenerator
             Step++;
         }
 
-        void RasterizeCorridors()
+        private void RasterizeCorridors()
         {
             var corridor = graph.Template.CreateCorridor();
             corridor.Init(rasterizer, graph, rand);
@@ -113,7 +118,7 @@ namespace DungeonGenerator
                 }
         }
 
-        void CreateCorridor(Room src, Room dst, out Point srcPos, out Point dstPos)
+        private void CreateCorridor(Room src, Room dst, out Point srcPos, out Point dstPos)
         {
             var edge = src.Edges.Single(ed => ed.RoomB == dst);
             var link = edge.Linkage;
@@ -132,14 +137,14 @@ namespace DungeonGenerator
                 throw new ArgumentException();
         }
 
-        void RasterizeCorridor(MapCorridor corridor, Edge edge)
+        private void RasterizeCorridor(MapCorridor corridor, Edge edge)
         {
             Point srcPos, dstPos;
             CreateCorridor(edge.RoomA, edge.RoomB, out srcPos, out dstPos);
             corridor.Rasterize(edge.RoomA, edge.RoomB, srcPos, dstPos);
         }
 
-        void RasterizeRooms()
+        private void RasterizeRooms()
         {
             foreach (var room in graph.Rooms)
                 room.Rasterize(rasterizer, rand);

@@ -13,7 +13,7 @@ namespace wServer.logic
 {
     partial class BehaviorDb
     {
-        _ HauntedCemetery = () => Behav()
+        private _ HauntedCemetery = () => Behav()
         .Init("Arena Dn Spawner",
             new State(
                 new ConditionalEffect(ConditionEffectIndex.Invincible),
@@ -2590,6 +2590,5 @@ namespace wServer.logic
                     )
                 )
             );
-
     }
 }

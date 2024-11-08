@@ -86,7 +86,7 @@ namespace wServer.realm.entities.player
             return 50 * (level - 1) + (level - 2) * (level - 1) * 50;
         }
 
-        static int GetFameGoal(int fame)
+        private static int GetFameGoal(int fame)
         {
             if (fame >= 4000) return 0;
             else if (fame >= 2000) return 4000;

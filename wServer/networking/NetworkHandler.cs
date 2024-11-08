@@ -17,18 +17,27 @@ namespace wServer.networking
     internal class NetworkHandler : IDisposable
     {
         public const int BUFFER_SIZE = int.MaxValue / 4096;
+
         private static readonly ILog log = LogManager.GetLogger(typeof(NetworkHandler));
+
         private readonly Client parent;
+
         private readonly ConcurrentQueue<Packet> pendingPackets = new ConcurrentQueue<Packet>();
+
         private readonly object sendLock = new object();
+
         private readonly Socket skt;
 
         private SocketAsyncEventArgs receive;
+
         private byte[] receiveBuff;
+
         private ReceiveState receiveState = ReceiveState.Awaiting;
 
         private SocketAsyncEventArgs send;
+
         private byte[] sendBuff;
+
         private SendState sendState = SendState.Awaiting;
 
         public NetworkHandler(Client parent, Socket skt)
@@ -131,6 +140,7 @@ namespace wServer.networking
                         e.SetBuffer(0, len);
                         skt.ReceiveAsync(e);
                         break;
+
                     case ReceiveState.ReceivingBody:
                         if (e.BytesTransferred < (e.UserToken as ReceiveToken).Length)
                         {
@@ -151,6 +161,7 @@ namespace wServer.networking
                             skt.ReceiveAsync(e);
                         }
                         break;
+
                     default:
                         throw new InvalidOperationException(e.LastOperation.ToString());
                 }
@@ -179,6 +190,7 @@ namespace wServer.networking
                         if (!skt.Connected) return;
                         skt.SendAsync(e);
                         break;
+
                     case SendState.Sending:
                         (e.UserToken as SendToken).Packet = null;
 
@@ -200,7 +212,6 @@ namespace wServer.networking
                 OnError(ex);
             }
         }
-
 
         private void OnError(Exception ex)
         {
@@ -271,8 +282,11 @@ namespace wServer.networking
         private enum ReceiveState
         {
             Awaiting,
+
             ReceivingHdr,
+
             ReceivingBody,
+
             Processing
         }
 
@@ -285,7 +299,9 @@ namespace wServer.networking
         private enum SendState
         {
             Awaiting,
+
             Ready,
+
             Sending
         }
 

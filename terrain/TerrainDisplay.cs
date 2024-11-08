@@ -12,11 +12,17 @@ namespace terrain
     internal class TerrainDisplay : Form
     {
         private readonly PictureBox pic;
+
         private readonly PictureBox pic2;
+
         private readonly TerrainTile[,] tilesBak;
+
         private Bitmap bmp;
+
         private Mode mode;
+
         private Panel panel;
+
         private TerrainTile[,] tiles;
 
         public TerrainDisplay(TerrainTile[,] tiles)
@@ -170,8 +176,11 @@ namespace terrain
         private enum Mode
         {
             None,
+
             Erase,
+
             Average,
+
             MAX
         }
     }

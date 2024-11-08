@@ -9,6 +9,7 @@ namespace wServer.realm.setpieces
     internal class BlueOpenWall : ISetPiece
     {
         private static readonly string DragonTileBlue = "Dragon Tile Blue";
+
         private static readonly string DragonTileCream = "Dragon Tile Cream";
 
         private static byte[,] SetPiece //[Y, X]

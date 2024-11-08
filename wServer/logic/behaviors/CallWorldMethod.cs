@@ -7,7 +7,9 @@ namespace wServer.logic.behaviors
     public class CallWorldMethod : Behavior
     {
         private readonly string worldClass;
+
         private readonly string targetMethod;
+
         private readonly object[] parameters;
 
         public CallWorldMethod(string worldClass, string targetMethod, params object[] parameters)
@@ -28,6 +30,7 @@ namespace wServer.logic.behaviors
             }
         }
 
-        protected override void TickCore(Entity host, RealmTime time, ref object state) { }
+        protected override void TickCore(Entity host, RealmTime time, ref object state)
+        { }
     }
 }

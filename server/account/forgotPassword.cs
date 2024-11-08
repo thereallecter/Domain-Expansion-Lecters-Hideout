@@ -16,7 +16,6 @@ namespace server.account
         {
             using (Database db = new Database())
             {
-
                 //Generates a random password
                 string password = Database.GenerateRandomString(10);
 
@@ -26,10 +25,8 @@ namespace server.account
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@email", Query["guid"]);
 
-
                 if (cmd.ExecuteNonQuery() == 1)
                 {
-
                     //Makes the email sending function
                     SmtpClient client = new SmtpClient();
                     client.Port = 587;
@@ -40,14 +37,11 @@ namespace server.account
                     client.UseDefaultCredentials = false;
                     client.Credentials = new System.Net.NetworkCredential("dieliam6@gmail.com", "pleasedieliam"); //Email credentials
 
-
-
                     //Email information
                     MailMessage mm = new MailMessage("RANDOMEMAILHERE", Query["guid"], "SERVERNAME", "SERVERNAME");
                     mm.Body = "Your new password for SERVERNAME is: " + password + " hopefully you wont forget your password again.";
                     mm.BodyEncoding = UTF8Encoding.UTF8;
                     mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-
 
                     //Send the actual email
                     client.Send(mm);
@@ -56,7 +50,6 @@ namespace server.account
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.WriteLine("Reset Password Link sent to " + Query["guid"]);
                     Console.ForegroundColor = ConsoleColor.White;
-
                 }
                 else
                     using (StreamWriter wtr = new StreamWriter(Context.Response.OutputStream))

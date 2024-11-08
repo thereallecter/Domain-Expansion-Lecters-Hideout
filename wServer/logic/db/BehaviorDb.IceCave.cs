@@ -121,7 +121,6 @@ namespace wServer.logic
                        new Suicide()
                     )))
 
-
         //ESBEN LETS GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!
              .Init("ic Esben the Unwilling",
                 new State(

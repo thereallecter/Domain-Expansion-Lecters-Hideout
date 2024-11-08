@@ -1,7 +1,5 @@
 <EquipmentSets>
 
-
-
    <EquipmentSet type="0x0001" id="Oryx Awesome Set">
       <Setpiece slot="2" itemtype="0x2337">Equipment</Setpiece>
       <Setpiece slot="1" itemtype="0x2339">Equipment</Setpiece>
@@ -83,5 +81,4 @@
     <ActivateOnEquipAll stat="21" amount="5">IncrementStat</ActivateOnEquipAll>
     <ActivateOnEquipAll stat="22" amount="5">IncrementStat</ActivateOnEquipAll>
   </EquipmentSet>
-
 </EquipmentSets>

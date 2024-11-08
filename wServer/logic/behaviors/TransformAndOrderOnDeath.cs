@@ -7,12 +7,19 @@ namespace wServer.logic.behaviors
     public class TransformAndOrderOnDeath : Behavior
     {
         private readonly int max;
+
         private readonly int min;
+
         private readonly float probability;
+
         private readonly ushort target;
+
         private readonly bool returnToSpawn;
+
         private readonly double range;
+
         private readonly string targetStateName;
+
         private State targetState;
 
         public TransformAndOrderOnDeath(string target, double range, string targetState, int min = 1, int max = 1, double probability = 1, bool returnToSpawn = false)
@@ -59,7 +66,6 @@ namespace wServer.logic.behaviors
             }
             return null;
         }
-
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {

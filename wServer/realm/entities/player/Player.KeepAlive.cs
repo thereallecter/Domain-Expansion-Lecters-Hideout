@@ -42,8 +42,6 @@ namespace wServer.realm.entities.player
             }
         }
 
-
-
         public void ClientTick(RealmTime time, MovePacket packet)
         {
             //oldClientTime = curClientTime;

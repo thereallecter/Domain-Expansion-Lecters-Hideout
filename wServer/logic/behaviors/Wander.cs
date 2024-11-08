@@ -11,8 +11,8 @@ namespace wServer.logic.behaviors
     {
         //State storage: direction & remain time
 
-
         private static Cooldown period = new Cooldown(500, 200);
+
         private readonly float speed;
 
         public Wander(double speed)
@@ -59,6 +59,7 @@ namespace wServer.logic.behaviors
         private class WanderStorage
         {
             public Vector2 Direction;
+
             public float RemainingDistance;
         }
     }

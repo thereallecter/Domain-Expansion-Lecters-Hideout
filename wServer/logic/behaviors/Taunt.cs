@@ -15,10 +15,15 @@ namespace wServer.logic.behaviors
         //State storage: time
 
         private readonly bool broadcast;
+
         private readonly float probability = 1;
+
         private readonly string[] text;
+
         private readonly string[] states;
+
         private readonly bool checkForStates;
+
         private Cooldown cooldown = new Cooldown(0, 0);
 
         public Taunt(params string[] text)

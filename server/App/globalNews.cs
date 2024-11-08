@@ -66,13 +66,21 @@ namespace server.app
     public struct globalNews_struct
     {
         public int slot;
+
         public int linkType;
+
         public string title;
+
         public string image;
+
         public int priority;
+
         public string linkDetail;
+
         public string platform;
+
         public long startTime;
+
         public long endTime;
     }
 }

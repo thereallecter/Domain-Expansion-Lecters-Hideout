@@ -5,7 +5,7 @@ namespace wServer.logic
 {
     partial class BehaviorDb
     {
-        _ CubeGod = () => Behav()
+        private _ CubeGod = () => Behav()
             .Init("Cube God",
                 new State(
                     new StayCloseToSpawn(0.3, range: 7),

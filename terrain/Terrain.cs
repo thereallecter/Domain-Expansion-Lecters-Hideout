@@ -182,7 +182,6 @@ namespace terrain
                 Console.Out.WriteLine("Computing biomes...");
                 new Biome(rand.Next(), map).ComputeBiomes(dat);
 
-
                 new TerrainDisplay(dat).ShowDialog();
                 //Test.Show(RenderMoistBmp(dat));
                 //Test.Show(RenderEvalBmp(dat));

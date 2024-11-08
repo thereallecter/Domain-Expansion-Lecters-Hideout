@@ -14,7 +14,9 @@ namespace wServer.logic.behaviors
         //State storage: cooldown timer
 
         private readonly string group;
+
         private readonly double range;
+
         private Cooldown coolDown;
 
         public Heal(double range, string group, Cooldown coolDown = new Cooldown())

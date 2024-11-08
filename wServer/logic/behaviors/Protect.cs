@@ -11,9 +11,13 @@ namespace wServer.logic.behaviors
     {
         //State storage: protect state
         private readonly float acquireRange;
+
         private readonly ushort protectee;
+
         private readonly float protectionRange;
+
         private readonly float reprotectRange;
+
         private readonly float speed;
 
         public Protect(double speed, string protectee, double acquireRange = 10, double protectionRange = 2,
@@ -47,6 +51,7 @@ namespace wServer.logic.behaviors
                         goto case ProtectState.Protecting;
                     }
                     break;
+
                 case ProtectState.Protecting:
                     if (entity == null)
                     {
@@ -68,6 +73,7 @@ namespace wServer.logic.behaviors
                         s = ProtectState.Protected;
                     }
                     break;
+
                 case ProtectState.Protected:
                     if (entity == null)
                     {
@@ -90,7 +96,9 @@ namespace wServer.logic.behaviors
         private enum ProtectState
         {
             DontKnowWhere,
+
             Protecting,
+
             Protected,
         }
     }

@@ -27,12 +27,14 @@ namespace DungeonGenerator
 {
     public class RoomCollision
     {
-        const int GridScale = 3;
-        const int GridSize = 1 << GridScale;
+        private const int GridScale = 3;
 
-        struct RoomKey
+        private const int GridSize = 1 << GridScale;
+
+        private struct RoomKey
         {
             public readonly int XKey;
+
             public readonly int YKey;
 
             public RoomKey(int x, int y)
@@ -47,9 +49,9 @@ namespace DungeonGenerator
             }
         }
 
-        readonly Dictionary<RoomKey, HashSet<Room>> rooms = new Dictionary<RoomKey, HashSet<Room>>();
+        private readonly Dictionary<RoomKey, HashSet<Room>> rooms = new Dictionary<RoomKey, HashSet<Room>>();
 
-        void Add(int x, int y, Room rm)
+        private void Add(int x, int y, Room rm)
         {
             var key = new RoomKey(x, y);
             var roomList = rooms.GetValueOrCreate(key, k => new HashSet<Room>());
@@ -67,7 +69,7 @@ namespace DungeonGenerator
             }
         }
 
-        void Remove(int x, int y, Room rm)
+        private void Remove(int x, int y, Room rm)
         {
             var key = new RoomKey(x, y);
             HashSet<Room> roomList;
@@ -86,7 +88,7 @@ namespace DungeonGenerator
             }
         }
 
-        bool HitTest(int x, int y, Rect bounds)
+        private bool HitTest(int x, int y, Rect bounds)
         {
             var key = new RoomKey(x, y);
             var roomList = rooms.GetValueOrDefault(key, (HashSet<Room>)null);

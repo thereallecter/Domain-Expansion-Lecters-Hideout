@@ -11,6 +11,7 @@ namespace wServer.logic.transitions
         //State storage: none
 
         private readonly double dist;
+
         private readonly ushort target;
 
         public EntityNotExistsTransition(string target, double dist, string targetState)

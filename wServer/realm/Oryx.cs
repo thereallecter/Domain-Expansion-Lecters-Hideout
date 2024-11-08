@@ -19,7 +19,9 @@ namespace wServer.realm
     internal class Oryx : IDisposable
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(Oryx));
+
         private readonly int[] enemyCounts = new int[12];
+
         private readonly int[] enemyMaxCounts = new int[12];
 
         private readonly List<Tuple<string, ISetPiece>> events = new List<Tuple<string, ISetPiece>>
@@ -34,10 +36,15 @@ namespace wServer.realm
         };
 
         private readonly Random rand = new Random();
+
         private GameWorld world;
+
         public bool ClosingStarted = false;
+
         public bool RealmClosed = false;
+
         private bool disposed = false;
+
         private long prevTick;
 
         private int x;
@@ -625,8 +632,11 @@ namespace wServer.realm
         private struct TauntData
         {
             public string[] final;
+
             public string[] killed;
+
             public string[] numberOfEnemies;
+
             public string[] spawn;
         }
 

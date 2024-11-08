@@ -11,6 +11,7 @@ namespace wServer.logic.behaviors
         //State storage: remaining distance
 
         private readonly int distance;
+
         private readonly float speed;
 
         public BackAndForth(double speed, int distance = 5)

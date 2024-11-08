@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Linq;
 using wServer.networking.svrPackets;
 using wServer.realm;
@@ -136,4 +135,3 @@ namespace wServer.logic.behaviors.PetBehaviors
         }
     }
 }
-

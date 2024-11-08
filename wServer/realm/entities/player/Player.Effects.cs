@@ -9,9 +9,13 @@ namespace wServer.realm.entities.player
     partial class Player
     {
         private int CanTPCooldownTime;
+
         private float bleeding;
+
         private int healCount;
+
         private float healing;
+
         private int newbieTime;
 
         public bool IsVisibleToEnemy()

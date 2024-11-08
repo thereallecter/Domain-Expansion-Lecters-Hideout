@@ -42,9 +42,13 @@ namespace wServer.realm.setpieces
             {0, 0, 0, 0, 0, 0, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 1, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0}
         };
+
         private static readonly string Floor = "Japanese Moss";
+
         private static readonly string CFloor = "Dragon Tile Cream 2";
+
         private static readonly string Central = "Dragon Tile Cream";
+
         private static readonly string Pillar = "Dragon Totem";
 
         private readonly Random rand = new Random();
@@ -53,6 +57,7 @@ namespace wServer.realm.setpieces
         {
             get { return 41; }
         }
+
         public void RenderSetPiece(World world, IntPoint pos)
         {
             var t = new int[41, 41];
@@ -120,7 +125,6 @@ namespace wServer.realm.setpieces
             Entity rockdrag = Entity.Resolve(world.Manager, "Dragon Head");
             rockdrag.Move(pos.X + 20.5f, pos.Y + 20.5f);
             world.EnterWorld(rockdrag);
-
         }
     }
 }

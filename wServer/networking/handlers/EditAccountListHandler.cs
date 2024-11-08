@@ -46,6 +46,7 @@ namespace wServer.networking.handlers
                                 client.Player.Locked.Remove(target.AccountId);
                             }
                             break;
+
                         case AccountListPacket.IGNORED_LIST_ID:
                             if (packet.Add)
                             {

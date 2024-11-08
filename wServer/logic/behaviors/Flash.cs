@@ -12,7 +12,9 @@ namespace wServer.logic.behaviors
         //State storage: none
 
         private readonly uint color;
+
         private readonly float flashPeriod;
+
         private readonly int flashRepeats;
 
         public Flash(uint color, double flashPeriod, int flashRepeats)

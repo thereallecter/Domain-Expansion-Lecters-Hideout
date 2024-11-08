@@ -41,7 +41,6 @@ namespace wServer.logic.behaviors
                 else
                     base.fixedAngle = 0 * Math.PI / 180;
 
-
                 if (player != null || defaultAngle != null || fixedAngle != null)
                 {
                     ProjectileDesc desc = host.ObjectDesc.Projectiles[projectileIndex];

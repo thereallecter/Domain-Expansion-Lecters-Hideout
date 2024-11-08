@@ -12,10 +12,15 @@ namespace wServer.logic.behaviors
     {
         //State storage: orbit state
         private readonly float acquireRange;
+
         private readonly float radius;
+
         private readonly float radiusVariance;
+
         private readonly float speed;
+
         private readonly float speedVariance;
+
         private readonly ushort? target;
 
         public Orbit(double speed, double radius, double acquireRange = 10,
@@ -84,6 +89,7 @@ namespace wServer.logic.behaviors
         private class OrbitState
         {
             public float Radius;
+
             public float Speed;
         }
     }

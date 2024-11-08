@@ -6,14 +6,15 @@ namespace wServer.networking.handlers
 {
     class GuildRemovePacketHandler : PacketHandlerBase<GuildRemovePacket>
     {
-        public override PacketID ID { get { return PacketID.GUILDREMOVE; } }
+        public override PacketID ID
+        { get { return PacketID.GUILDREMOVE; } }
 
         protected override void HandlePacket(Client client, GuildRemovePacket packet)
         {
             client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
         }
 
-        void Handle(Client client, GuildRemovePacket packet)
+        private void Handle(Client client, GuildRemovePacket packet)
         {
             client.Manager.Database.DoActionAsync(db =>
             {

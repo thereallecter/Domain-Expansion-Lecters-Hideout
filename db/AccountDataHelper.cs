@@ -19,6 +19,7 @@ namespace db
         public class AccountGiftCodeData
         {
             private readonly string accId;
+
             private readonly string giftCode;
 
             public AccountGiftCodeData(byte[] data)

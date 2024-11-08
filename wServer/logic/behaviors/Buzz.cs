@@ -11,7 +11,9 @@ namespace wServer.logic.behaviors
     {
         //State storage: direction & remain
         private readonly float dist;
+
         private readonly float speed;
+
         private Cooldown coolDown;
 
         public Buzz(double speed = 2, double dist = 0.5, Cooldown coolDown = new Cooldown())
@@ -73,7 +75,9 @@ namespace wServer.logic.behaviors
         private class BuzzStorage
         {
             public Vector2 Direction;
+
             public float RemainingDistance;
+
             public int RemainingTime;
         }
     }

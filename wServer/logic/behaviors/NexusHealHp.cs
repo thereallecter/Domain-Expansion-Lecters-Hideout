@@ -14,7 +14,9 @@ namespace wServer.logic.behaviors
         //State storage: cooldown timer
 
         private readonly int amount;
+
         private readonly double range;
+
         private Cooldown coolDown;
 
         public NexusHealHp(double range, int amount, Cooldown coolDown = new Cooldown())

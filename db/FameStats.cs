@@ -15,7 +15,6 @@ public class FameStats
     [XmlElement("Char")]
     public Char __Char { get; set; }
 
-
     public int Shots { get; set; }
     public int ShotsThatDamage { get; set; }
     public int SpecialAbilityUses { get; set; }
@@ -541,7 +540,6 @@ public class FameStats
         XmlElement killed = xmlDoc.CreateElement("KilledBy");
         killed.InnerText = killer;
         xmlDoc.DocumentElement.AppendChild(killed);
-
 
         StringWriter result = new StringWriter();
         xmlDoc.Save(result);

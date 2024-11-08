@@ -26,11 +26,14 @@ namespace DungeonGenerator.Templates.Abyss
 {
     internal class BossRoom : Room
     {
-        public override RoomType Type { get { return RoomType.Target; } }
+        public override RoomType Type
+        { get { return RoomType.Target; } }
 
-        public override int Width { get { return 42; } }
+        public override int Width
+        { get { return 42; } }
 
-        public override int Height { get { return 42; } }
+        public override int Height
+        { get { return 42; } }
 
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {
@@ -78,6 +81,7 @@ namespace DungeonGenerator.Templates.Abyss
                             numImp--;
                         }
                         break;
+
                     case 1:
                         if (numDemon > 0)
                         {
@@ -88,6 +92,7 @@ namespace DungeonGenerator.Templates.Abyss
                             numDemon--;
                         }
                         break;
+
                     case 2:
                         if (numBrute > 0)
                         {

@@ -12,8 +12,11 @@ namespace wServer.logic.behaviors
     {
         //State storage: swirl state
         private readonly float acquireRange;
+
         private readonly float radius;
+
         private readonly float speed;
+
         private readonly bool targeted;
 
         public Swirl(double speed = 1, double radius = 8, double acquireRange = 10, bool targeted = true)
@@ -109,7 +112,9 @@ namespace wServer.logic.behaviors
         private class SwirlState
         {
             public bool Acquired;
+
             public Vector2 Center;
+
             public int RemainingTime;
         }
     }

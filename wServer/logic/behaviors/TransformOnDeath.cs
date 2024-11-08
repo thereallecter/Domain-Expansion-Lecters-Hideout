@@ -10,9 +10,13 @@ namespace wServer.logic.behaviors
     public class TransformOnDeath : Behavior
     {
         private readonly int max;
+
         private readonly int min;
+
         private readonly float probability;
+
         private readonly ushort target;
+
         private readonly bool returnToSpawn;
 
         public TransformOnDeath(string target, int min = 1, int max = 1, double probability = 1, bool returnToSpawn = false)

@@ -12,6 +12,7 @@ namespace wServer.logic.behaviors
         //State storage: time
 
         private readonly Behavior behavior;
+
         private readonly int period;
 
         public Timed(int period, Behavior behavior)

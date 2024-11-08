@@ -55,6 +55,7 @@ namespace wServer.realm.entities.player
                 Text = text
             });
         }
+
         public void SendError(string text)
         {
             Client.SendPacket(new TextPacket()
@@ -65,6 +66,7 @@ namespace wServer.realm.entities.player
                 Text = text
             });
         }
+
         public void SendpsrText(string text)
         {
             Client.SendPacket(new TextPacket()
@@ -75,6 +77,7 @@ namespace wServer.realm.entities.player
                 Text = text
             });
         }
+
         public void SendHelp(string text)
         {
             Client.SendPacket(new TextPacket()
@@ -85,6 +88,7 @@ namespace wServer.realm.entities.player
                 Text = text
             });
         }
+
         public void SendEnemy(string name, string text)
         {
             Client.SendPacket(new TextPacket()
@@ -95,6 +99,7 @@ namespace wServer.realm.entities.player
                 Text = text
             });
         }
+
         public void SendText(string sender, string text)
         {
             Client.SendPacket(new TextPacket()
@@ -105,6 +110,7 @@ namespace wServer.realm.entities.player
                 Text = text
             });
         }
+
         public void SendGuild(string text)
         {
             Client.SendPacket(new TextPacket
@@ -116,6 +122,7 @@ namespace wServer.realm.entities.player
                 Text = text
             });
         }
+
         public void GuildRecieved(int objId, int stars, string from, string text)
         {
             Client.SendPacket(new TextPacket

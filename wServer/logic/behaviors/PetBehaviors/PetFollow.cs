@@ -45,6 +45,7 @@ namespace wServer.logic.behaviors.PetBehaviors
                     else
                         s.State = F.Acquired;
                     break;
+
                 case F.Acquired:
                     if (player == null)
                     {
@@ -92,12 +93,14 @@ namespace wServer.logic.behaviors.PetBehaviors
         private enum F
         {
             DontKnowWhere,
+
             Acquired,
         }
 
         private class FollowState
         {
             public int RemainingTime;
+
             public F State;
         }
     }

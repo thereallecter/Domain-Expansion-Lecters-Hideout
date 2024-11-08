@@ -12,9 +12,11 @@ namespace wServer.logic
     public class FameCounter
     {
         private readonly Player player;
+
         private readonly HashSet<Projectile> projs = new HashSet<Projectile>();
 
         private readonly FameStats stats;
+
         private int elapsed;
 
         public FameCounter(Player player)

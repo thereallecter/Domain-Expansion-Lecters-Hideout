@@ -102,10 +102,8 @@ namespace wServer.logic
                         new State("suicide",
                         new Suicide()
 
-
                         )
                           )
-
 
             );
     }

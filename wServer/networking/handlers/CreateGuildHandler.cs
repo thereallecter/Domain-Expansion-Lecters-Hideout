@@ -8,14 +8,15 @@ namespace wServer.networking.handlers
 {
     class CreateGuildHandler : PacketHandlerBase<CreateGuildPacket>
     {
-        public override PacketID ID { get { return PacketID.CREATEGUILD; } }
+        public override PacketID ID
+        { get { return PacketID.CREATEGUILD; } }
 
         protected override void HandlePacket(Client client, CreateGuildPacket packet)
         {
             client.Manager.Logic.AddPendingAction(t => Handle(client, packet));
         }
 
-        void Handle(Client client, CreateGuildPacket packet)
+        private void Handle(Client client, CreateGuildPacket packet)
         {
             try
             {

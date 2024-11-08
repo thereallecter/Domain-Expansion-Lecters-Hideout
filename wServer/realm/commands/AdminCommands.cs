@@ -43,7 +43,9 @@ namespace wServer.realm.commands
 
     internal class SetGoldCommand : Command
     {
-        public SetGoldCommand() : base("gold", RankName.ADMIN) { }
+        public SetGoldCommand() : base("gold", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -70,9 +72,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SetCharacterFameCommand : Command
     {
-        public SetCharacterFameCommand() : base("cfame", RankName.ADMIN) { }
+        public SetCharacterFameCommand() : base("cfame", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -100,9 +105,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SetTokensCommand : Command
     {
-        public SetTokensCommand() : base("tokens", RankName.ADMIN) { }
+        public SetTokensCommand() : base("tokens", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -129,9 +137,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SetStarsCommand : Command
     {
-        public SetStarsCommand() : base("stars", RankName.ADMIN) { }
+        public SetStarsCommand() : base("stars", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -156,9 +167,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SetFameCommand : Command
     {
-        public SetFameCommand() : base("fame", RankName.ADMIN) { }
+        public SetFameCommand() : base("fame", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -185,9 +199,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SetLevelCommand : Command
     {
-        public SetLevelCommand() : base("level", RankName.ADMIN) { }
+        public SetLevelCommand() : base("level", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -214,9 +231,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SetStatCommand : Command
     {
-        public SetStatCommand() : base("stat", RankName.ADMIN) { }
+        public SetStatCommand() : base("stat", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -232,34 +252,42 @@ namespace wServer.realm.commands
                         case "hp":
                             player.Stats[0] = amount;
                             break;
+
                         case "mana":
                         case "mp":
                             player.Stats[1] = amount;
                             break;
+
                         case "atk":
                         case "attack":
                             player.Stats[2] = amount;
                             break;
+
                         case "def":
                         case "defense":
                             player.Stats[3] = amount;
                             break;
+
                         case "spd":
                         case "speed":
                             player.Stats[4] = amount;
                             break;
+
                         case "vit":
                         case "vitality":
                             player.Stats[5] = amount;
                             break;
+
                         case "wis":
                         case "wisdom":
                             player.Stats[6] = amount;
                             break;
+
                         case "dex":
                         case "dexterity":
                             player.Stats[7] = amount;
                             break;
+
                         default:
                             player.SendError("Invalid Stat");
                             player.SendHelp("Stats: Health, Mana, Attack, Defense, Speed, Vitality, Wisdom, Dexterity");
@@ -294,34 +322,42 @@ namespace wServer.realm.commands
                                 case "hp":
                                     i.Player.Stats[0] = amount;
                                     break;
+
                                 case "mana":
                                 case "mp":
                                     i.Player.Stats[1] = amount;
                                     break;
+
                                 case "atk":
                                 case "attack":
                                     i.Player.Stats[2] = amount;
                                     break;
+
                                 case "def":
                                 case "defense":
                                     i.Player.Stats[3] = amount;
                                     break;
+
                                 case "spd":
                                 case "speed":
                                     i.Player.Stats[4] = amount;
                                     break;
+
                                 case "vit":
                                 case "vitality":
                                     i.Player.Stats[5] = amount;
                                     break;
+
                                 case "wis":
                                 case "wisdom":
                                     i.Player.Stats[6] = amount;
                                     break;
+
                                 case "dex":
                                 case "dexterity":
                                     i.Player.Stats[7] = amount;
                                     break;
+
                                 default:
                                     player.SendError("Invalid Stat");
                                     player.SendHelp("Stats: Health, Mana, Attack, Defense, Speed, Vitality, Wisdom, Dexterity");
@@ -354,9 +390,12 @@ namespace wServer.realm.commands
             }
         }
     }
+
     internal class SetTagCommand : Command
     {
-        public SetTagCommand() : base("tag", RankName.MODERATOR) { }
+        public SetTagCommand() : base("tag", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -404,9 +443,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class KillAllCommand : Command
     {
-        public KillAllCommand() : base("kill_all", RankName.ADMIN) { }
+        public KillAllCommand() : base("kill_all", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -432,9 +474,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class KickCommand : Command
     {
-        public KickCommand() : base("kick", RankName.MODERATOR) { }
+        public KickCommand() : base("kick", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -462,9 +507,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class MuteCommand : Command
     {
-        public MuteCommand() : base("mute", RankName.MODERATOR) { }
+        public MuteCommand() : base("mute", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -493,9 +541,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class UnMuteCommand : Command
     {
-        public UnMuteCommand() : base("unmute", RankName.ADMIN) { }
+        public UnMuteCommand() : base("unmute", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -524,9 +575,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class GodCommand : Command
     {
-        public GodCommand() : base("him", RankName.MODERATOR) { }
+        public GodCommand() : base("him", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -554,7 +608,9 @@ namespace wServer.realm.commands
 
     internal class AddWorldCommand : Command
     {
-        public AddWorldCommand() : base("addworld", RankName.ADMIN) { }
+        public AddWorldCommand() : base("addworld", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -562,9 +618,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SpawnCommand : Command
     {
-        public SpawnCommand() : base("spawn", RankName.MODERATOR) { }
+        public SpawnCommand() : base("spawn", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -622,9 +681,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class GiveCommand : Command
     {
-        public GiveCommand() : base("give", RankName.ADMIN) { }
+        public GiveCommand() : base("give", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -663,9 +725,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class TpCommand : Command
     {
-        public TpCommand() : base("tp", RankName.MODERATOR) { }
+        public TpCommand() : base("tp", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -703,9 +768,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class MaxCommand : Command
     {
-        public MaxCommand() : base("max", RankName.ADMIN) { }
+        public MaxCommand() : base("max", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -732,9 +800,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class MaxPlayerCommand : Command
     {
-        public MaxPlayerCommand() : base("max_player", RankName.ADMIN) { }
+        public MaxPlayerCommand() : base("max_player", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -767,9 +838,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class OryxSayCommand : Command
     {
-        public OryxSayCommand() : base("osay", RankName.MODERATOR) { }
+        public OryxSayCommand() : base("osay", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -783,9 +857,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SWhoCommand : Command //get all players from all worlds (this may become too large!)
     {
-        public SWhoCommand() : base("swho", RankName.ADMIN) { }
+        public SWhoCommand() : base("swho", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -813,9 +890,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class AnnouncementCommand : Command
     {
-        public AnnouncementCommand() : base("announce", RankName.MODERATOR) { }
+        public AnnouncementCommand() : base("announce", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -839,9 +919,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class SummonCommand : Command
     {
-        public SummonCommand() : base("summon", RankName.ADMIN) { }
+        public SummonCommand() : base("summon", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -890,9 +973,12 @@ namespace wServer.realm.commands
             return false;
         }
     }
+
     internal class KillPlayerCommand : Command
     {
-        public KillPlayerCommand() : base("kill", RankName.ADMIN) { }
+        public KillPlayerCommand() : base("kill", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -910,9 +996,12 @@ namespace wServer.realm.commands
             return false;
         }
     }
+
     internal class RestartCommand : Command
     {
-        public RestartCommand() : base("restart", RankName.OWNER) { }
+        public RestartCommand() : base("restart", RankName.OWNER)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -945,7 +1034,9 @@ namespace wServer.realm.commands
 
     internal class SetpieceCommand : Command
     {
-        public SetpieceCommand() : base("set_piece", RankName.ADMIN) { }
+        public SetpieceCommand() : base("set_piece", RankName.ADMIN)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {
@@ -955,9 +1046,12 @@ namespace wServer.realm.commands
             return true;
         }
     }
+
     internal class DevChatCommand : Command
     {
-        public DevChatCommand() : base("dev", RankName.MODERATOR) { }
+        public DevChatCommand() : base("dev", RankName.MODERATOR)
+        {
+        }
 
         protected override bool Process(Player player, RealmTime time, string[] args)
         {

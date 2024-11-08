@@ -29,6 +29,7 @@ namespace wServer.networking
         }
 
         public abstract PacketID ID { get; }
+
         public abstract Packet CreateInstance();
 
         public abstract void Crypt(Client client, byte[] dat, int offset, int len);
@@ -52,6 +53,7 @@ namespace wServer.networking
         }
 
         protected abstract void Read(Client client, NReader rdr);
+
         protected abstract void Write(Client client, NWriter wtr);
 
         public override string ToString()

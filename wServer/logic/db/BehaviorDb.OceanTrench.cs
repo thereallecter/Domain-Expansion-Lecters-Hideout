@@ -6,7 +6,7 @@ namespace wServer.logic
 {
     partial class BehaviorDb
     {
-        _ OceanTrench = () => Behav()
+        private _ OceanTrench = () => Behav()
             .Init("Coral Gift",  //credits to GhostMaree, ???
                 new State(
                     new State("Texture1",
@@ -412,6 +412,5 @@ namespace wServer.logic
                         )
                     )
             );
-
     }
 }

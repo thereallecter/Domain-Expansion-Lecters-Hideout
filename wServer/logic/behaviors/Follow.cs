@@ -12,9 +12,13 @@ namespace wServer.logic.behaviors
     {
         //State storage: follow state
         private readonly float acquireRange;
+
         private readonly int duration;
+
         private readonly float range;
+
         private readonly float speed;
+
         private Cooldown coolDown;
 
         public Follow(double speed, double acquireRange = 10, double range = 6,
@@ -54,6 +58,7 @@ namespace wServer.logic.behaviors
                     if (s.RemainingTime > 0)
                         s.RemainingTime -= time.thisTickTimes;
                     break;
+
                 case F.Acquired:
                     if (player == null)
                     {
@@ -89,6 +94,7 @@ namespace wServer.logic.behaviors
                         s.RemainingTime = 0;
                     }
                     break;
+
                 case F.Resting:
                     if (player == null)
                     {
@@ -114,13 +120,16 @@ namespace wServer.logic.behaviors
         private enum F
         {
             DontKnowWhere,
+
             Acquired,
+
             Resting
         }
 
         private class FollowState
         {
             public int RemainingTime;
+
             public F State;
         }
     }

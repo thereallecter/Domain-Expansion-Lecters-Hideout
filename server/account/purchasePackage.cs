@@ -85,10 +85,12 @@ namespace server.account
             }
         }
 
-        struct PackageContent
+        private struct PackageContent
         {
             public List<int> items;
+
             public int vaultChests;
+
             public int charSlots;
         }
     }

@@ -41,8 +41,10 @@ public class Chars
     public List<ServerItem> Servers { get; set; }
 
     public string OwnedSkins { get; set; }
+
     [XmlElement("TOSPopup")]
     public string TOSPopup { get; set; }
+
     public string Lat { get; set; }
     public string Long { get; set; }
 
@@ -128,6 +130,7 @@ public class Account
 {
     [XmlIgnore]
     public int Rank { get; set; }
+
     private XmlSerializerNamespaces _namespaces;
 
     public Account()
@@ -140,6 +143,7 @@ public class Account
 
     //Because the getProdAccount feature, prod has that many accounts that maybe a long isnt enough anymore
     public string AccountId { get; set; }
+
     public string Name { get; set; }
 
     [XmlIgnore]
@@ -183,6 +187,7 @@ public class Account
 
     [XmlIgnore]
     public string Email { get; set; }
+
     [XmlIgnore]
     public string Password { get; set; }
 
@@ -198,6 +203,7 @@ public class Account
 
     [XmlIgnore]
     public string AuthToken { get; set; }
+
     [XmlIgnore]
     public string NotAcceptedNewTos { get; set; }
 
@@ -306,6 +312,7 @@ public class Account
 
     [XmlIgnore]
     public bool IsGuestAccount { get; set; }
+
     [XmlIgnore]
     public int DailyQuestId { get; set; }
 
@@ -572,13 +579,16 @@ public class QuestItem
 {
     [XmlAttribute("tier")]
     public int Tier { get; set; }
+
     [XmlAttribute("goal")]
     public string Goal { get; set; }
+
     public string Description { get; set; }
     public string Image { get; set; }
 
     [XmlIgnore]
     public int Id { get; set; }
+
     [XmlIgnore]
     public DateTime Time { get; set; }
 }

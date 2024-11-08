@@ -23,6 +23,7 @@ namespace wServer.logic.loot
     public class ItemLoot : ILootDef
     {
         private readonly string item;
+
         private readonly double probability;
 
         public string Lootstate { get; set; }
@@ -65,23 +66,31 @@ namespace wServer.logic.loot
     public enum ItemType
     {
         Weapon,
+
         Ability,
+
         Armor,
+
         Ring,
+
         Potion
     }
 
     public enum EggRarity
     {
         Common,
+
         Uncommon,
+
         Rare,
+
         Legendary
     }
 
     public class EggLoot : ILootDef
     {
         private readonly EggRarity rarity;
+
         private readonly double probability;
 
         public string Lootstate { get; set; }
@@ -110,13 +119,19 @@ namespace wServer.logic.loot
     public class TierLoot : ILootDef
     {
         public static readonly int[] WeaponT = { 1, 2, 3, 8, 17, 24 };
+
         public static readonly int[] AbilityT = { 4, 5, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 25 };
+
         public static readonly int[] ArmorT = { 6, 7, 14 };
+
         public static readonly int[] RingT = { 9 };
+
         public static readonly int[] PotionT = { 10 };
+
         private readonly double probability;
 
         private readonly byte tier;
+
         private readonly int[] types;
 
         public string Lootstate { get; set; }
@@ -129,18 +144,23 @@ namespace wServer.logic.loot
                 case ItemType.Weapon:
                     types = WeaponT;
                     break;
+
                 case ItemType.Ability:
                     types = AbilityT;
                     break;
+
                 case ItemType.Armor:
                     types = ArmorT;
                     break;
+
                 case ItemType.Ring:
                     types = RingT;
                     break;
+
                 case ItemType.Potion:
                     types = PotionT;
                     break;
+
                 default:
                     throw new NotSupportedException(type.ToString());
             }
@@ -165,6 +185,7 @@ namespace wServer.logic.loot
     public class Threshold : ILootDef
     {
         private readonly ILootDef[] children;
+
         private readonly double threshold;
 
         public string Lootstate { get; set; }
@@ -190,6 +211,7 @@ namespace wServer.logic.loot
     internal class MostDamagers : ILootDef
     {
         private readonly ILootDef[] loots;
+
         private readonly int amount;
 
         public MostDamagers(int amount, params ILootDef[] loots)
@@ -246,12 +268,16 @@ namespace wServer.logic.loot
             {
                 case EggRarity.Common:
                     return new ILootDef[1] { new EggLoot(EggRarity.Common, 0.1) };
+
                 case EggRarity.Uncommon:
                     return new ILootDef[2] { new EggLoot(EggRarity.Common, 0.1), new EggLoot(EggRarity.Uncommon, 0.05) };
+
                 case EggRarity.Rare:
                     return new ILootDef[3] { new EggLoot(EggRarity.Common, 0.1), new EggLoot(EggRarity.Uncommon, 0.05), new EggLoot(EggRarity.Rare, 0.01) };
+
                 case EggRarity.Legendary:
                     return new ILootDef[4] { new EggLoot(EggRarity.Common, 0.1), new EggLoot(EggRarity.Uncommon, 0.05), new EggLoot(EggRarity.Rare, 0.01), new EggLoot(EggRarity.Legendary, 0.001) };
+
                 default:
                     throw new InvalidOperationException("Not a valid Egg Rarity");
             }

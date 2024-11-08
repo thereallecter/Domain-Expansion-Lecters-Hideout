@@ -12,10 +12,13 @@ namespace wServer.realm.setpieces
         }
 
         private static readonly string Tree = "Tree Jungle";
+
         private static readonly string Water = "GhostWater";
+
         private static readonly string Sand = "Ghost Water Beach";
 
-        Random rand = new Random();
+        private Random rand = new Random();
+
         public void RenderSetPiece(World world, IntPoint pos)
         {
             XmlData dat = world.Manager.GameData;
@@ -100,9 +103,6 @@ namespace wServer.realm.setpieces
             Entity gshipanchor = Entity.Resolve(world.Manager, "Ghost Ship Anchor");
             gshipanchor.Move(pos.X + Size / 2f, pos.Y + Size / 2f);
             world.EnterWorld(gshipanchor);
-
         }
-
-
     }
 }

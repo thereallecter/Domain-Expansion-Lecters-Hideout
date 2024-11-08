@@ -36,7 +36,8 @@ namespace DungeonGenerator.Templates
 
         public abstract int MaxDepth { get; }
         public abstract NormDist TargetDepth { get; }
-        public virtual Range NumRoomRate { get { return new Range(3, 5); } }
+        public virtual Range NumRoomRate
+        { get { return new Range(3, 5); } }
 
         public abstract NormDist SpecialRmCount { get; }
         public abstract NormDist SpecialRmDepthDist { get; }
@@ -49,8 +50,11 @@ namespace DungeonGenerator.Templates
         }
 
         public abstract Room CreateStart(int depth);
+
         public abstract Room CreateTarget(int depth, Room prev);
+
         public abstract Room CreateSpecial(int depth, Room prev);
+
         public abstract Room CreateNormal(int depth, Room prev);
 
         public virtual void InitializeRasterization(DungeonGraph graph)

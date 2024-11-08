@@ -10,10 +10,15 @@ namespace wServer.logic.behaviors
         //State storage: nothing
 
         private readonly float radius;
+
         private readonly bool players;
+
         private readonly int minDamage;
+
         private readonly int maxDamage;
+
         private readonly bool noDef;
+
         private readonly ARGB color;
 
         public Aoe(double radius, bool players, int minDamage, int maxDamage, bool noDef, uint color)
@@ -57,6 +62,7 @@ namespace wServer.logic.behaviors
             });
         }
 
-        protected override void TickCore(Entity host, RealmTime time, ref object state) { }
+        protected override void TickCore(Entity host, RealmTime time, ref object state)
+        { }
     }
 }

@@ -10,12 +10,19 @@ namespace wServer.realm.setpieces
     internal abstract class Temple : ISetPiece
     {
         protected static readonly string DarkGrass = "Dark Grass";
+
         protected static readonly string Floor = "Jungle Temple Floor";
+
         protected static readonly string WallA = "Jungle Temple Bricks";
+
         protected static readonly string WallB = "Jungle Temple Walls";
+
         protected static readonly string WallC = "Jungle Temple Column";
+
         protected static readonly string Flower = "Jungle Ground Flowers";
+
         protected static readonly string Grass = "Jungle Grass";
+
         protected static readonly string Tree = "Jungle Tree Big";
 
         protected static readonly Loot chest = new Loot(
@@ -33,6 +40,7 @@ namespace wServer.realm.setpieces
             );
 
         public abstract int Size { get; }
+
         public abstract void RenderSetPiece(World world, IntPoint pos);
 
         protected static void Render(Temple temple, World world, IntPoint pos, int[,] ground, int[,] objs)

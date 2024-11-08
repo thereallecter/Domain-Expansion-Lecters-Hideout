@@ -342,6 +342,7 @@ namespace wServer.realm.entities.player
                             BroadcastSync(batch, p => this.Dist(p) < 35);
                         }
                         break;
+
                     case ActivateEffects.Shoot:
                         {
                             ActivateShoot(time, item, target);
@@ -407,7 +408,6 @@ namespace wServer.realm.entities.player
 
                             int bit = idx + 39;
 
-
                             if (eff.UseWisMod)
                             {
                                 amountSBA = (int)UseWisMod(eff.Amount, 0);
@@ -416,15 +416,11 @@ namespace wServer.realm.entities.player
                             }
                             if (HasConditionEffect(ConditionEffectIndex.HPBoost))
                             {
-
-
                                 if (amountSBA == 0) ;
-
                                 else if (amountSBA >= 1) ;
                                 amountSBA = 0;
                                 durationSBA = 0;
                                 return false;
-
                             }
 
                             this.Aoe(rangeSBA, true, player =>
@@ -440,7 +436,6 @@ namespace wServer.realm.entities.player
                                 {
                                     (player as Player).Boost[idx] -= amountSBA;
                                     player.UpdateCount++;
-
                                 }));
                             });
                             BroadcastSync(new ShowEffectPacket()
@@ -465,6 +460,7 @@ namespace wServer.realm.entities.player
                                 case ConditionEffectIndex.Damaging:
                                     color = 0xffff0000;
                                     break;
+
                                 case ConditionEffectIndex.Berserk:
                                     color = 0x808080;
                                     break;
@@ -510,6 +506,7 @@ namespace wServer.realm.entities.player
                                 case ConditionEffectIndex.Damaging:
                                     color = 0xffff0000;
                                     break;
+
                                 case ConditionEffectIndex.Berserk:
                                     color = 0x808080;
                                     break;
@@ -662,6 +659,7 @@ namespace wServer.realm.entities.player
                             BroadcastSync(pkts, p => this.Dist(p) < 25);
                         }
                         break;
+
                     case ActivateEffects.Trap:
                         {
                             BroadcastSync(new ShowEffectPacket
@@ -851,20 +849,21 @@ namespace wServer.realm.entities.player
                             }
                         }
                         break;
+
                     case ActivateEffects.Fame:
                         {
                             var db1 = new Database();
                             db1.UpdateFame(Client.Account, eff.Amount);
-
                         }
                         break;
+
                     case ActivateEffects.Gold:
                         {
                             var db1 = new Database();
                             db1.UpdateCredit(Client.Account, eff.Amount);
-
                         }
                         break;
+
                     case ActivateEffects.RemoveNegativeConditions:
                         {
                             this.Aoe(eff.Range / 2, true, player => { ApplyConditionEffect(NegativeEffs); });
@@ -953,6 +952,7 @@ namespace wServer.realm.entities.player
                         BroadcastSync(packets);
 
                         break;
+
                     case ActivateEffects.Create: //this is a portal
                         {
                             ushort objType;
@@ -965,7 +965,6 @@ namespace wServer.realm.entities.player
                             string DungName = Manager.GameData.Portals[objType].DungeonName;
 
                             ARGB c = new ARGB(0x00FF00);
-
 
                             entity.Move(X, Y);
                             w.EnterWorld(entity);
@@ -1101,6 +1100,7 @@ namespace wServer.realm.entities.player
                         }
                         Pet.Create(Manager, this, item);
                         break;
+
                     case ActivateEffects.MysteryPortal:
                         string[] dungeons = new[]
                         {
@@ -1166,6 +1166,7 @@ namespace wServer.realm.entities.player
                             }
                         }));
                         break;
+
                     case ActivateEffects.GenericActivate:
                         var targetPlayer = eff.Target.Equals("player");
                         var centerPlayer = eff.Center.Equals("player");

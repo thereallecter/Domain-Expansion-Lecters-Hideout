@@ -6,7 +6,7 @@ namespace wServer.logic
 {
     partial class BehaviorDb
     {
-        _ New = () => Behav()
+        private _ New = () => Behav()
         //Credits to Cake for this behavior xd lmao
                         .Init("Big Reaper Minion",
                 new State(
@@ -135,6 +135,5 @@ namespace wServer.logic
                         )
                     )
             );
-
     }
 }

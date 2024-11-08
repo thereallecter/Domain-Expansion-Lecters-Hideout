@@ -26,18 +26,21 @@ namespace DungeonGenerator.Templates.PirateCave
 {
     internal class BossRoom : Room
     {
-        readonly int radius;
+        private readonly int radius;
 
         public BossRoom(int radius)
         {
             this.radius = radius;
         }
 
-        public override RoomType Type { get { return RoomType.Target; } }
+        public override RoomType Type
+        { get { return RoomType.Target; } }
 
-        public override int Width { get { return radius * 2 + 1; } }
+        public override int Width
+        { get { return radius * 2 + 1; } }
 
-        public override int Height { get { return radius * 2 + 1; } }
+        public override int Height
+        { get { return radius * 2 + 1; } }
 
         public override void Rasterize(BitmapRasterizer<DungeonTile> rasterizer, Random rand)
         {
@@ -87,6 +90,7 @@ namespace DungeonGenerator.Templates.PirateCave
                             numKing--;
                         }
                         break;
+
                     case 1:
                         if (numBoss > 0)
                         {
@@ -97,6 +101,7 @@ namespace DungeonGenerator.Templates.PirateCave
                             numBoss--;
                         }
                         break;
+
                     case 2:
                         if (numMinion > 0)
                         {

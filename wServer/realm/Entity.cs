@@ -17,20 +17,35 @@ namespace wServer.realm
     public class Entity : IProjectileOwner, ICollidable<Entity>, IDisposable
     {
         private const int EFFECT_COUNT = 47;
+
         protected static readonly ILog Log = LogManager.GetLogger(typeof(Entity));
+
         private readonly ObjectDesc desc;
+
         private readonly int[] effects;
+
         private Position[] posHistory;
+
         private Projectile[] projectiles;
+
         public bool BagDropped;
+
         public TagList Tags;
+
         public bool IsPet;
+
         private byte posIdx;
+
         protected byte ProjectileId;
+
         private bool stateEntry;
+
         private State stateEntryCommonRoot;
+
         private Dictionary<object, object> states;
+
         private bool tickingEffects;
+
         private Player playerOwner; //For Drakes
 
         public Entity(RealmManager manager, ushort objType)
@@ -76,7 +91,6 @@ namespace wServer.realm
 
         public RealmManager Manager { get; private set; }
 
-
         public ObjectDesc ObjectDesc => desc;
 
         public World Owner { get; internal set; }
@@ -90,14 +104,17 @@ namespace wServer.realm
 
         public bool Usable { get; set; }
 
-
         //Stats
         public string Name { get; set; }
+
         public int Size { get; set; }
 
         private ConditionEffects _conditionEffects;
+
         private Int32 _conditionEffects1;
+
         private Int32 _conditionEffects2;
+
         public ConditionEffects ConditionEffects
         {
             get { return _conditionEffects; }
@@ -291,7 +308,6 @@ namespace wServer.realm
             return posHistory[(byte)(posIdx - 2)];
         }
 
-
         /*
          * ArenaGuard,
          * ArenaPortal,
@@ -346,38 +362,48 @@ namespace wServer.realm
                     throw new Exception("Projectile should not instantiated using Entity.Resolve");
                 case "Sign":
                     return new Sign(manager, id);
+
                 case "Wall":
                 case "DoubleWall":
                     return new Wall(manager, id, node);
+
                 case "ConnectedWall":
                 case "CaveWall":
                     return new ConnectedObject(manager, id);
+
                 case "GameObject":
                 case "CharacterChanger":
                 case "MoneyChanger":
                 case "NameChanger":
                     return new StaticObject(manager, id, StaticObject.GetHP(node), StaticObject.GetStatic(node), false, true);
+
                 case "GuildRegister":
                 case "GuildChronicle":
                 case "GuildBoard":
                     return new StaticObject(manager, id, null, false, false, false);
+
                 case "Container":
                     return new Container(manager, node);
+
                 case "Player":
                     throw new Exception("Player should not instantiated using Entity.Resolve");
                 case "Character": //Other characters means enemy
                     return new Enemy(manager, id);
+
                 case "Portal":
                 case "GuildHallPortal":
                     return new Portal(manager, id, null);
+
                 case "ClosedVaultChest":
                 case "ClosedVaultChestGold":
                 case "ClosedGiftChest":
                 case "VaultChest":
                 case "Merchant":
                     return new Merchants(manager, id);
+
                 case "GuildMerchant":
                     return new GuildMerchant(manager, id);
+
                 case "ArenaGuard":
                 case "ArenaPortal":
                 case "MysteryBoxGround":
@@ -388,6 +414,7 @@ namespace wServer.realm
                 case "FortuneGround":
                 case "QuestRewards":
                     return new StaticObject(manager, id, null, true, false, false);
+
                 case "Pet":
                     throw new Exception("Pets should not instantiated using Entity.Resolve");
                 default:
@@ -434,7 +461,7 @@ namespace wServer.realm
             return ObjectDesc.MaxHP == hpBeforeHit && ObjectDesc.MaxHP <= dmg;
         }
 
-        void ProcessConditionEffects(RealmTime time)
+        private void ProcessConditionEffects(RealmTime time)
         {
             if (effects == null || !tickingEffects) return;
 

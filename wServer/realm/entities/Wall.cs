@@ -15,7 +15,6 @@ namespace wServer.realm.entities
         {
         }
 
-
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {
             if (!Vulnerable || !(projectile.ProjectileOwner is Player)) return true;

@@ -6,8 +6,11 @@ namespace wServer.logic.behaviors
     public class JumpToRandomOffset : CycleBehavior
     {
         private readonly int minX;
+
         private readonly int maxX;
+
         private readonly int minY;
+
         private readonly int maxY;
 
         public JumpToRandomOffset(int minX, int maxX, int minY, int maxY)

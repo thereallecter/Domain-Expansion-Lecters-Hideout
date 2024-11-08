@@ -11,40 +11,65 @@ using System.Xml.Linq;
 public enum Rarity : uint
 {
     Common,
+
     Uncommon,
+
     Rare,
+
     Legendary,
+
     Divine
 }
 
 public enum Family : uint
 {
     Aquatic,
+
     Automaton,
+
     Avian,
+
     Canine,
+
     Exotic,
+
     Farm,
+
     Feline,
+
     Humanoid,
+
     Insect,
+
     Penguin,
+
     Reptile,
+
     Spooky,
+
     Unknown, //this is the ? ? ? ? family
+
     Woodland
 }
 
 public enum Ability : uint
 {
     AttackClose = 402,
+
     AttackMid = 404,
+
     AttackFar = 405,
+
     Electric = 406,
+
     Heal = 407,
+
     MagicHeal = 408,
+
     Savage = 409,
+
     Decoy = 410,
+
     RisingFury = 411,
 }
 
@@ -52,102 +77,194 @@ public enum Ability : uint
 public enum ConditionEffects : ulong
 {
     Dead = 1 << 0,
+
     Quiet = 1 << 1,
+
     Weak = 1 << 2,
+
     Slowed = 1 << 3,
+
     Sick = 1 << 4,
+
     Dazed = 1 << 5,
+
     Stunned = 1 << 6,
+
     Blind = 1 << 7,
+
     Hallucinating = 1 << 8,
+
     Drunk = 1 << 9,
+
     Confused = 1 << 10,
+
     StunImmume = 1 << 11,
+
     Invisible = 1 << 12,
+
     Paralyzed = 1 << 13,
+
     Speedy = 1 << 14,
+
     Bleeding = 1 << 15,
+
     ArmorBreakImmune = 1 << 16,
+
     Healing = 1 << 17,
+
     Damaging = 1 << 18,
+
     Berserk = 1 << 19,
+
     Paused = 1 << 20,
+
     Stasis = 1 << 21,
+
     StasisImmune = 1 << 22,
+
     Invincible = 1 << 23,
+
     Invulnerable = 1 << 24,
+
     Armored = 1 << 25,
+
     ArmorBroken = 1 << 26,
+
     Hexed = 1 << 27,
+
     NinjaSpeedy = 1 << 28,
+
     Unstable = 1 << 29,
+
     Darkness = 1 << 30,
+
     SlowedImmune = (ulong)1 << 31,
+
     DazedImmune = (ulong)1 << 32,
+
     ParalyzeImmune = (ulong)1 << 33,
+
     Petrify = (ulong)1 << 34,
+
     PetrifyImmune = (ulong)1 << 35,
+
     PetDisable = (ulong)1 << 36,
+
     Curse = (ulong)1 << 37,
+
     CurseImmune = (ulong)1 << 38,
+
     HPBoost = (ulong)1 << 39,
+
     MPBoost = (ulong)1 << 40,
+
     AttBoost = (ulong)1 << 41,
+
     DefBoost = (ulong)1 << 42,
+
     SpdBoost = (ulong)1 << 43,
+
     VitBoost = (ulong)1 << 44,
+
     WisBoost = (ulong)1 << 45,
+
     DexBoost = (ulong)1 << 46
 }
 
 public enum ConditionEffectIndex
 {
     Dead = 0,
+
     Quiet = 1,
+
     Weak = 2,
+
     Slowed = 3,
+
     Sick = 4,
+
     Dazed = 5,
+
     Stunned = 6,
+
     Blind = 7,
+
     Hallucinating = 8,
+
     Drunk = 9,
+
     Confused = 10,
+
     StunImmune = 11,
+
     Invisible = 12,
+
     Paralyzed = 13,
+
     Speedy = 14,
+
     Bleeding = 15,
+
     ArmorBreakImmune = 16,
+
     Healing = 17,
+
     Damaging = 18,
+
     Berserk = 19,
+
     Paused = 20,
+
     Stasis = 21,
+
     StasisImmune = 22,
+
     Invincible = 23,
+
     Invulnerable = 24,
+
     Armored = 25,
+
     ArmorBroken = 26,
+
     Hexed = 27,
+
     NinjaSpeedy = 28,
+
     Unstable = 29,
+
     Darkness = 30,
+
     SlowedImmune = 31,
+
     DazedImmune = 32,
+
     ParalyzeImmune = 33,
+
     Petrify = 34,
+
     PetrifyImmune = 35,
+
     PetDisable = 36,
+
     Curse = 37,
+
     CurseImmune = 38,
+
     HPBoost = 39,
+
     MPBoost = 40,
+
     AttBoost = 41,
+
     DefBoost = 42,
+
     SpdBoost = 43,
+
     VitBoost = 44,
+
     WisBoost = 45,
+
     DexBoost = 46
 }
 
@@ -286,39 +403,73 @@ public class ProjectileDesc
 public enum ActivateEffects
 {
     Shoot,
+
     StatBoostSelf,
+
     StatBoostAura,
+
     BulletNova,
+
     ConditionEffectAura,
+
     ConditionEffectSelf,
+
     Heal,
+
     HealNova,
+
     Magic,
+
     MagicNova,
+
     Teleport,
+
     VampireBlast,
+
     Trap,
+
     StasisBlast,
+
     Decoy,
+
     Lightning,
+
     PoisonGrenade,
+
     RemoveNegativeConditions,
+
     RemoveNegativeConditionsSelf,
+
     IncrementStat,
+
     Pet,
+
     PermaPet,
+
     Create,
+
     UnlockPortal,
+
     DazeBlast,
+
     ClearConditionEffectAura,
+
     ClearConditionEffectSelf,
+
     Dye,
+
     CreatePet,
+
     ShurikenAbility,
+
     UnlockSkin,
+
     MysteryPortal,
+
     Gold,
+
     Fame,
+
     GenericActivate
 }
 
@@ -728,7 +879,6 @@ public class ObjectDesc
     public int SizeStep { get; private set; }
     public TagList Tags { get; private set; }
     public ProjectileDesc[] Projectiles { get; private set; }
-
 
     public double MaxHP { get; private set; }
     public int Defense { get; private set; }

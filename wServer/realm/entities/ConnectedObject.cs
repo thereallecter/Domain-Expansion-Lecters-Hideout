@@ -10,10 +10,15 @@ namespace wServer.realm.entities
     public enum ConnectionType
     {
         Dot = 0,
+
         ushortLine = 1,
+
         L = 2,
+
         Line = 3,
+
         T = 4,
+
         Cross = 5
     }
 
@@ -41,7 +46,6 @@ namespace wServer.realm.entities
             Rotation = rotation;
         }
 
-
         public ConnectionType Type { get; private set; }
         public int Rotation { get; private set; }
         public uint Bits { get; private set; }
@@ -65,7 +69,6 @@ namespace wServer.realm.entities
             for (int y = -1; y <= 1; y++)
                 for (int x = -1; x <= 1; x++)
                     z[x + 1, y + 1] = offset(x, y);
-
 
             if (z[1, 0] && z[1, 2] && z[0, 1] && z[2, 1])
                 return ConnectionInfo.Infos2[Tuple.Create(ConnectionType.Cross, 0)];
@@ -125,7 +128,6 @@ namespace wServer.realm.entities
             stats[StatsType.ObjectConnection] = (int)ConnectionComputer.Compute((_x, _y) => false).Bits;
             base.ExportStats(stats);
         }
-
 
         public override bool HitByProjectile(Projectile projectile, RealmTime time)
         {

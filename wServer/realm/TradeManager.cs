@@ -11,17 +11,20 @@ namespace wServer.realm
 {
     public class TradeManager
     {
-        private readonly static ILog log = LogManager.GetLogger(typeof(TradeManager));
+        private static readonly ILog log = LogManager.GetLogger(typeof(TradeManager));
         public static List<KeyValuePair<Player, Player>> CurrentRequests { get; }
         public static List<Player> TradingPlayers { get; }
 
         private readonly Player player1, player2;
 
         private bool player1Accept;
+
         private bool player2Accept;
+
         private bool finished;
 
         private bool[] player1Trades;
+
         private bool[] player2Trades;
 
         static TradeManager()

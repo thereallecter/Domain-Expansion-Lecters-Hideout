@@ -11,10 +11,15 @@ namespace wServer.realm.setpieces
     internal class SkullShrine : ISetPiece
     {
         private static readonly string Grass = "Blue Grass";
+
         private static readonly string Tile = "Castle Stone Floor Tile";
+
         private static readonly string TileDark = "Castle Stone Floor Tile Dark";
+
         private static readonly string Stone = "Cracked Purple Stone";
+
         private static readonly string PillarA = "Blue Pillar";
+
         private static readonly string PillarB = "Broken Blue Pillar";
 
         private readonly Random rand = new Random();

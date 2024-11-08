@@ -33,7 +33,9 @@ namespace DungeonGenerator
         Initialize = 0,
 
         TargetGeneration = 1,
+
         SpecialGeneration = 2,
+
         BranchGeneration = 3,
 
         Finish = 4
@@ -41,15 +43,21 @@ namespace DungeonGenerator
 
     public class Generator
     {
-        readonly Random rand;
-        readonly DungeonTemplate template;
+        private readonly Random rand;
 
-        RoomCollision collision;
-        Room rootRoom;
-        List<Room> rooms;
-        int maxDepth;
-        int minRoomNum;
-        int maxRoomNum;
+        private readonly DungeonTemplate template;
+
+        private RoomCollision collision;
+
+        private Room rootRoom;
+
+        private List<Room> rooms;
+
+        private int maxDepth;
+
+        private int minRoomNum;
+
+        private int maxRoomNum;
 
         public GenerationStep Step { get; set; }
 
@@ -73,7 +81,7 @@ namespace DungeonGenerator
             return rooms;
         }
 
-        void RunStep()
+        private void RunStep()
         {
             switch (Step)
             {
@@ -104,7 +112,7 @@ namespace DungeonGenerator
             Step++;
         }
 
-        Link? PlaceRoom(Room src, Room target, int connPt)
+        private Link? PlaceRoom(Room src, Room target, int connPt)
         {
             var sep = template.RoomSeparation.Random(rand);
             if (src is FixedRoom && target is FixedRoom)
@@ -117,7 +125,7 @@ namespace DungeonGenerator
             return PlaceRoomFree(src, target, (Direction)connPt, sep);
         }
 
-        Link? PlaceRoomFree(Room src, Room target, Direction connPt, int sep)
+        private Link? PlaceRoomFree(Room src, Room target, Direction connPt, int sep)
         {
             int x, y;
             Link? link = null;
@@ -171,7 +179,7 @@ namespace DungeonGenerator
             return link;
         }
 
-        Link? PlaceRoomSourceFixed(FixedRoom src, Room target, int connPt, int sep)
+        private Link? PlaceRoomSourceFixed(FixedRoom src, Room target, int connPt, int sep)
         {
             var conn = src.ConnectionPoints[connPt];
             int x, y;
@@ -224,7 +232,7 @@ namespace DungeonGenerator
             return link;
         }
 
-        Link? PlaceRoomTargetFixed(Room src, FixedRoom target, int connPt, int sep)
+        private Link? PlaceRoomTargetFixed(Room src, FixedRoom target, int connPt, int sep)
         {
             var targetDir = ((Direction)connPt).Reverse();
 
@@ -290,7 +298,7 @@ namespace DungeonGenerator
             return link;
         }
 
-        Link? PlaceRoomFixed(FixedRoom src, FixedRoom target, int connPt, int sep)
+        private Link? PlaceRoomFixed(FixedRoom src, FixedRoom target, int connPt, int sep)
         {
             var conn = src.ConnectionPoints[connPt];
 
@@ -351,14 +359,14 @@ namespace DungeonGenerator
             return link;
         }
 
-        int GetMaxConnectionPoints(Room rm)
+        private int GetMaxConnectionPoints(Room rm)
         {
             if (rm is FixedRoom)
                 return ((FixedRoom)rm).ConnectionPoints.Length;
             return 4;
         }
 
-        bool GenerateTarget()
+        private bool GenerateTarget()
         {
             var targetDepth = (int)template.TargetDepth.NextValue();
 
@@ -377,7 +385,7 @@ namespace DungeonGenerator
             return false;
         }
 
-        bool GenerateTargetInternal(Room prev, int depth, int targetDepth)
+        private bool GenerateTargetInternal(Room prev, int depth, int targetDepth)
         {
             var connPtNum = GetMaxConnectionPoints(prev);
             var seq = Enumerable.Range(0, connPtNum).ToList();
@@ -420,7 +428,7 @@ namespace DungeonGenerator
             return true;
         }
 
-        void GenerateSpecials()
+        private void GenerateSpecials()
         {
             if (template.SpecialRmCount == null)
                 return;
@@ -445,7 +453,7 @@ namespace DungeonGenerator
             }
         }
 
-        bool GenerateSpecialInternal(Room prev, int depth, int targetDepth)
+        private bool GenerateSpecialInternal(Room prev, int depth, int targetDepth)
         {
             var connPtNum = GetMaxConnectionPoints(prev);
             var seq = Enumerable.Range(0, connPtNum).ToList();
@@ -488,7 +496,7 @@ namespace DungeonGenerator
             return true;
         }
 
-        void GenerateBranches()
+        private void GenerateBranches()
         {
             int numRooms = new Range(minRoomNum, maxRoomNum).Random(rand);
 
@@ -512,7 +520,7 @@ namespace DungeonGenerator
             }
         }
 
-        bool GenerateBranchInternal(Room prev, int depth, int maxDepth, bool doBranch)
+        private bool GenerateBranchInternal(Room prev, int depth, int maxDepth, bool doBranch)
         {
             if (depth >= maxDepth)
                 return false;

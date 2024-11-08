@@ -13,12 +13,17 @@ namespace wServer.realm.entities
         private const int LIFETIME = 10;
 
         private readonly int dmg;
+
         private readonly int duration;
+
         private readonly ConditionEffectIndex effect;
+
         private readonly Player player;
+
         private readonly float radius;
 
         private int p;
+
         private int t;
 
         public Trap(Player player, float radius, int dmg, ConditionEffectIndex eff, float effDuration)

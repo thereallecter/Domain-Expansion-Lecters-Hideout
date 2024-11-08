@@ -10,6 +10,7 @@ namespace wServer.logic.behaviors.PetBehaviors
     {
         //State storage: wander state
         private readonly float speed;
+
         private Cooldown coolDown;
 
         public PetWander(double speed, Cooldown coolDown)
@@ -62,6 +63,7 @@ namespace wServer.logic.behaviors.PetBehaviors
         private class WanderStorage
         {
             public Vector2 Direction;
+
             public float RemainingDistance;
         }
     }

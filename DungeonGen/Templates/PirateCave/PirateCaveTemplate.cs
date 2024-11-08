@@ -27,13 +27,19 @@ namespace DungeonGenerator.Templates.PirateCave
     public class PirateCaveTemplate : DungeonTemplate
     {
         internal static readonly TileType LightSand = new TileType(0x00bd, "Light Sand");
+
         internal static readonly TileType BrownLines = new TileType(0x000c, "Brown Lines");
+
         internal static readonly TileType ShallowWater = new TileType(0x0073, "Shallow Water");
+
         internal static readonly TileType Composite = new TileType(0x00fd, "Composite");
+
         internal static readonly TileType Space = new TileType(0x00fe, "Space");
 
         internal static readonly ObjectType CaveWall = new ObjectType(0x01ce, "Cave Wall");
+
         internal static readonly ObjectType PalmTree = new ObjectType(0x018e, "Palm Tree");
+
         internal static readonly ObjectType CowardicePortal = new ObjectType(0x0703, "Portal of Cowardice");
 
         internal static readonly ObjectType PirateKing = new ObjectType(0x0927, "Dreadstump the Pirate King");
@@ -60,18 +66,24 @@ namespace DungeonGenerator.Templates.PirateCave
             new ObjectType(0x68f, "Cave Pirate Cabin Boy")
         };
 
-        public override int MaxDepth { get { return 10; } }
+        public override int MaxDepth
+        { get { return 10; } }
 
-        NormDist targetDepth;
-        public override NormDist TargetDepth { get { return targetDepth; } }
+        private NormDist targetDepth;
+        public override NormDist TargetDepth
+        { get { return targetDepth; } }
 
-        public override NormDist SpecialRmCount { get { return null; } }
+        public override NormDist SpecialRmCount
+        { get { return null; } }
 
-        public override NormDist SpecialRmDepthDist { get { return null; } }
+        public override NormDist SpecialRmDepthDist
+        { get { return null; } }
 
-        public override Range RoomSeparation { get { return new Range(3, 7); } }
+        public override Range RoomSeparation
+        { get { return new Range(3, 7); } }
 
-        public override int CorridorWidth { get { return 2; } }
+        public override int CorridorWidth
+        { get { return 2; } }
 
         public override void Initialize()
         {

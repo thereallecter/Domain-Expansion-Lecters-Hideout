@@ -12,6 +12,7 @@ namespace wServer.logic.behaviors
         //State storage: none
 
         private readonly int altitude;
+
         private readonly float speed;
 
         public StayAbove(double speed, int altitude)

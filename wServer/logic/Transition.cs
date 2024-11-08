@@ -11,6 +11,7 @@ namespace wServer.logic
     public abstract class Transition : IStateChildren
     {
         [ThreadStatic] private static Random rand;
+
         private readonly string targetStateName;
 
         public Transition(string targetState)
@@ -52,6 +53,7 @@ namespace wServer.logic
         {
             TargetState = states[targetStateName];
         }
+
         public void OnStateEntry(Entity host, RealmTime time)
         {
             object state;
@@ -68,7 +70,6 @@ namespace wServer.logic
 
         protected virtual void OnStateEntry(Entity host, RealmTime time, ref object state)
         {
-
         }
     }
 }

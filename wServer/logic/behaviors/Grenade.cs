@@ -15,9 +15,13 @@ namespace wServer.logic.behaviors
         //State storage: cooldown timer
 
         private readonly int damage;
+
         private readonly float radius;
+
         private readonly double range;
+
         private Cooldown coolDown;
+
         private double? fixedAngle;
 
         public Grenade(double radius, int damage, double range = 5,

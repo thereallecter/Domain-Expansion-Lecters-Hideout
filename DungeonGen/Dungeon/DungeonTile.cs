@@ -23,6 +23,7 @@ namespace DungeonGenerator.Dungeon
     public struct TileType
     {
         public readonly uint Id;
+
         public readonly string Name;
 
         public TileType(uint id, string name)
@@ -60,7 +61,9 @@ namespace DungeonGenerator.Dungeon
     public struct DungeonTile
     {
         public TileType TileType;
+
         public string Region;
+
         public DungeonObject Object;
     }
 }

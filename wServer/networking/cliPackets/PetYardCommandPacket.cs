@@ -5,7 +5,9 @@ namespace wServer.networking.cliPackets
     public class PetYardCommandPacket : ClientPacket
     {
         public const int UPGRADE_PET_YARD = 1;
+
         public const int FEED_PET = 2;
+
         public const int FUSE_PET = 3;
 
         public byte CommandId { get; set; }

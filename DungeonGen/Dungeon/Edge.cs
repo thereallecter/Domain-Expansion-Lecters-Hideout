@@ -26,14 +26,18 @@ namespace DungeonGenerator.Dungeon
     public enum Direction
     {
         South = 0,
+
         East = 1,
+
         North = 2,
+
         West = 3
     }
 
     public struct Link
     {
         public readonly Direction Direction;
+
         public readonly int Offset;
 
         public Link(Direction direction, int offset)
@@ -50,7 +54,7 @@ namespace DungeonGenerator.Dungeon
 
     public class Edge
     {
-        Edge()
+        private Edge()
         {
         }
 

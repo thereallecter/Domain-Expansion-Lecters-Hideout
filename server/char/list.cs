@@ -129,7 +129,7 @@ namespace server.@char
             return ret;
         }
 
-        List<ServerItem> GetServerList()
+        private List<ServerItem> GetServerList()
         {
             var ret = new List<ServerItem>();
             int num = Program.Settings.GetValue<int>("svrNum");
@@ -286,15 +286,25 @@ namespace server.@char
         private class locationPoint
         {
             public string ip;
+
             public string country_code;
+
             public string country_name;
+
             public string region_code;
+
             public string region_name;
+
             public string city;
+
             public string zip_code;
+
             public string time_zone;
+
             public double latitude;
+
             public double longitude;
+
             public int metro_code;
         }
     }

@@ -13,12 +13,15 @@ namespace wServer.realm
          *  0  - 7  X coordinate of chunk
          *  8  - 15 Y coordinate of chunk
          *  16 - 23 Collision Map Type
-         * 
+         *
          */
+
         public int Data;
 
         public CollisionNode<T> Next;
+
         public ICollidable<T> Parent;
+
         public CollisionNode<T> Previous;
 
         public void InsertAfter(CollisionNode<T> node)
@@ -66,12 +69,19 @@ namespace wServer.realm
     public class CollisionMap<T> where T : ICollidable<T>
     {
         public const int CHUNK_SIZE = 16;
+
         private const int ACTIVE_RADIUS = 3;
+
         private readonly int cH;
+
         private readonly int cW;
+
         private readonly CollisionNode<T>[,] chunks;
+
         private readonly int h;
+
         private readonly byte type;
+
         private readonly int w;
 
         public CollisionMap(byte type, int w, int h)

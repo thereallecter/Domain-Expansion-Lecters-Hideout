@@ -38,6 +38,7 @@ namespace wServer.networking.handlers
                             });
                             client.Player.SaveToCharacter();
                             break;
+
                         case PetCommandPacket.UNFOLLOW_PET:
                             cmd = db.CreateQuery();
                             cmd.CommandText = "UPDATE characters SET petId=-1 WHERE charId=@charId AND accId=@accId;";
@@ -51,6 +52,7 @@ namespace wServer.networking.handlers
                                 PetId = -1
                             });
                             break;
+
                         case PetCommandPacket.RELEASE_PET:
                             cmd = db.CreateQuery();
                             cmd.CommandText = "DELETE FROM pets WHERE petId=@petId AND accId=@accId;";
@@ -66,6 +68,7 @@ namespace wServer.networking.handlers
                             if (client.Player.Pet != null)
                                 client.Player.Pet.PlayerOwner = client.Player;
                             break;
+
                         default:
                             client.Player.SendError("Unknown CommandId");
                             break;

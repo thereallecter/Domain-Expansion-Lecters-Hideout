@@ -33,10 +33,13 @@ namespace DungeonGenerator
             {
                 case Direction.North:
                     return Direction.South;
+
                 case Direction.South:
                     return Direction.North;
+
                 case Direction.East:
                     return Direction.West;
+
                 case Direction.West:
                     return Direction.East;
             }

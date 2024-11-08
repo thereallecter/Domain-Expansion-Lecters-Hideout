@@ -3,9 +3,13 @@
     public partial class Player
     {
         private bool lootDropBoostFreeTimer;
+
         private bool lootTierBoostFreeTimer;
+
         private bool ninjaShoot;
+
         private bool ninjaFreeTimer;
+
         private bool xpFreeTimer;
 
         public void HandleBoosts()

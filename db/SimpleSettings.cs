@@ -14,7 +14,9 @@ namespace db
         private static readonly ILog log = LogManager.GetLogger(typeof(SimpleSettings));
 
         private readonly string cfgFile;
+
         private readonly string id;
+
         private readonly Dictionary<string, string> values;
 
         public SimpleSettings(string id)

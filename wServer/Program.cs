@@ -20,9 +20,11 @@ namespace wServer
     {
         public static bool WhiteList { get; private set; }
         public static bool Verify { get; private set; }
+
         internal static SimpleSettings Settings;
 
         private static readonly ILog log = LogManager.GetLogger("Server");
+
         private static RealmManager manager;
 
         public static DateTime WhiteListTurnOff { get; private set; }

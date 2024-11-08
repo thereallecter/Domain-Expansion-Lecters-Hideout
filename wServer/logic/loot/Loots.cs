@@ -14,7 +14,9 @@ namespace wServer.logic.loot
     public struct LootDef
     {
         public readonly Item Item;
+
         public readonly double Probabilty;
+
         public readonly string LootState;
 
         public LootDef(Item item, double probabilty, string lootState)
@@ -164,24 +166,31 @@ namespace wServer.logic.loot
                 case 0:
                     bag = 0x500;
                     break;
+
                 case 1:
                     bag = 0x506;
                     break;
+
                 case 2:
                     bag = 0x503;
                     break;
+
                 case 3:
                     bag = 0x508;
                     break;
+
                 case 4:
                     bag = 0x509;
                     break;
+
                 case 5:
                     bag = 0x050B;
                     break;
+
                 case 6:
                     bag = 0x050C;
                     break;
+
                 case 7:
                     bag = 0xfff;
                     break;

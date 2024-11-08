@@ -14,6 +14,7 @@ namespace wServer.logic.behaviors
         //assume spawn=state entry position
 
         private readonly int range;
+
         private readonly float speed;
 
         public StayCloseToSpawn(double speed, int range = 5)

@@ -13,6 +13,7 @@ namespace wServer.realm.setpieces
     internal class LavaFissure : ISetPiece
     {
         private static readonly string Lava = "Lava Blend";
+
         private static readonly string Floor = "Partial Red Floor";
 
         private static readonly Loot chest = new Loot(
@@ -87,7 +88,6 @@ namespace wServer.realm.setpieces
                         world.Map[x + pos.X, y + pos.Y] = tile;
                     }
                 }
-
 
             Entity demon = Entity.Resolve(world.Manager, "Red Demon");
             demon.Move(pos.X + 20.5f, pos.Y + 20.5f);

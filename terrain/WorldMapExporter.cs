@@ -15,6 +15,7 @@ namespace terrain
         {
             File.WriteAllBytes(path, Export(tiles));
         }
+
         public static byte[] Export(TerrainTile[,] tiles)
         {
             List<TerrainTile> dict = new List<TerrainTile>();

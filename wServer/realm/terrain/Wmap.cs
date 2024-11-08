@@ -15,74 +15,133 @@ namespace wServer.realm.terrain
     public enum TileRegion : byte
     {
         None,
+
         Spawn,
+
         Realm_Portals,
+
         Store_1,
+
         Store_2,
+
         Store_3,
+
         Store_4,
+
         Store_5,
+
         Store_6,
+
         Vault,
+
         Loot,
+
         Defender,
+
         Hallway,
+
         Enemy,
+
         Hallway_1,
+
         Hallway_2,
+
         Hallway_3,
+
         Store_7,
+
         Store_8,
+
         Store_9,
+
         Gifting_Chest,
+
         Store_10,
+
         Store_11,
+
         Store_12,
+
         Store_13,
+
         Store_14,
+
         Store_15,
+
         Store_16,
+
         Store_17,
+
         Store_18,
+
         Store_19,
+
         Store_20,
+
         Store_21,
+
         Store_22,
+
         Store_23,
+
         Store_24,
+
         PetRegion,
+
         Outside_Arena,
+
         Item_Spawn_Point,
+
         Arena_Central_Spawn,
+
         Arena_Edge_Spawn
     }
 
     public enum WmapTerrain : byte
     {
         None,
+
         Mountains,
+
         HighSand,
+
         HighPlains,
+
         HighForest,
+
         MidSand,
+
         MidPlains,
+
         MidForest,
+
         LowSand,
+
         LowPlains,
+
         LowForest,
+
         ShoreSand,
+
         ShorePlains,
     }
 
     public struct WmapTile
     {
         public byte Elevation;
+
         public string Name;
+
         public int ObjId;
+
         public ushort ObjType;
+
         public TileRegion Region;
+
         public WmapTerrain Terrain;
+
         public byte TileId;
+
         public byte UpdateCount;
 
         public ObjectDef ToDef(int x, int y)
@@ -97,23 +156,29 @@ namespace wServer.realm.terrain
                         case "name":
                             stats.Add(new KeyValuePair<StatsType, object>(StatsType.Name, kv[1]));
                             break;
+
                         case "size":
                             stats.Add(new KeyValuePair<StatsType, object>(StatsType.Size, Utils.FromString(kv[1])));
                             break;
+
                         case "eff":
                             stats.Add(new KeyValuePair<StatsType, object>(StatsType.Effects, Utils.FromString(kv[1])));
                             break;
+
                         case "conn":
                             stats.Add(new KeyValuePair<StatsType, object>(StatsType.ObjectConnection,
                                 Utils.FromString(kv[1])));
                             break;
+
                         case "hp":
                             stats.Add(new KeyValuePair<StatsType, object>(StatsType.HP, Utils.FromString(kv[1])));
                             break;
+
                         case "mcost":
                             stats.Add(new KeyValuePair<StatsType, object>(StatsType.SellablePrice,
                                 Utils.FromString(kv[1])));
                             break;
+
                         case "mcur":
                             stats.Add(new KeyValuePair<StatsType, object>(StatsType.SellablePriceCurrency,
                                 Utils.FromString(kv[1])));
@@ -162,7 +227,9 @@ namespace wServer.realm.terrain
     public class Wmap
     {
         private readonly XmlData data;
+
         private Tuple<IntPoint, ushort, string>[] entities;
+
         private WmapTile[,] tiles;
 
         public Wmap(XmlData data)
@@ -232,7 +299,6 @@ namespace wServer.realm.terrain
                         tile.ObjId = idBase + enCount;
                     }
 
-
                     tiles[x, y] = tile;
                 }
             this.entities = entities.ToArray();
@@ -280,7 +346,6 @@ namespace wServer.realm.terrain
                         enCount++;
                         tile.ObjId = idBase + enCount;
                     }
-
 
                     tiles[x, y] = tile;
                 }
@@ -330,7 +395,6 @@ namespace wServer.realm.terrain
                         tile.ObjId = idBase + enCount;
                     }
 
-
                     tiles[x, y] = tile;
                 }
             this.entities = entities.ToArray();
@@ -352,16 +416,20 @@ namespace wServer.realm.terrain
                             case "name":
                                 entity.Name = kv[1];
                                 break;
+
                             case "size":
                                 entity.Size = Utils.FromString(kv[1]);
                                 break;
+
                             case "eff":
                                 entity.ConditionEffects = (ConditionEffects)Utils.FromString(kv[1]);
                                 break;
+
                             case "conn":
                                 (entity as ConnectedObject).Connection =
                                     ConnectionInfo.Infos[(uint)Utils.FromString(kv[1])];
                                 break;
+
                             case "mtype":
                                 (entity as Merchants).Custom = true;
                                 (entity as Merchants).MType = Utils.FromString(kv[1]);
@@ -373,6 +441,7 @@ namespace wServer.realm.terrain
                             case "mcost":
                                 (entity as SellableObject).Price = Utils.FromString(kv[1]);
                                 break;
+
                             case "mcur":
                                 (entity as SellableObject).Currency = (CurrencyType)Utils.FromString(kv[1]);
                                 break;

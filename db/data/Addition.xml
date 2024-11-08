@@ -9,7 +9,7 @@
   </Object>
   <Object ext="true" id="kekxd">
     <Class>Equipment</Class>
-    <Item/>
+    <Item />
     <AnimatedTexture>
       <File>playerskins</File>
       <Index>30</Index>
@@ -17,14 +17,14 @@
     <SlotType>10</SlotType>
     <Description>{equip.Customize_your_Knight_with_the_Slime_Skin._Rarity:_Uncommon}</Description>
     <Activate skinType="950">UnlockSkin</Activate>
-    <Consumable/>
+    <Consumable />
     <BagType>1</BagType>
     <DisplayId>{equip.Slime_Knight_Skin}</DisplayId>
   </Object>
   <Object ext="true" id="InnerSanctum Task Master">
     <Class>Character</Class>
-    <StasisImmune/>
-    <NoMiniMap/>
+    <StasisImmune />
+    <NoMiniMap />
     <Texture>
       <File>invisible</File>
       <Index>0</Index>
@@ -48,9 +48,9 @@
     <Description>What could hide inside it...</Description>
     <Sound>use_potion</Sound>
     <Activate amount="5">Gold</Activate>
-    <Consumable/>
-    <Potion/>
-    <Soulbound/>
+    <Consumable />
+    <Potion />
+    <Soulbound />
     <BagType>2</BagType>
     <DisplayId>Gold</DisplayId>
   </Object>
@@ -65,16 +65,16 @@
     <Description>What could hide inside it...</Description>
     <Sound>use_potion</Sound>
     <Activate amount="10">Fame</Activate>
-    <Consumable/>
-    <Potion/>
-    <Soulbound/>
+    <Consumable />
+    <Potion />
+    <Soulbound />
     <BagType>2</BagType>
     <DisplayId>Fame</DisplayId>
   </Object>
-  
+
   <Object ext="true" id="Reaper Key">
     <Class>Equipment</Class>
-    <Item/>
+    <Item />
     <Texture>
       <File>lofiObj5</File>
       <Index>0x88</Index>
@@ -82,15 +82,15 @@
     <SlotType>10</SlotType>
     <Description>A key which opens an entrance to the Grim Reaper's Lair</Description>
     <Sound>use_key</Sound>
-    <Consumable/>
-    <Soulbound/>
+    <Consumable />
+    <Soulbound />
     <Activate id="Grim Reaper's Lair">Create</Activate>
     <feedPower>270</feedPower>
     <DisplayId>Reaper Key</DisplayId>
   </Object>
   <Object ext="true" id="Grim Reaper's Lair">
     <Class>Portal</Class>
-    <IntergamePortal/>
+    <IntergamePortal />
     <DungeonName>Grim Reaper's Lair</DungeonName>
     <Texture>
       <File>lofiObj5</File>
@@ -99,9 +99,8 @@
     <DisplayId>Grim Reaper's Lair</DisplayId>
   </Object>
 
-
   <Object ext="true" id="Shybo">
-    <Enemy/>
+    <Enemy />
     <Class>Character</Class>
     <AnimatedTexture>
       <File>chars16x16dEncounters</File>
@@ -112,12 +111,12 @@
     <Size>20</Size>
     <MaxHitPoints>50000</MaxHitPoints>
     <Defense>50</Defense>
-    <Quest/>
-    <StasisImmune/>
-    <StunImmune/>
-    <DazedImmune/>
+    <Quest />
+    <StasisImmune />
+    <StunImmune />
+    <DazedImmune />
     <XpMult>0.8</XpMult>
-    <NoArticle/>
+    <NoArticle />
     <Projectile id="0">
       <ObjectId>Black Ball</ObjectId>
       <Damage>125</Damage>
@@ -128,7 +127,7 @@
     <DisplayId>Shybo</DisplayId>
   </Object>
   <Object ext="true" id="A Shybo Enemy">
-    <Enemy/>
+    <Enemy />
     <Class>Character</Class>
     <AnimatedTexture>
       <File>chars16x16dEncounters</File>
@@ -139,12 +138,12 @@
     <Size>80</Size>
     <MaxHitPoints>25000</MaxHitPoints>
     <Defense>25</Defense>
-    <Quest/>
-    <StasisImmune/>
-    <StunImmune/>
-    <DazedImmune/>
+    <Quest />
+    <StasisImmune />
+    <StunImmune />
+    <DazedImmune />
     <XpMult>0.8</XpMult>
-    <NoArticle/>
+    <NoArticle />
     <Projectile id="0">
       <ObjectId>Black Ball</ObjectId>
       <Damage>75</Damage>
@@ -155,7 +154,7 @@
     <DisplayId>A Shybo Enemy</DisplayId>
   </Object>
   <Object ext="true" id="Shybo Minion">
-    <Enemy/>
+    <Enemy />
     <Class>Character</Class>
     <AnimatedTexture>
       <File>chars16x16dEncounters</File>
@@ -166,12 +165,12 @@
     <Size>70</Size>
     <MaxHitPoints>10000</MaxHitPoints>
     <Defense>25</Defense>
-    <Quest/>
-    <StasisImmune/>
-    <StunImmune/>
-    <DazedImmune/>
+    <Quest />
+    <StasisImmune />
+    <StunImmune />
+    <DazedImmune />
     <XpMult>0.8</XpMult>
-    <NoArticle/>
+    <NoArticle />
     <Projectile id="0">
       <ObjectId>Black Ball</ObjectId>
       <Damage>75</Damage>
@@ -180,5 +179,4 @@
     </Projectile>
     <DisplayId>Shybo Minion</DisplayId>
   </Object>
-  
 </ExtData>

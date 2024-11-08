@@ -10,7 +10,9 @@ namespace wServer.realm
     public enum AbilityType
     {
         First,
+
         Second,
+
         Third
     }
 
@@ -120,8 +122,8 @@ namespace wServer.realm
         };
 
         private Pet pet;
-        private readonly AbilityType type;
 
+        private readonly AbilityType type;
 
         //a * (1 - Math.pow(r, level)) / (1 - r)
         //points to get to level

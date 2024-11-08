@@ -6,9 +6,13 @@ namespace wServer.logic.behaviors
     public class HpLessOrder : Behavior
     {
         private readonly float dist;
+
         private readonly float threshold;
+
         private readonly ushort children;
+
         private readonly string targetStateName;
+
         private State targetState;
 
         public HpLessOrder(double dist, double threshold, string children, string targetStateName)
@@ -37,7 +41,6 @@ namespace wServer.logic.behaviors
             }
             return null;
         }
-
 
         protected override void TickCore(Entity host, RealmTime time, ref object state)
         {

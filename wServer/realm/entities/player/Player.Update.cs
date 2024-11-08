@@ -19,10 +19,15 @@ namespace wServer.realm.entities.player
         private const int APPOX_AREA_OF_SIGHT = (int)(Math.PI * SIGHTRADIUS * SIGHTRADIUS + 1);
 
         private readonly HashSet<Entity> clientEntities = new HashSet<Entity>();
+
         private readonly HashSet<IntPoint> clientStatic = new HashSet<IntPoint>(new IntPointComparer());
+
         private readonly Dictionary<Entity, int> lastUpdate = new Dictionary<Entity, int>();
+
         private int mapHeight;
+
         private int mapWidth;
+
         private int tickId;
 
         private IEnumerable<Entity> GetNewEntities()
@@ -46,7 +51,6 @@ namespace wServer.realm.entities.player
                     if (owner == AccountId)
                         if ((LootDropBoost || LootTierBoost) && (i.ObjectType != 0x500 || i.ObjectType != 0x506))
                             (i as Container).BoostedBag = true; //boosted bag
-
                 }
                 if (!(MathsUtils.DistSqr(i.X, i.Y, X, Y) <= SIGHTRADIUS * SIGHTRADIUS)) continue;
                 if (clientEntities.Add(i))

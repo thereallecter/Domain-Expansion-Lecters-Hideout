@@ -15,9 +15,6 @@
         protected override void Init()
         {
             LoadMap("wServer.realm.worlds.maps.davy.jm", MapType.Json);
-
-
-
         }
     }
 }

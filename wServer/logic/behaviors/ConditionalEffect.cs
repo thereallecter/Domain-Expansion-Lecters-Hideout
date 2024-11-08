@@ -11,6 +11,7 @@ namespace wServer.logic.behaviors
         //State storage: none
 
         private readonly ConditionEffectIndex effect;
+
         private readonly bool perm;
 
         public ConditionalEffect(ConditionEffectIndex effect, bool perm = false)

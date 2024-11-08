@@ -24,9 +24,13 @@ namespace wServer.realm
     public enum PendingPriority
     {
         Emergent,
+
         Destruction,
+
         Networking,
+
         Normal,
+
         Creation,
     }
 
@@ -48,7 +52,9 @@ namespace wServer.realm
             "NexusPortal.Cake",
             "NexusPortal.xdlmao",
         };
+
         public static List<string> CurrentRealmNames = new List<string>();
+
         public const int MAX_REALM_PLAYERS = 85;
 
         private static readonly ILog log = LogManager.GetLogger(typeof(RealmManager));
@@ -63,7 +69,9 @@ namespace wServer.realm
         public Random Random { get; }
 
         private Thread logic;
+
         private Thread network;
+
         private int nextClientId;
 
         private int nextWorldId;
