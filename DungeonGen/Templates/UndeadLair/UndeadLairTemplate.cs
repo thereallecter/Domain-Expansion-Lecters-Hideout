@@ -26,19 +26,13 @@ namespace DungeonGenerator.Templates.UndeadLair
 {
     public class UndeadLairTemplate : DungeonTemplate
     {
-        internal static readonly TileType LightSand = new TileType(0x00bd, "Light Sand");
-
         internal static readonly TileType GreyClosed = new TileType(0x05, "Grey Closed");
-
         internal static readonly TileType Composite = new TileType(0x00fd, "Composite");
-
         internal static readonly TileType Space = new TileType(0x00fe, "Space");
 
         internal static readonly ObjectType CaveWall = new ObjectType(0x01ce, "Cave Wall");
-
         internal static readonly ObjectType CowardicePortal = new ObjectType(0x0703, "Portal of Cowardice");
-
-        internal static readonly ObjectType PirateKing = new ObjectType(0x0927, "Dreadstump the Pirate King");
+        internal static readonly ObjectType Septavius = new ObjectType(0x0d90, "Septavius the Ghost God");
 
         internal static readonly ObjectType[] Boss = {
         };
