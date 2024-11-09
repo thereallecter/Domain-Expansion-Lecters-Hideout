@@ -96,7 +96,7 @@ namespace DungeonGenerator.Templates.UndeadLair
                         {
                             buf[x, y].Object = new DungeonObject
                             {
-                                ObjectType = UndeadLairTemplate.PirateKing
+                                ObjectType = UndeadLairTemplate.Septavius
                             };
                             numKing--;
                         }
