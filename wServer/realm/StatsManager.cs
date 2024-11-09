@@ -35,7 +35,8 @@ namespace wServer.realm
         {
             if (player.HasConditionEffect(ConditionEffectIndex.Weak))
                 return 0.5f;
-            var ret = (0.5f + GetStats(2) / 75F * (2 - 0.5f));
+
+            var ret = (0.5f + GetStats(2) / 45F * (2 - 0.5f));
 
             if (player.HasConditionEffect(ConditionEffectIndex.Damaging))
                 ret *= 1.5f;
@@ -50,7 +51,7 @@ namespace wServer.realm
             if (host.HasConditionEffect(ConditionEffectIndex.ArmorBroken))
                 def = 0;
 
-            float limit = dmg * 0.15f;
+            float limit = dmg * 0.10f;
 
             float ret;
             if (dmg - def < limit) ret = limit;
@@ -71,7 +72,7 @@ namespace wServer.realm
                 noDef)
                 def = 0;
 
-            float limit = dmg * 0.15f;
+            float limit = dmg * 0.10f;
 
             float ret;
             if (dmg - def < limit) ret = limit;
@@ -105,7 +106,7 @@ namespace wServer.realm
             int vit = GetStats(5);
             if (player.HasConditionEffect(ConditionEffectIndex.Sick))
                 vit = 0;
-            return 1 + 0.12f * vit;
+            return 1 + 0.32f * vit;
         }
 
         public float GetMPRegen()
@@ -113,7 +114,7 @@ namespace wServer.realm
             int wis = GetStats(6);
             if (player.HasConditionEffect(ConditionEffectIndex.Quiet))
                 return 0;
-            return 0.5f + 0.06f * wis;
+            return 0.5f + 0.26f * wis;
         }
 
         public float GetDex()
@@ -122,7 +123,7 @@ namespace wServer.realm
             if (player.HasConditionEffect(ConditionEffectIndex.Dazed))
                 dex = 0;
 
-            float ret = 1.5f + 6.5f * (dex / 75f);
+            float ret = 3.5f + 6.5f * (dex / 45f);
             if (player.HasConditionEffect(ConditionEffectIndex.Berserk))
                 ret *= 1.5f;
             if (player.HasConditionEffect(ConditionEffectIndex.Stunned))
