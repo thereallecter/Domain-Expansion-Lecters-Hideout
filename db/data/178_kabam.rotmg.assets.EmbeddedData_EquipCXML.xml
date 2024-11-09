@@ -11780,63 +11780,34 @@
       <DisplayId>{equip.Pirate_KingAPOSs_Cutlass}</DisplayId>
    </Object>
    <Object type="0xcdc" id="Doku No Ken">
-      <Class>Equipment</Class>
-      <Item/>
-      <Texture>
-         <File>lofiObj3</File>
-         <Index>0x404</Index>
-      </Texture>
-      <SlotType>24</SlotType>
-      <Description>{equip.Stuck_in_the_maw_of_the_Son_of_Arachna,_this_Katana_is_coat}</Description>
-      <RateOfFire>1.25</RateOfFire>
-      <Sound>weapon/long_sword</Sound>
-      <Projectile id="0">
-         <ObjectId>Poison Katana Slash</ObjectId>
-         <Speed>130</Speed>
-         <MinDamage>130</MinDamage>
-         <MaxDamage>150</MaxDamage>
-         <LifetimeMS>400</LifetimeMS>
-         <Amplitude>0.5</Amplitude>
-         <Frequency>1</Frequency>
-         <Size>90</Size>
-         <MultiHit/>
-      </Projectile>
-      <BagType>6</BagType>
-      <FameBonus>4</FameBonus>
-      <OldSound>bladeSwing</OldSound>
-      <feedPower>500</feedPower>
-      <Soulbound/>
-      <DisplayId>{equip.Doku_No_Ken}</DisplayId>
+     <Class>Equipment</Class>
+     <Item/>
+     <Texture>
+       <File>lofiObj3</File>
+       <Index>0x404</Index>
+     </Texture>
+     <SlotType>24</SlotType>
+     <Description>{equip.Stuck_in_the_maw_of_the_Son_of_Arachna,_this_Katana_is_coat}</Description>
+     <RateOfFire>1.45</RateOfFire>
+     <Sound>weapon/long_sword</Sound>
+     <Projectile id="0">
+       <ObjectId>Poison Katana Slash</ObjectId>
+       <Speed>145</Speed>
+       <MinDamage>135</MinDamage>
+       <MaxDamage>165</MaxDamage>
+       <LifetimeMS>380</LifetimeMS>
+       <Amplitude>0.3</Amplitude>
+       <Frequency>1.5</Frequency>
+       <Size>90</Size>
+       <MultiHit/>
+     </Projectile>
+     <BagType>6</BagType>
+     <FameBonus>4</FameBonus>
+     <OldSound>bladeSwing</OldSound>
+     <feedPower>500</feedPower>
+     <Soulbound/>
+     <DisplayId>Doku No Ken</DisplayId>
    </Object>
-  <Object type="0xfcdc" id="Doku No Ken (ReMastered)">
-    <Class>Equipment</Class>
-    <Item/>
-    <Texture>
-      <File>lofiObj3</File>
-      <Index>0x404</Index>
-    </Texture>
-    <SlotType>24</SlotType>
-    <Description>{equip.Stuck_in_the_maw_of_the_Son_of_Arachna,_this_Katana_is_coat}</Description>
-    <RateOfFire>1.45</RateOfFire>
-    <Sound>weapon/long_sword</Sound>
-    <Projectile id="0">
-      <ObjectId>Poison Katana Slash</ObjectId>
-      <Speed>145</Speed>
-      <MinDamage>135</MinDamage>
-      <MaxDamage>165</MaxDamage>
-      <LifetimeMS>380</LifetimeMS>
-      <Amplitude>0.3</Amplitude>
-      <Frequency>1.5</Frequency>
-      <Size>90</Size>
-      <MultiHit/>
-    </Projectile>
-    <BagType>6</BagType>
-    <FameBonus>4</FameBonus>
-    <OldSound>bladeSwing</OldSound>
-    <feedPower>500</feedPower>
-    <Soulbound/>
-    <DisplayId>Doku No Ken (ReMastered)</DisplayId>
-  </Object>
    <Object type="0xcde" id="Leaf Bow">
       <Class>Equipment</Class>
       <Item/>
