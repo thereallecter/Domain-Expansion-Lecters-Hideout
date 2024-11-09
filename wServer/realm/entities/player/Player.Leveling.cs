@@ -77,24 +77,24 @@ namespace wServer.realm.entities.player
 
         private static int GetExpGoal(int level)
         {
-            return 50 + (level - 1) * 100;
+            return 500 + (level - 1) * 1000;
         }
 
         private static int GetLevelExp(int level)
         {
             if (level == 1) return 0;
-            return 50 * (level - 1) + (level - 2) * (level - 1) * 50;
+            return 500 * (level - 1) + (level - 2) * (level - 1) * 500;
         }
 
         private static int GetFameGoal(int fame)
         {
-            if (fame >= 4000) return 0;
-            else if (fame >= 2000) return 4000;
-            else if (fame >= 800) return 2000;
-            else if (fame >= 400) return 800;
-            else if (fame >= 150) return 400;
-            else if (fame >= 20) return 150;
-            else return 20;
+            if (fame >= 40000) return 0;
+            else if (fame >= 20000) return 40000;
+            else if (fame >= 8000) return 20000;
+            else if (fame >= 4000) return 8000;
+            else if (fame >= 1500) return 4000;
+            else if (fame >= 200) return 1500;
+            else return 200;
         }
 
         public int GetStars()
@@ -102,12 +102,12 @@ namespace wServer.realm.entities.player
             var ret = 0;
             foreach (var i in Client.Account.Stats.ClassStates)
             {
-                if (i.BestFame >= 4000) ret += 6;
-                else if (i.BestFame >= 2000) ret += 5;
-                else if (i.BestFame >= 800) ret += 4;
-                else if (i.BestFame >= 400) ret += 3;
-                else if (i.BestFame >= 150) ret += 2;
-                else if (i.BestFame >= 20) ret += 1;
+                if (i.BestFame >= 40000) ret += 6;
+                else if (i.BestFame >= 20000) ret += 5;
+                else if (i.BestFame >= 8000) ret += 4;
+                else if (i.BestFame >= 4000) ret += 3;
+                else if (i.BestFame >= 1500) ret += 2;
+                else if (i.BestFame >= 200) ret += 1;
             }
             return ret;
         }
@@ -167,8 +167,8 @@ namespace wServer.realm.entities.player
         private void CalculateFame()
         {
             int newFame;
-            if (Experience < 200 * 1000) newFame = Experience / 1000;
-            else newFame = 200 + (Experience - 200 * 1000) / 1000;
+            if (Experience < 200 * 10000) newFame = Experience / 10000;
+            else newFame = 200 + (Experience - 200 * 1000) / 10000;
             if (newFame == Fame) return;
             Fame = newFame;
             int newGoal;
@@ -220,7 +220,7 @@ namespace wServer.realm.entities.player
                 if (Level == 20)
                 {
                     foreach (var i in Owner.Players.Values)
-                        i.SendInfo(Name + " achieved level 20");
+                        i.SendInfo(Name + " achieved level 100");
                     XpBoosted = false;
                     XpBoostTimeLeft = 0;
                 }
