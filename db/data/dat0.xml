@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
 <GroundTypes>
+
+
+
    <Ground type="0x00" id="Black Water">
       <Texture>
          <File>lofiEnvironment2</File>
@@ -3709,4 +3710,5 @@
       <MinDamage>70</MinDamage>
       <MaxDamage>80</MaxDamage>
    </Ground>
+
 </GroundTypes>

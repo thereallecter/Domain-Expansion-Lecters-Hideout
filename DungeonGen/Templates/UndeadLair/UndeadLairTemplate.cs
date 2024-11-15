@@ -35,16 +35,46 @@ namespace DungeonGenerator.Templates.UndeadLair
         internal static readonly ObjectType Septavius = new ObjectType(0x0d90, "Septavius the Ghost God");
 
         internal static readonly ObjectType[] Boss = {
+            new ObjectType(0x0d95, "Lair Skeleton King"),
+            new ObjectType(0x0d93, "Lair Skeleton Veteran"),
+
+            new ObjectType(0x0d97, "Lair Mummy King"),
+
+            new ObjectType(0x0da2, "Lair Burst Trap"),
+            new ObjectType(0x0da3, "Lair Ghost Bat"),
         };
 
         internal static readonly ObjectType[] Minion = {
+            new ObjectType(0x0d91, "Lair Skeleton"),
+            new ObjectType(0x0d92, "Lair Skeleton Swordsman"),
+            new ObjectType(0x0d93, "Lair Skeleton Veteran"),
+            new ObjectType(0x0d94, "Lair Skeleton Mage"),
+
+            new ObjectType(0x0d96, "Lair Mummy"),
+            new ObjectType(0x0d98, "Lair Mummy Pharaoh"),
+            new ObjectType(0x0d93, "Lair Skeleton Veteran"),
+            new ObjectType(0x0d94, "Lair Skeleton Mage"),
+
+            new ObjectType(0x0d9e, "Lair Big Black Slime"),
+            new ObjectType(0x0d9c, "Lair Medium Black Slime"),
+
+            new ObjectType(0x0d9e, "Lair Big Brown Slime"),
+            new ObjectType(0x0d9f, "Lair Skeleton Mage")
         };
 
         internal static readonly ObjectType[] Pet = {
+            new ObjectType(0x0d99, "Lair Construct Giant"),
+            new ObjectType(0x0d9a, "Lair Construct Titan"),
+
+            new ObjectType(0x0d9d, "Lair Little Black Slime"),
+            new ObjectType(0x0d9f, "Lair Little Brown Slime"),
+
+            new ObjectType(0x0da0, "Lair Brown Bat"),
+            new ObjectType(0x0da1, "Lair Ghost Bat"),
         };
 
         public override int MaxDepth
-        { get { return 36; } }
+        { get { return 12; } }
 
         private NormDist targetDepth;
         public override NormDist TargetDepth
@@ -57,19 +87,19 @@ namespace DungeonGenerator.Templates.UndeadLair
         { get { return null; } }
 
         public override Range RoomSeparation
-        { get { return new Range(5, 5); } }
+        { get { return new Range(3, 7); } }
 
         public override int CorridorWidth
-        { get { return 5; } }
+        { get { return 2; } }
 
         public override void Initialize()
         {
-            targetDepth = new NormDist(2, 24, 12, 36, Rand.Next());
+            targetDepth = new NormDist(2, 8, 10, 12, Rand.Next());
         }
 
         public override Room CreateStart(int depth)
         {
-            return new StartRoom(14, 14);
+            return new StartRoom(10, 13);
         }
 
         public override Room CreateTarget(int depth, Room prev)
@@ -84,7 +114,7 @@ namespace DungeonGenerator.Templates.UndeadLair
 
         public override Room CreateNormal(int depth, Room prev)
         {
-            return new NormalRoom(Rand.Next(14, 14), Rand.Next(14, 14));
+            return new NormalRoom(Rand.Next(10, 13), Rand.Next(10, 13));
         }
 
         public override MapCorridor CreateCorridor()

@@ -12,18 +12,13 @@ namespace wServer.realm.entities
 {
     internal class MerchantLists
     {
-        public static Dictionary<int, Tuple<int, CurrencyType>> prices = new Dictionary<int, Tuple<int, CurrencyType>>
-        {
-
-        };
-
-        public static int[] AccessoryClothList;
+        public static Dictionary<int, Tuple<int, CurrencyType>> prices = new Dictionary<int, Tuple<int, CurrencyType>> { };
 
         public static int[] AccessoryDyeList;
-
-        public static int[] ClothingClothList;
+        public static int[] AccessoryClothList;
 
         public static int[] ClothingDyeList;
+        public static int[] ClothingClothList;
 
         public static int[] store1List = { };
 

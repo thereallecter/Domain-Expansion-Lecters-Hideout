@@ -49,8 +49,8 @@ namespace wServer.realm
     {
         public static List<string> Realms = new List<string>(44)
         {
-            "NexusPortal.Cake",
-            "NexusPortal.xdlmao",
+            "America", "Canada", "Mexico", "Cuba", "Bahamas",
+            "Japan", "China", "Afghanistan", "North Korea", "Russia"
         };
 
         public static List<string> CurrentRealmNames = new List<string>();
@@ -200,6 +200,7 @@ namespace wServer.realm
             Monitor = new RealmPortalMonitor(this);
 
             Task.Factory.StartNew(() => GameWorld.AutoName(1, true)).ContinueWith(_ => AddWorld(_.Result), TaskScheduler.Default);
+            Task.Factory.StartNew(() => GameWorld.AutoName(2, true)).ContinueWith(_ => AddWorld(_.Result), TaskScheduler.Default);
 
             Chat = new ChatManager(this);
             Commands = new CommandManager(this);

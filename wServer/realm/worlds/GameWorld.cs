@@ -22,7 +22,7 @@ namespace wServer.realm.worlds
 
         public GameWorld(int mapId, string name, bool oryxPresent)
         {
-            displayname = name;
+            displayname = "Welcome to " + name;
             Name = name;
             ClientWorldName = name;
             Background = 0;

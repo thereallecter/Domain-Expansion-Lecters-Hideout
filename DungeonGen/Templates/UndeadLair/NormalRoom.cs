@@ -61,9 +61,9 @@ namespace DungeonGenerator.Templates.UndeadLair
                 TileType = UndeadLairTemplate.GreyClosed
             });
 
-            int numBoss = new Range(0, 1).Random(rand);
-            int numMinion = new Range(3, 5).Random(rand);
-            int numPet = new Range(0, 2).Random(rand);
+            int numBoss = new Range(1, 2).Random(rand);
+            int numMinion = new Range(4, 6).Random(rand);
+            int numPet = new Range(2, 2).Random(rand);
 
             var buf = rasterizer.Bitmap;
             var bounds = Bounds;
@@ -81,7 +81,7 @@ namespace DungeonGenerator.Templates.UndeadLair
                         {
                             buf[x, y].Object = new DungeonObject
                             {
-                                // ObjectType = UndeadLairTemplate.Boss[rand.Next(UndeadLairTemplate.Boss.Length)]
+                                ObjectType = UndeadLairTemplate.Boss[rand.Next(UndeadLairTemplate.Boss.Length)]
                             };
                             numBoss--;
                         }
@@ -92,7 +92,7 @@ namespace DungeonGenerator.Templates.UndeadLair
                         {
                             buf[x, y].Object = new DungeonObject
                             {
-                                // ObjectType = UndeadLairTemplate.Minion[rand.Next(UndeadLairTemplate.Minion.Length)]
+                                ObjectType = UndeadLairTemplate.Minion[rand.Next(UndeadLairTemplate.Minion.Length)]
                             };
                             numMinion--;
                         }
@@ -103,7 +103,7 @@ namespace DungeonGenerator.Templates.UndeadLair
                         {
                             buf[x, y].Object = new DungeonObject
                             {
-                                // ObjectType = UndeadLairTemplate.Pet[rand.Next(UndeadLairTemplate.Pet.Length)]
+                                ObjectType = UndeadLairTemplate.Pet[rand.Next(UndeadLairTemplate.Pet.Length)]
                             };
                             numPet--;
                         }
