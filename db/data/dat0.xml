@@ -1,7 +1,4 @@
 <GroundTypes>
-
-
-
    <Ground type="0x00" id="Black Water">
       <Texture>
          <File>lofiEnvironment2</File>

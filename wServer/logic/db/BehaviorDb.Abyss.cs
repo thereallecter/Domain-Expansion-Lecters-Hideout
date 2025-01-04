@@ -7,8 +7,8 @@ namespace wServer.logic
     partial class BehaviorDb
     {
         private _ Abyss = () => Behav()
-            .Init("Archdemon Malphas",
-                new State(
+        .Init("Archdemon Malphas",
+            new State(
                     new OnDeathBehavior(new ApplySetpiece("AbyssDeath")),
                     new State("default",
                         new PlayerWithinTransition(8, "basic")

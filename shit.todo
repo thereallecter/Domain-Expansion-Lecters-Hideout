@@ -18,7 +18,7 @@
 	-> Clean up Behaviors
 	-> Cleanup Nexus.wmap (Start work on Lecter's Hideout)
 	-> Convert project from Realm Of The Mad God into a standalone game engine
-		Do this by stripping Realm Of The Mad God down to it's bare components
+		Do this by stripping Realm Of The Mad God down to its bare components
 		and functionalites. Then, rebuild it from the ground up to become, Lecter's Hideout.
 		Using the RotMG systems as a game engine
 11/08/2024 [03:19 AM]
@@ -34,3 +34,5 @@
 	-> Equipment rebalance
 11/08/2024 [12:21 AM]
 	-> Dissapearing items bug is back
+12/18/2024 [10:29 AM]
+	-> Reorganize Dat0.xml and Dat1.xml
