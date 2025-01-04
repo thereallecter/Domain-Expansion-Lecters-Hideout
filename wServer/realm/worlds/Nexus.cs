@@ -10,20 +10,17 @@ namespace wServer.realm.worlds
 {
     public class Nexus : World
     {
-        public const string NEXUS_RESOURCE = "wServer.realm.worlds.maps.nexus.wmap";
-
+        public const string DEFAULT_RESOURCE = "wServer.realm.worlds.maps.nexus.wmap";
         public const string PROD_RESOURCE = "wServer.realm.worlds.maps.nexusprod.wmap";
-
         public const string WINTER_RESOURCE = "wServer.realm.worlds.maps.nexus_winter.jm";
-
         public const string SUMMER_RESOURCE = "wServer.realm.worlds.maps.nexus_summer.jm";
 
         public Nexus()
         {
             Id = NEXUS_ID;
             Name = "Nexus";
-            ClientWorldName = "server.nexus";
-            Background = 2;
+            ClientWorldName = "Nexus";
+            Background = 0;
             AllowTeleport = false;
             Difficulty = -1;
         }
@@ -31,7 +28,7 @@ namespace wServer.realm.worlds
         protected override void Init()
         {
             //LoadMap(SUMMER_RESOURCE, MapType.Json);
-            LoadMap(NEXUS_RESOURCE, MapType.Wmap);
+            LoadMap(DEFAULT_RESOURCE, MapType.Wmap);
         }
 
         public override void Tick(RealmTime time)

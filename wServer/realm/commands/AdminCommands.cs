@@ -446,7 +446,7 @@ namespace wServer.realm.commands
 
     internal class KillAllCommand : Command
     {
-        public KillAllCommand() : base("kill_all", RankName.ADMIN)
+        public KillAllCommand() : base("genocide", RankName.ADMIN)
         {
         }
 

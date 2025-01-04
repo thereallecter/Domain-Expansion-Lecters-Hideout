@@ -36,3 +36,6 @@
 	-> Dissapearing items bug is back
 12/18/2024 [10:29 AM]
 	-> Reorganize Dat0.xml and Dat1.xml
+01/03/2024 [04:39 PM]
+	-> Play with different defense formulas (currently thinking about switching to def = percent instead of subtractive)
+		Higher def = higher dmg% reduction

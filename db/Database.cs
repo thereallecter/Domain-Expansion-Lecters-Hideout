@@ -271,9 +271,11 @@ AND characters.charId=death.chrId;";
 
             cmd = CreateQuery();
             cmd.CommandText =
-                "INSERT INTO accounts(uuid, password, name, rank, namechosen, verified, guild, guildRank, guildFame, vaultCount, maxCharSlot, regTime, guest, banned, locked, ignored, gifts, isAgeVerified, authToken) VALUES(@uuid, SHA1(@password), @randomName, @rank, 0, 0, 0, 0, 0, 1, 2, @regTime, @guest, 0, @empty, @empty, @empty, 1, @authToken);";
+                "INSERT INTO " +
+                "accounts(uuid, password, name, rank, namechosen, verified, guild, guildRank, guildFame, vaultCount, maxCharSlot, regTime, guest, banned, locked, ignored, gifts, isAgeVerified, authToken) " +
+                "VALUES(@uuid, SHA1(@password), @nuid, @rank, 1, 0, 0, 0, 0, 1, 2, @regTime, @guest, 0, @empty, @empty, @empty, 1, @authToken);";
             cmd.Parameters.AddWithValue("@uuid", uuid);
-            cmd.Parameters.AddWithValue("@randomName", Names[new Random().Next(0, Names.Length)]);
+            cmd.Parameters.AddWithValue("@nuid", uuid);
             cmd.Parameters.AddWithValue("@password", password);
             cmd.Parameters.AddWithValue("@name", Names[(uint)uuid.GetHashCode() % Names.Length]);
             cmd.Parameters.AddWithValue("@guest", isGuest);

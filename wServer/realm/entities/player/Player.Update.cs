@@ -16,7 +16,7 @@ namespace wServer.realm.entities.player
 
         public const int SIGHTRADIUS = 15;
 
-        private const int APPOX_AREA_OF_SIGHT = (int)(Math.PI * SIGHTRADIUS * SIGHTRADIUS + 1);
+        private const int APPOX_AREA_OF_SIGHT = (int)(Math.PI * SIGHTRADIUS * SIGHTRADIUS + 2);
 
         private readonly HashSet<Entity> clientEntities = new HashSet<Entity>();
 
