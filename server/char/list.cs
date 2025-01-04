@@ -183,14 +183,14 @@ namespace server.@char
                 "Trickster",
                 "Sorcerer",
                 "Ninja",
+                "Ninja v2",
                 "Archer",
                 "Wizard",
                 "Priest",
                 "Necromancer",
                 "Warrior",
                 "Knight",
-                "Paladin",
-                "Nerd"
+                "Paladin"
             };
 
             if (acc == null)
@@ -204,14 +204,14 @@ namespace server.@char
                     new ClassAvailabilityItem {Class = "Trickster", Restricted = "restricted"},
                     new ClassAvailabilityItem {Class = "Sorcerer", Restricted = "restricted"},
                     new ClassAvailabilityItem {Class = "Ninja", Restricted = "restricted"},
+                    new ClassAvailabilityItem {Class = "Ninja v2", Restricted = "restricted"},
                     new ClassAvailabilityItem {Class = "Archer", Restricted = "restricted"},
                     new ClassAvailabilityItem {Class = "Wizard", Restricted = "unrestricted"},
                     new ClassAvailabilityItem {Class = "Priest", Restricted = "restricted"},
                     new ClassAvailabilityItem {Class = "Necromancer", Restricted = "restricted"},
                     new ClassAvailabilityItem {Class = "Warrior", Restricted = "restricted"},
                     new ClassAvailabilityItem {Class = "Knight", Restricted = "restricted"},
-                    new ClassAvailabilityItem {Class = "Paladin", Restricted = "restricted"},
-                    new ClassAvailabilityItem {Class = "Nerd", Restricted = "unrestricted"},
+                    new ClassAvailabilityItem {Class = "Paladin", Restricted = "restricted"}
                 };
             }
 

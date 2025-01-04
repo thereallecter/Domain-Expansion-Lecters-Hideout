@@ -273,20 +273,15 @@ AND characters.charId=death.chrId;";
             cmd.CommandText =
                 "INSERT INTO " +
                 "accounts(uuid, password, name, rank, namechosen, verified, guild, guildRank, guildFame, vaultCount, maxCharSlot, regTime, guest, banned, locked, ignored, gifts, isAgeVerified, authToken) " +
-                "VALUES(@uuid, SHA1(@password), @nuid, @rank, 1, 0, 0, 0, 0, 1, 2, @regTime, @guest, 0, @empty, @empty, @empty, 1, @authToken);";
+                "VALUES(@uuid, SHA1(@password), @nuid, 0, 1, 0, 0, 0, 0, 5, 10, @regTime, @guest, 0, @empty, @empty, @empty, 1, @authToken);";
             cmd.Parameters.AddWithValue("@uuid", uuid);
             cmd.Parameters.AddWithValue("@nuid", uuid);
             cmd.Parameters.AddWithValue("@password", password);
-            cmd.Parameters.AddWithValue("@name", Names[(uint)uuid.GetHashCode() % Names.Length]);
+            cmd.Parameters.AddWithValue("@name", uuid);
             cmd.Parameters.AddWithValue("@guest", isGuest);
             cmd.Parameters.AddWithValue("@regTime", DateTime.Now);
             cmd.Parameters.AddWithValue("@authToken", GenerateRandomString(128));
             cmd.Parameters.AddWithValue("@empty", "");
-
-            if (emails.Contains(uuid))
-                cmd.Parameters.AddWithValue("@rank", 1);
-            else
-                cmd.Parameters.AddWithValue("@rank", 0);
 
             var success = cmd.ExecuteNonQuery() > 0;
             var accId = cmd.LastInsertedId;
@@ -295,7 +290,7 @@ AND characters.charId=death.chrId;";
             {
                 cmd = CreateQuery();
                 cmd.CommandText =
-                    "INSERT INTO stats(accId, fame, totalFame, credits, totalCredits) VALUES(@accId, 0, 0, 100, 100);";
+                    "INSERT INTO stats(accId, fame, totalFame, credits, totalCredits) VALUES(@accId, 0, 0, 1600, 1600);";
                 cmd.Parameters.AddWithValue("@accId", accId);
                 cmd.ExecuteNonQuery();
 
@@ -427,7 +422,7 @@ AND characters.charId=death.chrId;";
                     Locked = rdr.GetString("locked").Split(',').ToList(),
                     Ignored = rdr.GetString("ignored").Split(',').ToList(),
                     _Gifts = rdr.GetString("gifts"),
-                    IsAgeVerified = rdr.GetString("isAgeVerified").ToLower() == "true" ? 1 : 0,
+                    IsAgeVerified = string.Equals(rdr.GetString("isAgeVerified"), "true", StringComparison.OrdinalIgnoreCase) ? 1 : 0,
                     AuthToken = rdr.GetString("authToken"),
                     NotAcceptedNewTos = rdr.GetInt32("acceptedNewTos") == 1 ? null : String.Empty,
                     OwnedSkins = Utils.FromCommaSepString32(rdr.GetString("ownedSkins")).ToList()

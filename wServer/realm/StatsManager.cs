@@ -65,6 +65,7 @@ namespace wServer.realm
 
         public float GetDefenseDamage(int dmg, bool noDef)
         {
+            Random rnd = new Random();
             int def = GetStats(3);
             if (player.HasConditionEffect(ConditionEffectIndex.Armored))
                 def *= 2;
@@ -72,12 +73,7 @@ namespace wServer.realm
                 noDef)
                 def = 0;
 
-            float limit = dmg * 0.10f;
-
-            float ret;
-            if (dmg - def < limit) ret = limit;
-            else ret = dmg - def;
-
+            float ret = Math.Abs(dmg - ((def / 100) * ((dmg * (float)rnd.NextDouble()) + dmg)));
             if (player.HasConditionEffect(ConditionEffectIndex.Invulnerable) ||
                 player.HasConditionEffect(ConditionEffectIndex.Invincible))
                 ret = 0;
@@ -106,7 +102,7 @@ namespace wServer.realm
             int vit = GetStats(5);
             if (player.HasConditionEffect(ConditionEffectIndex.Sick))
                 vit = 0;
-            return 1 + 0.32f * vit;
+            return 1.12f + 0.52f * vit;
         }
 
         public float GetMPRegen()
@@ -114,7 +110,7 @@ namespace wServer.realm
             int wis = GetStats(6);
             if (player.HasConditionEffect(ConditionEffectIndex.Quiet))
                 return 0;
-            return 0.5f + 0.26f * wis;
+            return 0.5f + 0.48f * wis;
         }
 
         public float GetDex()

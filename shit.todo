@@ -1,18 +1,14 @@
 11/07/2024 [11:05 PM]
 	-> make sure commands are properly formatted and consistent
-11/07/2024 [11:15 PM] 
 	-> effects to items (ie... Doku does poison)
-11/07/2024 [11:34 PM] 
 	-> make pets vanity
-11/07/2024 [11:41 PM] 
 	-> rebuild all dungeons using DungeonGen
-11/07/2024 [11:53 PM] 
 	-> Rebalance player stats (ie... HP/MP Regen, HP/MP, XP, No Level Cap)
 		Level Up's will increase stats up to LVL 100, each LVLUP after will 
 		result in increased Fame etc...
+		
 11/08/2024 [12:17 AM]
 	-> remove pet egg drops until pets are working
-11/08/2024 [01:51 AM]
 	-> !!FIX THE PETS!!
 	-> Fix XML's (ie... export client xmls into server)
 	-> Clean up Behaviors
@@ -21,21 +17,37 @@
 		Do this by stripping Realm Of The Mad God down to its bare components
 		and functionalites. Then, rebuild it from the ground up to become, Lecter's Hideout.
 		Using the RotMG systems as a game engine
+		
 11/08/2024 [03:19 AM]
 	-> Undead Lair is now generating using dungeon gen
 	-> still needs the correct tiles/objects/enemies
 	-> Can be done later, im tired XD
+	
 11/08/2024 [03:20 AM]
 	-> Am finally going to bed
+	
 11/08/2024 [11:37 PM]
 	-> Changing character stats, how the stats behave
 	-> Temporarily setting all classes to stat max 75
 	-> Defense soley relies on equipment
 	-> Equipment rebalance
+	
 11/08/2024 [12:21 AM]
 	-> Dissapearing items bug is back
+	
 12/18/2024 [10:29 AM]
 	-> Reorganize Dat0.xml and Dat1.xml
+	
 01/03/2024 [04:39 PM]
 	-> Play with different defense formulas (currently thinking about switching to def = percent instead of subtractive)
 		Higher def = higher dmg% reduction
+	-> GetCharSet command items depend on rank
+		Low rank -> Low tier starting
+		High rank -> High tier starting
+	-> Practice using templates by putting Sprite World in the DungeonGen
+	-> Fix UDL DungeonGen --- Missing corridors
+	-> Items dissapearing has yet again returned ffs
+		Error might have to do with the currently torn apart sign-in system
+	
+01/03/2024 [05:28 PM]
+	-> 

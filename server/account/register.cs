@@ -55,7 +55,7 @@ namespace server.account
                     {
                         MySqlCommand cmd = db.CreateQuery();
                         cmd.CommandText =
-                            "UPDATE accounts SET uuid=@newUuid, name=@newUuid, password=SHA1(@password), namechosen=TRUE, guest=FALSE WHERE uuid=@uuid, name=@name;";
+                            "UPDATE accounts SET uuid=@newUuid, name=@newUuid, password=SHA1(@password), namechosen=1, guest=FALSE WHERE uuid=@uuid, name=@name;";
                         cmd.Parameters.AddWithValue("@uuid", Query["guid"]);
                         cmd.Parameters.AddWithValue("@newUuid", Query["newGUID"]);
                         cmd.Parameters.AddWithValue("@password", Query["newPassword"]);
